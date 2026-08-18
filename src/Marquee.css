@@ -11,7 +11,7 @@
 
   padding: 18px 0;
 
-  background: #0b0a0d;
+  background: #000000;
 
   border-top: 1px solid
     rgba(255, 255, 255, 0.08);
@@ -68,7 +68,7 @@
   color: transparent;
 
   -webkit-text-stroke: 1px
-    rgba(245, 243, 247, 0.5);
+    rgba(255, 255, 255, 0.5);
 
   transition:
     color 0.3s ease,
@@ -81,9 +81,9 @@
 ========================================================= */
 
 .marquee-item:hover {
-  color: #9280c5;
+  color: #9b7bff;
 
-  -webkit-text-stroke: 1px #9280c5;
+  -webkit-text-stroke: 1px #9b7bff;
 }
 
 
@@ -94,7 +94,7 @@
 .marquee-dot {
   margin: 0 28px;
 
-  color: #9280c5;
+  color: #9b7bff;
 
   font-family: "Syne", sans-serif;
 
@@ -111,6 +111,7 @@
 ========================================================= */
 
 @keyframes marquee-scroll {
+
   from {
     transform: translateX(0);
   }
@@ -118,6 +119,7 @@
   to {
     transform: translateX(-50%);
   }
+
 }
 
 

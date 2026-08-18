@@ -8,106 +8,179 @@ const About = () => {
       <div className="about-container">
 
         {/* =========================================
-            IMAGE
+            TOP LABEL
         ========================================= */}
 
-        <div className="about-image-side">
+        <div className="about-top">
 
-          <div className="about-image-frame">
-            <img
-              src="/me.png"
-              alt="Chidera Benjamin"
-              className="about-image"
-            />
+          <span className="about-eyebrow">
+            01 — ABOUT
+          </span>
 
-            <span className="about-image-number">
-              01
-            </span>
-          </div>
+          <span className="about-top-line" />
 
-          <div className="about-image-caption">
-            <span>CHIDERA BENJAMIN</span>
-            <span>PRODUCT DESIGNER</span>
+          <span className="about-top-note">
+            PRODUCT DESIGNER / RESEARCHER
+          </span>
+
+        </div>
+
+
+        {/* =========================================
+            MAIN STATEMENT
+        ========================================= */}
+
+        <div className="about-intro">
+
+          <h2 className="about-heading">
+            I design digital
+            <br />
+            experiences that
+            <span> make sense.</span>
+          </h2>
+
+          <div className="about-intro-side">
+            <p>
+              Chidera Benjamin is a product designer,
+              UI/UX researcher and graphics designer
+              focused on creating thoughtful digital
+              experiences that are clear, useful and
+              visually engaging.
+            </p>
+
+            <a
+              href="/work"
+              className="about-link"
+            >
+              <span>Explore my work</span>
+
+              <span className="about-link-icon">
+                <FiArrowUpRight />
+              </span>
+            </a>
           </div>
 
         </div>
 
 
         {/* =========================================
-            CONTENT
+            IMAGE + DETAILS
         ========================================= */}
 
-        <div className="about-content">
+        <div className="about-main">
 
-          <span className="about-eyebrow">
-            ABOUT ME
-          </span>
+          {/* IMAGE */}
 
-          <h2>
-            I’m a designer
-            <br />
-            who likes to
-            <br />
-            <span>make things make sense.</span>
-          </h2>
+          <div className="about-image-side">
 
-          <div className="about-text">
+            <div className="about-image-frame">
 
-            <p>
-              I'm Chidera Benjamin, a product designer,
-              UI/UX researcher and graphics designer
-              passionate about creating digital experiences
-              that are thoughtful, useful and visually clear.
-            </p>
+              <img
+                src="/me.png"
+                alt="Chidera Benjamin"
+                className="about-image"
+              />
 
-            <p>
-              I enjoy digging into problems, understanding
-              people and turning research into simple,
-              engaging experiences that feel as good as
-              they work.
-            </p>
+              <span className="about-image-number">
+                01
+              </span>
 
-          </div>
+              <span className="about-image-tag">
+                CHIDERA / 2026
+              </span>
 
-
-          {/* =========================================
-              SPECIALTIES
-          ========================================= */}
-
-          <div className="about-specialties">
-
-            <div className="about-specialty">
-              <span>01</span>
-              <p>Product Design</p>
-            </div>
-
-            <div className="about-specialty">
-              <span>02</span>
-              <p>UI/UX Research</p>
-            </div>
-
-            <div className="about-specialty">
-              <span>03</span>
-              <p>Graphics Design</p>
             </div>
 
           </div>
 
 
-          {/* =========================================
-              LINK
-          ========================================= */}
+          {/* DETAILS */}
 
-          <a
-            href="/work"
-            className="about-link"
-          >
-            <span>See my work</span>
+          <div className="about-details">
 
-            <span className="about-link-icon">
-              <FiArrowUpRight />
-            </span>
-          </a>
+            <div className="about-detail-intro">
+              <span>MY APPROACH</span>
+
+              <p>
+                I enjoy digging into problems,
+                understanding people and turning
+                research into simple experiences
+                that feel intuitive from the first
+                interaction.
+              </p>
+            </div>
+
+
+            {/* SPECIALTIES */}
+
+            <div className="about-specialties">
+
+              <div className="about-specialty">
+
+                <span>01</span>
+
+                <div>
+                  <h3>Product Design</h3>
+
+                  <p>
+                    From ideas to polished digital
+                    products.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div className="about-specialty">
+
+                <span>02</span>
+
+                <div>
+                  <h3>UI/UX Research</h3>
+
+                  <p>
+                    Understanding users before
+                    designing solutions.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div className="about-specialty">
+
+                <span>03</span>
+
+                <div>
+                  <h3>Graphics Design</h3>
+
+                  <p>
+                    Visual systems that communicate
+                    with clarity.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* SIGNATURE */}
+
+            <div className="about-bottom">
+
+              <span className="about-status">
+                <span className="about-status-dot" />
+                AVAILABLE FOR SELECT PROJECTS
+              </span>
+
+              <span className="about-signature">
+                CB
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 

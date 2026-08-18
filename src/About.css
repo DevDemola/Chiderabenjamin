@@ -3,220 +3,50 @@
 ========================================================= */
 
 .about-section {
-  width: 100%;
-
-  padding: 150px 0;
-
-  background: #0b0a0d;
-
-  color: #f5f3f7;
-
-  overflow: hidden;
-}
-
-
-.about-container {
-  width: min(90%, 1280px);
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 0.9fr)
-    minmax(0, 1.1fr);
-
-  align-items: center;
-
-  gap: clamp(60px, 8vw, 120px);
-}
-
-
-/* =========================================================
-   IMAGE SIDE
-========================================================= */
-
-.about-image-side {
-  width: 100%;
-
-  max-width: 520px;
-}
-
-
-/* =========================================================
-   IMAGE FRAME
-========================================================= */
-
-.about-image-frame {
   position: relative;
 
   width: 100%;
 
-  aspect-ratio: 0.82 / 1;
+  padding: 150px 0 170px;
 
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  background: #16131c;
-
-  border: 1px solid
-    rgba(255, 255, 255, 0.08);
-
-  box-shadow:
-    0 30px 70px
-    rgba(0, 0, 0, 0.3);
-}
-
-
-.about-image-frame::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 65%,
-      rgba(0, 0, 0, 0.28)
-    );
-
-  pointer-events: none;
-}
-
-
-.about-image {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition:
-    transform 0.7s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-}
-
-
-.about-image-frame:hover
-.about-image {
-  transform: scale(1.035);
-}
-
-
-/* =========================================================
-   IMAGE NUMBER
-========================================================= */
-
-.about-image-number {
-  position: absolute;
-
-  top: 20px;
-  right: 20px;
-
-  z-index: 2;
-
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: rgba(
-    11,
-    10,
-    13,
-    0.72
-  );
-
-  backdrop-filter: blur(10px);
-
-  -webkit-backdrop-filter: blur(10px);
+  background: #000000;
 
   color: #ffffff;
 
-  font-family: "Figtree", sans-serif;
-
-  font-size: 9px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
+  overflow: hidden;
 }
 
 
 /* =========================================================
-   IMAGE CAPTION
+   CONTAINER
 ========================================================= */
 
-.about-image-caption {
+.about-container {
+  width: min(90%, 1380px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP LABEL
+========================================================= */
+
+.about-top {
   display: flex;
 
   align-items: center;
 
-  justify-content: space-between;
+  gap: 18px;
 
-  gap: 20px;
-
-  margin-top: 15px;
-
-  color: rgba(
-    245,
-    243,
-    247,
-    0.36
-  );
-
-  font-family: "Figtree", sans-serif;
-
-  font-size: 9px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
+  margin-bottom: 80px;
 }
 
-
-.about-image-caption span:first-child {
-  color: #9280c5;
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.about-content {
-  max-width: 650px;
-}
-
-
-/* =========================================================
-   EYEBROW
-========================================================= */
 
 .about-eyebrow {
-  display: inline-flex;
+  flex-shrink: 0;
 
-  align-items: center;
-
-  gap: 8px;
-
-  margin-bottom: 25px;
-
-  color: #9280c5;
+  color: #9b7bff;
 
   font-family: "Figtree", sans-serif;
 
@@ -230,24 +60,56 @@
 }
 
 
-.about-eyebrow::before {
-  content: "";
+.about-top-line {
+  width: 100%;
 
-  width: 7px;
-  height: 7px;
+  height: 1px;
 
-  border-radius: 50%;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.12
+  );
+}
 
-  background: #9280c5;
 
-  box-shadow:
-    0 0 12px
-    rgba(
-      146,
-      128,
-      197,
-      0.6
-    );
+.about-top-note {
+  flex-shrink: 0;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.32
+  );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.about-intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(260px, 0.6fr);
+
+  align-items: end;
+
+  gap: 80px;
+
+  margin-bottom: 100px;
 }
 
 
@@ -255,49 +117,51 @@
    HEADING
 ========================================================= */
 
-.about-content h2 {
+.about-heading {
   margin: 0;
+
+  max-width: 950px;
 
   font-family: "Syne", sans-serif;
 
   font-size: clamp(
-    50px,
-    5.5vw,
-    80px
+    65px,
+    8vw,
+    125px
   );
 
   font-weight: 700;
 
-  line-height: 0.9;
+  line-height: 0.86;
 
-  letter-spacing: -0.06em;
+  letter-spacing: -0.07em;
 }
 
 
-.about-content h2 span {
-  color: #9280c5;
+.about-heading span {
+  color: #9b7bff;
 }
 
 
 /* =========================================================
-   TEXT
+   INTRO SIDE
 ========================================================= */
 
-.about-text {
-  max-width: 570px;
+.about-intro-side {
+  max-width: 340px;
 
-  margin-top: 35px;
+  padding-bottom: 7px;
 }
 
 
-.about-text p {
+.about-intro-side p {
   margin: 0;
 
   color: rgba(
-    245,
-    243,
-    247,
-    0.58
+    255,
+    255,
+    255,
+    0.5
   );
 
   font-family: "Figtree", sans-serif;
@@ -305,103 +169,6 @@
   font-size: 14px;
 
   line-height: 1.75;
-}
-
-
-.about-text p + p {
-  margin-top: 18px;
-}
-
-
-/* =========================================================
-   SPECIALTIES
-========================================================= */
-
-.about-specialties {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  margin-top: 45px;
-
-  border-top:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-
-  border-bottom:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-}
-
-
-.about-specialty {
-  padding: 18px 15px 18px 0;
-
-  border-right:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-}
-
-
-.about-specialty:last-child {
-  border-right: none;
-
-  padding-right: 0;
-
-  padding-left: 15px;
-}
-
-
-.about-specialty:nth-child(2) {
-  padding-left: 15px;
-}
-
-
-.about-specialty span {
-  display: block;
-
-  margin-bottom: 12px;
-
-  color: #9280c5;
-
-  font-family: "Figtree", sans-serif;
-
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-}
-
-
-.about-specialty p {
-  margin: 0;
-
-  color: #f5f3f7;
-
-  font-family: "Figtree", sans-serif;
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  line-height: 1.3;
 }
 
 
@@ -418,9 +185,9 @@
 
   gap: 12px;
 
-  margin-top: 35px;
+  margin-top: 30px;
 
-  color: #f5f3f7;
+  color: #ffffff;
 
   text-decoration: none;
 
@@ -436,13 +203,13 @@
 
 
 .about-link:hover {
-  color: #9280c5;
+  color: #9b7bff;
 }
 
 
 .about-link-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
 
   display: flex;
 
@@ -451,14 +218,20 @@
 
   border-radius: 50%;
 
-  background: #9280c5;
+  background: #9b7bff;
 
-  color: #0b0a0d;
+  color: #000000;
 
   font-size: 16px;
 
   transition:
-    transform 0.35s ease;
+    transform 0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
 }
 
 
@@ -469,25 +242,441 @@
 
 
 /* =========================================================
+   MAIN AREA
+========================================================= */
+
+.about-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.about-image-side {
+  width: 100%;
+}
+
+
+.about-image-frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1.05;
+
+  overflow: hidden;
+
+  background: #111111;
+
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+}
+
+
+.about-image-frame::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(
+        0,
+        0,
+        0,
+        0.45
+      )
+    );
+
+  pointer-events: none;
+}
+
+
+.about-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter:
+    grayscale(100%)
+    contrast(1.05);
+
+  transition:
+    transform 0.8s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+    filter 0.8s ease;
+}
+
+
+.about-image-frame:hover
+.about-image {
+  transform: scale(1.035);
+
+  filter:
+    grayscale(15%)
+    contrast(1.05);
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.about-image-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  z-index: 3;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
+
+  border-radius: 50%;
+
+  background: rgba(
+    0,
+    0,
+    0,
+    0.45
+  );
+
+  backdrop-filter: blur(10px);
+
+  color: #ffffff;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   IMAGE TAG
+========================================================= */
+
+.about-image-tag {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 22px;
+  bottom: 20px;
+
+  color: #ffffff;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.about-details {
+  padding-top: 10px;
+}
+
+
+/* =========================================================
+   DETAIL INTRO
+========================================================= */
+
+.about-detail-intro {
+  padding-bottom: 45px;
+
+  border-bottom: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+}
+
+
+.about-detail-intro > span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #9b7bff;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+
+.about-detail-intro p {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   SPECIALTIES
+========================================================= */
+
+.about-specialties {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   SPECIALTY
+========================================================= */
+
+.about-specialty {
+  display: grid;
+
+  grid-template-columns: 45px 1fr;
+
+  gap: 25px;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  transition:
+    padding-left 0.3s ease;
+}
+
+
+.about-specialty:hover {
+  padding-left: 10px;
+}
+
+
+.about-specialty > span {
+  color: #9b7bff;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+
+.about-specialty h3 {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.04em;
+}
+
+
+.about-specialty p {
+  margin: 0;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.about-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 35px;
+}
+
+
+.about-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+
+.about-status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #9b7bff;
+
+  box-shadow:
+    0 0 12px
+    rgba(
+      155,
+      123,
+      255,
+      0.8
+    );
+}
+
+
+.about-signature {
+  color: rgba(
+    155,
+    123,
+    255,
+    0.7
+  );
+
+  font-family: "Syne", sans-serif;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.08em;
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
   .about-section {
-    padding: 110px 0;
+    padding: 120px 0;
   }
 
-  .about-container {
-    gap: 55px;
+  .about-intro {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    margin-bottom: 75px;
   }
 
-  .about-content h2 {
+  .about-intro-side {
+    max-width: 520px;
+  }
+
+  .about-heading {
     font-size: clamp(
-      45px,
-      6vw,
-      65px
+      58px,
+      9vw,
+      90px
     );
+  }
+
+  .about-main {
+    gap: 55px;
   }
 
 }
@@ -500,17 +689,63 @@
 @media (max-width: 700px) {
 
   .about-section {
-    padding: 85px 0;
+    padding: 90px 0 110px;
   }
 
   .about-container {
     width: 90%;
+  }
 
+
+  /* TOP */
+
+  .about-top {
+    gap: 12px;
+
+    margin-bottom: 55px;
+  }
+
+  .about-top-note {
+    display: none;
+  }
+
+
+  /* INTRO */
+
+  .about-intro {
+    gap: 30px;
+
+    margin-bottom: 60px;
+  }
+
+  .about-heading {
+    font-size:
+      clamp(
+        48px,
+        14vw,
+        70px
+      );
+
+    line-height: 0.88;
+  }
+
+  .about-intro-side {
+    max-width: 100%;
+  }
+
+  .about-intro-side p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  /* MAIN */
+
+  .about-main {
     display: flex;
 
     flex-direction: column;
-
-    align-items: stretch;
 
     gap: 50px;
   }
@@ -518,50 +753,23 @@
 
   /* IMAGE */
 
-  .about-image-side {
-    max-width: 100%;
-  }
-
   .about-image-frame {
-    aspect-ratio: 0.88 / 1;
-
-    border-radius: 24px;
+    aspect-ratio: 0.9 / 1;
   }
 
 
-  .about-image-caption {
-    font-size: 8px;
+  /* DETAILS */
+
+  .about-details {
+    padding-top: 0;
   }
 
-
-  /* CONTENT */
-
-  .about-content {
-    max-width: 100%;
+  .about-detail-intro {
+    padding-bottom: 35px;
   }
 
-  .about-eyebrow {
-    margin-bottom: 20px;
-
-    font-size: 8px;
-  }
-
-  .about-content h2 {
-    font-size: clamp(
-      45px,
-      13vw,
-      65px
-    );
-
-    line-height: 0.9;
-  }
-
-  .about-text {
-    margin-top: 28px;
-  }
-
-  .about-text p {
-    font-size: 13px;
+  .about-detail-intro p {
+    font-size: 15px;
 
     line-height: 1.7;
   }
@@ -569,40 +777,27 @@
 
   /* SPECIALTIES */
 
-  .about-specialties {
-    grid-template-columns: 1fr;
+  .about-specialty {
+    grid-template-columns: 35px 1fr;
 
-    margin-top: 35px;
+    gap: 15px;
+
+    padding: 23px 0;
   }
 
-  .about-specialty,
-  .about-specialty:nth-child(2),
-  .about-specialty:last-child {
-    padding:
-      16px
-      0;
-
-    border-right: none;
-
-    border-bottom:
-      1px solid
-      rgba(
-        255,
-        255,
-        255,
-        0.08
-      );
+  .about-specialty h3 {
+    font-size: 19px;
   }
 
-  .about-specialty:last-child {
-    border-bottom: none;
+  .about-specialty p {
+    font-size: 10px;
   }
 
 
-  /* LINK */
+  /* BOTTOM */
 
-  .about-link {
-    margin-top: 28px;
+  .about-bottom {
+    padding-top: 28px;
   }
 
 }
@@ -615,19 +810,23 @@
 @media (max-width: 380px) {
 
   .about-section {
-    padding: 75px 0;
+    padding: 75px 0 90px;
   }
 
-  .about-container {
-    gap: 40px;
+  .about-heading {
+    font-size: 45px;
   }
 
-  .about-content h2 {
-    font-size: 43px;
-  }
-
-  .about-text p {
+  .about-intro-side p {
     font-size: 12px;
+  }
+
+  .about-detail-intro p {
+    font-size: 14px;
+  }
+
+  .about-specialty h3 {
+    font-size: 17px;
   }
 
 }
@@ -640,6 +839,7 @@
 @media (prefers-reduced-motion: reduce) {
 
   .about-image,
+  .about-specialty,
   .about-link-icon {
     transition: none !important;
   }
