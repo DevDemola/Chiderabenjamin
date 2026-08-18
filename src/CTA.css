@@ -1,0 +1,399 @@
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 170px 0;
+
+  background: #000000;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PURPLE GLOW
+========================================================= */
+
+.cta-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    #9b7bff;
+
+  opacity: 0.08;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cta-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(90%, 900px);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cta-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 28px;
+
+  color: #9b7bff;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.cta-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #9b7bff;
+
+  box-shadow:
+    0 0 14px
+    rgba(155, 123, 255, 0.8);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.cta-title {
+  margin: 0;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: clamp(
+    60px,
+    8vw,
+    105px
+  );
+
+  font-weight: 700;
+
+  line-height: 0.87;
+
+  letter-spacing: -0.07em;
+}
+
+.cta-title span {
+  color: #9b7bff;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cta-description {
+  max-width: 500px;
+
+  margin: 35px 0 40px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  min-width: 190px;
+
+  padding:
+    7px
+    7px
+    7px
+    22px;
+
+  border-radius: 100px;
+
+  background: #9b7bff;
+
+  color: #000000;
+
+  text-decoration: none;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.35s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+
+  background: #aa8fff;
+
+  box-shadow:
+    0 20px 45px
+    rgba(
+      155,
+      123,
+      255,
+      0.25
+    );
+}
+
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.cta-button-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #000000;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.cta-button:hover
+.cta-button-icon {
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   BOTTOM INFO
+========================================================= */
+
+.cta-bottom {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 90px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.28
+    );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .cta-section {
+    padding: 110px 0;
+  }
+
+  .cta-container {
+    width: 90%;
+  }
+
+  .cta-eyebrow {
+    margin-bottom: 22px;
+
+    font-size: 8px;
+  }
+
+  .cta-title {
+    font-size:
+      clamp(
+        48px,
+        14vw,
+        68px
+      );
+  }
+
+  .cta-description {
+    margin:
+      28px 0 32px;
+
+    font-size: 13px;
+  }
+
+  .cta-button {
+    min-width: 180px;
+
+    padding-left: 18px;
+
+    font-size: 12px;
+  }
+
+  .cta-button-icon {
+    width: 39px;
+    height: 39px;
+
+    font-size: 16px;
+  }
+
+  .cta-bottom {
+    margin-top: 65px;
+
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .cta-section {
+    padding: 90px 0;
+  }
+
+  .cta-title {
+    font-size: 45px;
+  }
+
+  .cta-description {
+    font-size: 12px;
+  }
+
+  .cta-bottom {
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.cta-button:focus-visible {
+  outline:
+    2px solid
+    #9b7bff;
+
+  outline-offset: 5px;
+}

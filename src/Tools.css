@@ -1,0 +1,644 @@
+/* =========================================================
+   TOOLS
+========================================================= */
+
+.tools-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 150px 0;
+
+  background: #000000;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.tools-container {
+  width: min(90%, 1280px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.tools-header {
+  margin-bottom: 70px;
+}
+
+
+.tools-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 25px;
+
+  color: #9b7bff;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.tools-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #9b7bff;
+
+  box-shadow:
+    0 0 14px
+    rgba(155, 123, 255, 0.8);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.tools-header h2 {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: clamp(
+    52px,
+    6.5vw,
+    88px
+  );
+
+  font-weight: 700;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+}
+
+
+.tools-header h2 span {
+  color: #9b7bff;
+}
+
+
+/* =========================================================
+   TOOLS LIST
+========================================================= */
+
+.tools-list {
+  width: 100%;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+}
+
+
+/* =========================================================
+   TOOL ITEM
+========================================================= */
+
+.tool-item {
+  position: relative;
+
+  min-height: 125px;
+
+  display: grid;
+
+  grid-template-columns:
+    70px
+    68px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  box-sizing: border-box;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  transition:
+    background 0.35s ease,
+    padding 0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.tool-item:hover {
+  padding-left: 12px;
+
+  background:
+    rgba(
+      155,
+      123,
+      255,
+      0.035
+    );
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.tool-index {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   ICON CONTAINER
+========================================================= */
+
+.tool-icon {
+  position: relative;
+
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(
+      155,
+      123,
+      255,
+      0.18
+    );
+
+  border-radius: 16px;
+
+  background:
+    rgba(
+      155,
+      123,
+      255,
+      0.055
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   ICON GLOW
+========================================================= */
+
+.tool-icon::before {
+  content: "";
+
+  position: absolute;
+
+  width: 45px;
+  height: 45px;
+
+  top: -20px;
+  right: -20px;
+
+  border-radius: 50%;
+
+  background: #9b7bff;
+
+  opacity: 0;
+
+  filter: blur(25px);
+
+  transition:
+    opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.tool-icon img {
+  position: relative;
+
+  z-index: 2;
+
+  width: 28px;
+  height: 28px;
+
+  display: block;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.tool-item:hover .tool-icon {
+  transform:
+    translateY(-3px)
+    rotate(-3deg);
+
+  background:
+    rgba(
+      155,
+      123,
+      255,
+      0.11
+    );
+
+  border-color:
+    rgba(
+      155,
+      123,
+      255,
+      0.45
+    );
+}
+
+
+.tool-item:hover .tool-icon::before {
+  opacity: 0.2;
+}
+
+
+.tool-item:hover .tool-icon img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.tool-details {
+  min-width: 0;
+}
+
+
+.tool-details h3 {
+  margin: 0 0 5px;
+
+  color: #ffffff;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+
+.tool-details p {
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.tool-arrow {
+  margin-right: 5px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+  transition:
+    color 0.3s ease,
+    transform 0.4s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.tool-item:hover .tool-arrow {
+  color: #9b7bff;
+
+  transform:
+    translate(
+      4px,
+      -4px
+    );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .tools-section {
+    padding: 115px 0;
+  }
+
+  .tools-header {
+    margin-bottom: 55px;
+  }
+
+  .tools-header h2 {
+    font-size:
+      clamp(
+        48px,
+        7vw,
+        70px
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .tools-section {
+    padding: 90px 0;
+  }
+
+  .tools-container {
+    width: 90%;
+  }
+
+
+  /* HEADER */
+
+  .tools-header {
+    margin-bottom: 45px;
+  }
+
+  .tools-eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 8px;
+  }
+
+  .tools-header h2 {
+    font-size:
+      clamp(
+        44px,
+        13vw,
+        62px
+      );
+
+    line-height: 0.92;
+
+    letter-spacing: -0.055em;
+  }
+
+
+  /* ITEMS */
+
+  .tool-item {
+    min-height: 105px;
+
+    grid-template-columns:
+      30px
+      52px
+      1fr
+      auto;
+
+    gap: 14px;
+  }
+
+
+  /* NUMBER */
+
+  .tool-index {
+    font-size: 8px;
+  }
+
+
+  /* ICON */
+
+  .tool-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+  }
+
+  .tool-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  /* DETAILS */
+
+  .tool-details h3 {
+    font-size: 18px;
+  }
+
+  .tool-details p {
+    font-size: 9px;
+  }
+
+
+  /* ARROW */
+
+  .tool-arrow {
+    margin-right: 0;
+
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .tools-section {
+    padding: 75px 0;
+  }
+
+  .tools-header h2 {
+    font-size: 43px;
+  }
+
+  .tool-item {
+    grid-template-columns:
+      24px
+      48px
+      1fr
+      auto;
+
+    gap: 11px;
+  }
+
+  .tool-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 13px;
+  }
+
+  .tool-icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tool-details h3 {
+    font-size: 16px;
+  }
+
+  .tool-details p {
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.tool-item:focus-visible {
+  outline:
+    2px solid
+    #9b7bff;
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tool-item,
+  .tool-icon,
+  .tool-icon img,
+  .tool-arrow {
+    transition: none !important;
+  }
+
+}
