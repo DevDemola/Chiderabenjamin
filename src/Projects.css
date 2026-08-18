@@ -1,0 +1,765 @@
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-section {
+  width: 100%;
+
+  padding: 140px 0;
+
+  background: #0b0a0d;
+
+  color: #f5f3f7;
+
+  overflow: hidden;
+}
+
+
+.projects-container {
+  width: min(92%, 1380px);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.projects-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 60px;
+
+  margin-bottom: 80px;
+}
+
+
+.projects-heading {
+  max-width: 760px;
+}
+
+
+.projects-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 25px;
+
+  color: #9280c5;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.projects-eyebrow::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #9280c5;
+
+  box-shadow:
+    0 0 12px
+    rgba(146, 128, 197, 0.55);
+}
+
+
+.projects-heading h2 {
+  margin: 0;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: clamp(
+    60px,
+    7vw,
+    105px
+  );
+
+  font-weight: 700;
+
+  line-height: 0.86;
+
+  letter-spacing: -0.065em;
+}
+
+
+.projects-heading h2 span {
+  color: #9280c5;
+}
+
+
+.projects-intro {
+  max-width: 330px;
+
+  margin: 0 0 6px;
+
+  color: rgba(
+    245,
+    243,
+    247,
+    0.52
+  );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROJECT LIST
+========================================================= */
+
+.projects-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 110px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.6fr)
+    minmax(220px, 0.6fr);
+
+  align-items: end;
+
+  gap: 50px;
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+
+.project-card-reverse {
+  grid-template-columns:
+    minmax(220px, 0.6fr)
+    minmax(0, 1.6fr);
+}
+
+
+.project-card-reverse .project-media {
+  order: 2;
+}
+
+.project-card-reverse .project-info {
+  order: 1;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+.project-media {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1.45 / 1;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #141219;
+
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.project-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: flex-start;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(
+        146,
+        128,
+        197,
+        0.35
+      ),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #16131c,
+      #0e0d11
+    );
+
+  transition:
+    transform 0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.project-placeholder span {
+  font-family: "Syne", sans-serif;
+
+  font-size: clamp(
+    70px,
+    9vw,
+    150px
+  );
+
+  font-weight: 700;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.08em;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.09
+  );
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.project-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 30%,
+      rgba(
+        146,
+        128,
+        197,
+        0.14
+      )
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.project-open {
+  position: absolute;
+
+  right: 25px;
+
+  bottom: 25px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #9280c5;
+
+  color: #0b0a0d;
+
+  font-size: 23px;
+
+  opacity: 0;
+
+  transform:
+    scale(0.8)
+    rotate(-20deg);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.project-card:hover .project-placeholder {
+  transform: scale(1.035);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-open {
+  opacity: 1;
+
+  transform:
+    scale(1)
+    rotate(0);
+}
+
+
+/* =========================================================
+   PROJECT INFO
+========================================================= */
+
+.project-info {
+  display: grid;
+
+  grid-template-columns:
+    45px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: start;
+
+  gap: 20px;
+
+  padding-bottom: 8px;
+}
+
+
+.project-number {
+  padding-top: 6px;
+
+  color: #9280c5;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+.project-details h3 {
+  margin: 0 0 8px;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: clamp(
+    28px,
+    3vw,
+    45px
+  );
+
+  font-weight: 700;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.05em;
+
+  color: #f5f3f7;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.project-details span {
+  color: rgba(
+    245,
+    243,
+    247,
+    0.42
+  );
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+.project-card:hover
+.project-details h3 {
+  color: #9280c5;
+}
+
+
+/* =========================================================
+   MOBILE ARROW
+========================================================= */
+
+.project-mobile-arrow {
+  display: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.projects-footer {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 100px;
+}
+
+
+.projects-view-all {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 7px 7px 7px 20px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border-radius: 100px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.03
+    );
+
+  color: #f5f3f7;
+
+  text-decoration: none;
+
+  font-family: "Figtree", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.projects-view-all:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(
+      146,
+      128,
+      197,
+      0.1
+    );
+
+  border-color:
+    rgba(
+      146,
+      128,
+      197,
+      0.4
+    );
+}
+
+
+.projects-view-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #9280c5;
+
+  color: #0b0a0d;
+
+  font-size: 16px;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.projects-view-all:hover
+.projects-view-icon {
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .projects-section {
+    padding: 110px 0;
+  }
+
+  .projects-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 60px;
+  }
+
+  .projects-intro {
+    max-width: 500px;
+
+    margin: 0;
+  }
+
+  .projects-list {
+    gap: 75px;
+  }
+
+  .project-card,
+  .project-card-reverse {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .project-card-reverse .project-media,
+  .project-card-reverse .project-info {
+    order: initial;
+  }
+
+  .project-media {
+    aspect-ratio: 1.35 / 1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .projects-section {
+    padding: 90px 0;
+  }
+
+  .projects-container {
+    width: 90%;
+  }
+
+  .projects-heading h2 {
+    font-size: clamp(
+      48px,
+      14vw,
+      68px
+    );
+  }
+
+  .projects-intro {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .projects-list {
+    gap: 60px;
+  }
+
+  .project-card,
+  .project-card-reverse {
+    gap: 18px;
+  }
+
+  .project-media {
+    aspect-ratio: 1 / 0.86;
+
+    border-radius: 20px;
+  }
+
+  .project-placeholder {
+    padding: 24px;
+  }
+
+  .project-placeholder span {
+    font-size: 80px;
+  }
+
+  .project-open {
+    width: 48px;
+    height: 48px;
+
+    right: 15px;
+    bottom: 15px;
+
+    font-size: 19px;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .project-info {
+    grid-template-columns:
+      30px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 12px;
+  }
+
+  .project-number {
+    padding-top: 4px;
+
+    font-size: 9px;
+  }
+
+  .project-details h3 {
+    font-size: 26px;
+
+    margin-bottom: 6px;
+  }
+
+  .project-details span {
+    font-size: 8px;
+  }
+
+  .project-mobile-arrow {
+    display: block;
+
+    color: #9280c5;
+
+    font-size: 20px;
+  }
+
+  .projects-footer {
+    margin-top: 70px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .projects-section {
+    padding: 75px 0;
+  }
+
+  .projects-heading h2 {
+    font-size: 45px;
+  }
+
+  .project-details h3 {
+    font-size: 23px;
+  }
+
+  .project-placeholder span {
+    font-size: 65px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-placeholder,
+  .project-overlay,
+  .project-open,
+  .project-details h3,
+  .projects-view-icon {
+    transition: none !important;
+  }
+
+}

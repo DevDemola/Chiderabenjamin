@@ -1,0 +1,191 @@
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 18px 0;
+
+  background: #0b0a0d;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.marquee-track {
+  width: max-content;
+
+  display: flex;
+
+  align-items: center;
+
+  will-change: transform;
+
+  animation:
+    marquee-scroll
+    30s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.marquee-item {
+  white-space: nowrap;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: clamp(
+    22px,
+    2.6vw,
+    38px
+  );
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1px
+    rgba(245, 243, 247, 0.5);
+
+  transition:
+    color 0.3s ease,
+    -webkit-text-stroke 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.marquee-item:hover {
+  color: #9280c5;
+
+  -webkit-text-stroke: 1px #9280c5;
+}
+
+
+/* =========================================================
+   SEPARATOR
+========================================================= */
+
+.marquee-dot {
+  margin: 0 28px;
+
+  color: #9280c5;
+
+  font-family: "Syne", sans-serif;
+
+  font-size: 26px;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* =========================================================
+   HOVER PAUSE
+========================================================= */
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .marquee {
+    padding: 15px 0;
+  }
+
+  .marquee-track {
+    animation-duration: 26s;
+  }
+
+  .marquee-item {
+    font-size: 20px;
+
+    -webkit-text-stroke-width: 0.8px;
+  }
+
+  .marquee-dot {
+    margin: 0 20px;
+
+    font-size: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .marquee-item {
+    font-size: 18px;
+  }
+
+  .marquee-dot {
+    margin: 0 16px;
+
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .marquee-track {
+    animation: none;
+  }
+
+}
