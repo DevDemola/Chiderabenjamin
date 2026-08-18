@@ -469,3 +469,279 @@
 
   border-radius: 4px;
 }
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.navbar-menu-button {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+
+  background: transparent;
+  color: inherit;
+
+  cursor: pointer;
+
+  font-size: 22px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navbar-menu-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar-container {
+    width: min(92%, 1450px);
+  }
+
+  .navbar-links {
+    gap: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 20px 0;
+  }
+
+
+  /* CONTAINER */
+
+  .navbar-container {
+    width: 90%;
+  }
+
+
+  /* LOGO */
+
+  .navbar-logo {
+    z-index: 101;
+  }
+
+  .logo-mark {
+    font-size: 22px;
+  }
+
+  .logo-name {
+    font-size: 13px;
+  }
+
+  .logo-name small {
+    font-size: 8px;
+  }
+
+
+  /* HIDE DESKTOP NAV */
+
+  .navbar-links,
+  .navbar-right {
+    display: none;
+  }
+
+
+  /* SHOW MENU BUTTON */
+
+  .navbar-menu-button {
+    display: flex;
+    z-index: 102;
+  }
+
+
+  /* MOBILE MENU */
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    padding: 32px 5% 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    background: inherit;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-15px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+
+    z-index: 99;
+  }
+
+
+  /* OPEN MENU */
+
+  .mobile-menu-open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+  }
+
+
+  /* MOBILE LINKS */
+
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mobile-menu-links a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: inherit;
+
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-menu-links a:hover {
+    opacity: 0.6;
+  }
+
+
+  /* MOBILE CTA */
+
+  .mobile-menu-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .mobile-menu-cta:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .mobile-menu-cta .navbar-cta-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+  }
+
+  .mobile-menu-cta .navbar-cta-icon svg {
+    color: #000;
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 18px 0;
+  }
+
+  .navbar-container {
+    width: 88%;
+  }
+
+  .navbar-menu-button {
+    width: 42px;
+    height: 42px;
+
+    font-size: 20px;
+  }
+
+  .mobile-menu {
+    padding: 28px 6% 32px;
+  }
+
+  .mobile-menu-links a {
+    font-size: 21px;
+  }
+
+}
