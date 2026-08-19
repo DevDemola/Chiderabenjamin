@@ -19,7 +19,7 @@ const projects = [
     category: "UX Research",
     description:
       "Research-led design work focused on understanding users and solving meaningful problems.",
-    image: "/project-2.jpg",
+    image: "/Lumora Wellness App.jpg.jpeg",
   },
   {
     id: "03",
@@ -27,7 +27,7 @@ const projects = [
     category: "Visual Design",
     description:
       "A visual exploration combining strong typography, composition and a distinctive visual language.",
-    image: "/LUMINO- Wristwatch brand.jpg.jpeg",
+    image: "/Lumino- Wrist watch brand.jpg.jpeg",
   },
   // {
   //   id: "04",
