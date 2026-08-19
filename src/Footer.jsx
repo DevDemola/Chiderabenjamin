@@ -1,146 +1,108 @@
 import React from "react";
-import { FiArrowUpRight } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import {
+  FiInstagram,
+  FiLinkedin,
+  FiDribbble,
+  FiArrowUpRight,
+} from "react-icons/fi";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
+
       <div className="footer-container">
 
-        {/* =========================================
-            TOP
-        ========================================= */}
-
+        {/* TOP */}
         <div className="footer-top">
 
-          <div className="footer-brand">
+          <a href="#home" className="footer-logo">
+            Chidera<span>.</span>
+          </a>
 
-            <Link
-              to="/"
-              className="footer-logo"
-            >
-              <span className="footer-logo-mark">
-                C
-              </span>
+          <span className="footer-status">
+            Available for select projects
+          </span>
 
-              <span className="footer-logo-name">
-                CHIDERA
-                <small>BENJAMIN</small>
-              </span>
-            </Link>
+        </div>
+
+
+        {/* INFO */}
+        <div className="footer-info-grid">
+
+          <div className="footer-info-item">
+            <span className="footer-label">
+              BASED IN
+            </span>
 
             <p>
-              Product designer creating
-              thoughtful digital experiences
-              that make sense.
+              Lagos, Nigeria
             </p>
-
           </div>
 
 
-          {/* =========================================
-              NAVIGATION
-          ========================================= */}
-
-          <div className="footer-column">
-
+          <div className="footer-info-item">
             <span className="footer-label">
-              EXPLORE
+              SPECIALIZED IN
             </span>
 
-            <nav className="footer-links">
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/work">Work</Link>
-              <Link to="/contact">Contact</Link>
-            </nav>
-
+            <p>
+              Product Design · Graphic Design · UX Research
+            </p>
           </div>
 
 
-          {/* =========================================
-              SOCIALS
-          ========================================= */}
-
-          <div className="footer-column">
-
+          <div className="footer-info-item">
             <span className="footer-label">
-              CONNECT
+              SAY HELLO
             </span>
 
-            <div className="footer-links">
-
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-                <FiArrowUpRight />
-              </a>
-
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram
-                <FiArrowUpRight />
-              </a>
-
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Behance
-                <FiArrowUpRight />
-              </a>
-
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Dribbble
-                <FiArrowUpRight />
-              </a>
-
-            </div>
-
+            <a
+              href="mailto:chidera@email.com"
+              className="footer-email"
+            >
+              chidera@email.com
+              <FiArrowUpRight />
+            </a>
           </div>
 
         </div>
 
 
-
-
-        {/* =========================================
-            BOTTOM
-        ========================================= */}
-
+        {/* BOTTOM */}
         <div className="footer-bottom">
 
-          <span>
-            © 2026 CHIDERA BENJAMIN
-          </span>
+          <p className="footer-copy">
+            © 2026 Chidera
+          </p>
 
-          <span>
-            DESIGNED WITH INTENTION.
-          </span>
 
-          <a
-            href="#"
-            className="footer-back-top"
-          >
-            BACK TO TOP
+          <div className="footer-socials">
+
+            <a href="#" aria-label="Instagram">
+              <FiInstagram />
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+              <FiLinkedin />
+            </a>
+
+            <a href="#" aria-label="Dribbble">
+              <FiDribbble />
+            </a>
+
+          </div>
+
+
+          <a href="#home" className="footer-top-link">
+            Back to top
             <FiArrowUpRight />
           </a>
 
         </div>
 
       </div>
+
     </footer>
   );
 };

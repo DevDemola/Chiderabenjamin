@@ -1,6 +1,6 @@
 import React from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 import "./Tools.css";
-import { BiRightArrow } from "react-icons/bi";
 
 const tools = [
   {
@@ -28,6 +28,7 @@ const tools = [
 const Tools = () => {
   return (
     <section className="tools-section" id="tools">
+
       <div className="tools-container">
 
         {/* =================================================
@@ -36,41 +37,49 @@ const Tools = () => {
 
         <div className="tools-header">
 
-          <span className="tools-eyebrow">
-            TOOLS I USE
-          </span>
+          <div className="tools-meta">
+            <span>03</span>
 
-          <h2>
-            Tools I use to
-            <br />
-            bring ideas to <span>life.</span>
-          </h2>
+            <span>
+              Tools & Workflow
+            </span>
+          </div>
+
+
+          <div className="tools-intro">
+
+            <h2>
+              The tools I use to
+              <br />
+              <em>bring ideas to life.</em>
+            </h2>
+
+            <p>
+              A mix of design, prototyping and creative tools
+              that help me turn ideas into meaningful experiences.
+            </p>
+
+          </div>
 
         </div>
 
 
         {/* =================================================
-            TOOLS LIST
+            TOOLS SHOWCASE
         ================================================= */}
 
-        <div className="tools-list">
+        <div className="tools-showcase">
 
           {tools.map((tool, index) => (
-            <div
-              className="tool-item"
+
+            <article
+              className={`tool-item tool-item-${index + 1}`}
               key={tool.name}
             >
 
-              {/* NUMBER */}
+              {/* TOOL IMAGE */}
 
-              <span className="tool-index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
-
-              {/* ICON */}
-
-              <div className="tool-icon">
+              <div className="tool-visual">
 
                 <img
                   src={tool.image}
@@ -80,33 +89,60 @@ const Tools = () => {
               </div>
 
 
-              {/* DETAILS */}
+              {/* TOOL INFORMATION */}
 
-              <div className="tool-details">
+              <div className="tool-info">
 
-                <h3>
-                  {tool.name}
-                </h3>
+                <span className="tool-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-                <p>
-                  {tool.role}
-                </p>
+                <div>
+
+                  <h3>
+                    {tool.name}
+                  </h3>
+
+                  <p>
+                    {tool.role}
+                  </p>
+
+                </div>
 
               </div>
 
 
               {/* ARROW */}
 
-              <span className="tool-arrow">
-                <BiRightArrow/>
-              </span>
+              <FiArrowUpRight className="tool-item-arrow" />
 
-            </div>
+            </article>
+
           ))}
 
         </div>
 
+
+        {/* =================================================
+            BOTTOM
+        ================================================= */}
+
+        <div className="tools-footer">
+
+          <span>
+            A few of my everyday tools
+          </span>
+
+          <div className="tools-footer-line" />
+
+          <span>
+            Always exploring
+          </span>
+
+        </div>
+
       </div>
+
     </section>
   );
 };

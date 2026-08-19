@@ -1,5 +1,5 @@
 import React from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiCalendar } from "react-icons/fi";
 import "./CTA.css";
 
 const CTA = () => {
@@ -7,32 +7,44 @@ const CTA = () => {
     <section className="cta-section" id="contact">
       <div className="cta-container">
 
-        <span className="cta-eyebrow">
-          HAVE A PROJECT IN MIND?
-        </span>
+        {/* IMAGE */}
+        <div className="cta-image-wrapper">
+          <img
+            src="/me1.png"
+            alt="Tosin"
+            className="cta-image"
+          />
+        </div>
 
-        <h2 className="cta-title">
-          Let’s make
-          <br />
-          something <span>meaningful.</span>
-        </h2>
+        {/* CONTENT */}
+        <div className="cta-content">
 
-        <p className="cta-description">
-          Whether you have an idea, a problem to solve,
-          or just want to say hello — I’d love to hear from you.
-        </p>
-
-        <a href="/contact" className="cta-button">
-          <span>Let's work together</span>
-
-          <span className="cta-button-icon">
-            <FiArrowUpRight />
+          <span className="cta-eyebrow">
+            LET'S WORK TOGETHER
           </span>
-        </a>
 
-        <div className="cta-bottom">
-          <span>AVAILABLE FOR SELECT PROJECTS</span>
-          <span>2026</span>
+         <h2>
+  Let’s create
+  <br />
+  something
+  <br />
+  <em>worth seeing.</em>
+</h2>
+
+<p>
+  From animation and compositing to video and design,
+  I help turn creative ideas into polished visual stories.
+</p>
+          <a href="/contact" className="cta-button">
+            <FiCalendar />
+
+            <span>Book a Free Consultation</span>
+
+            <span className="cta-button-arrow">
+              <FiArrowUpRight />
+            </span>
+          </a>
+
         </div>
 
       </div>

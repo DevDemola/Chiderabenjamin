@@ -3,29 +3,16 @@
 ========================================================= */
 
 .navbar {
-  position: fixed;
+  position: absolute;
 
   top: 0;
   left: 0;
 
   width: 100%;
 
-  z-index: 1000;
+  padding: 28px 0;
 
-  padding: 20px 0;
-
-  background: rgba(0, 0, 0, 0.72);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-
-  box-sizing: border-box;
-
-  transition:
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+  z-index: 100;
 }
 
 
@@ -34,7 +21,7 @@
 ========================================================= */
 
 .navbar-container {
-  width: min(94%, 1450px);
+  width: min(92%, 1400px);
 
   margin: 0 auto;
 
@@ -43,8 +30,6 @@
   align-items: center;
 
   justify-content: space-between;
-
-  gap: 50px;
 }
 
 
@@ -53,41 +38,21 @@
 ========================================================= */
 
 .navbar-logo {
-  display: flex;
+  color: #ffffff;
 
-  align-items: baseline;
+  font-family: "Poppins", sans-serif;
 
-  gap: 6px;
+  font-size: 20px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
 
   text-decoration: none;
+}
 
-  font-family: "Syne", sans-serif;
-
+.navbar-logo span {
   color: #9b7bff;
-
-  white-space: nowrap;
-
-  transition: opacity 0.3s ease;
-}
-
-.navbar-logo:hover {
-  opacity: 0.8;
-}
-
-.navbar-logo span:first-child {
-  font-size: 22px;
-
-  font-weight: 500;
-
-  letter-spacing: -0.06em;
-}
-
-.navbar-logo span:last-child {
-  font-size: 22px;
-
-  font-weight: 800;
-
-  letter-spacing: -0.07em;
 }
 
 
@@ -100,33 +65,23 @@
 
   align-items: center;
 
-  justify-content: center;
-
   gap: 42px;
-
-  margin-left: auto;
-
-  margin-right: 30px;
 }
 
 .navbar-links a {
   position: relative;
 
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.7);
 
-  text-decoration: none;
-
-  font-family: "Syne", sans-serif;
+  font-family: "Poppins", sans-serif;
 
   font-size: 14px;
 
-  font-weight: 600;
+  font-weight: 500;
 
-  letter-spacing: -0.01em;
+  text-decoration: none;
 
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .navbar-links a::after {
@@ -137,37 +92,20 @@
   left: 0;
   bottom: -7px;
 
-  width: 100%;
-  height: 2px;
-
-  border-radius: 10px;
+  width: 0;
+  height: 1px;
 
   background: #9b7bff;
 
-  transform: scaleX(0);
-
-  transform-origin: right;
-
-  transition:
-    transform 0.35s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
+  transition: width 0.3s ease;
 }
 
 .navbar-links a:hover {
   color: #ffffff;
-
-  transform: translateY(-1px);
 }
 
 .navbar-links a:hover::after {
-  transform: scaleX(1);
-
-  transform-origin: left;
+  width: 100%;
 }
 
 
@@ -176,126 +114,29 @@
 ========================================================= */
 
 .navbar-cta {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 12px;
-
-  min-width: 145px;
-
-  padding: 7px 7px 7px 20px;
-
-  border-radius: 100px;
-
-  background: #9b7bff;
-
-  color: #000000;
-
-  text-decoration: none;
-
-  font-family: "Syne", sans-serif;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  transition:
-    transform 0.35s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    ),
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.navbar-cta:hover {
-  background: #aa8fff;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 30px
-    rgba(
-      155,
-      123,
-      255,
-      0.28
-    );
-}
-
-
-/* =========================================================
-   CTA ICON
-========================================================= */
-
-.navbar-cta-icon {
-  width: 38px;
-  height: 38px;
-
   display: flex;
 
   align-items: center;
-  justify-content: center;
 
-  flex-shrink: 0;
+  gap: 8px;
 
-  border-radius: 50%;
+  padding: 11px 18px;
 
-  background: #ffffff;
+  border: 1px solid rgba(155, 123, 255, 0.45);
 
-  color: #000000;
+  border-radius: 100px;
 
-  font-size: 18px;
-
-  transition:
-    transform 0.4s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-}
-
-.navbar-cta:hover .navbar-cta-icon {
-  transform: rotate(45deg);
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
-
-.navbar-menu-button {
-  display: none;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 42px;
-  height: 42px;
-
-  padding: 0;
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(155, 123, 255, 0.08);
 
   color: #ffffff;
 
-  cursor: pointer;
+  font-family: "Poppins", sans-serif;
 
-  font-size: 19px;
+  font-size: 13px;
 
-  -webkit-tap-highlight-color: transparent;
+  font-weight: 500;
+
+  text-decoration: none;
 
   transition:
     background 0.3s ease,
@@ -303,14 +144,28 @@
     transform 0.3s ease;
 }
 
-.navbar-menu-button:hover {
-  background: rgba(155, 123, 255, 0.12);
+.navbar-cta svg {
+  color: #9b7bff;
 
-  border-color: rgba(155, 123, 255, 0.35);
+  font-size: 17px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.navbar-menu-button:active {
-  transform: scale(0.94);
+.navbar-cta:hover {
+  background: #9b7bff;
+
+  border-color: #9b7bff;
+
+  transform: translateY(-2px);
+}
+
+.navbar-cta:hover svg {
+  color: #000000;
+
+  transform: translate(2px, -2px);
 }
 
 
@@ -318,350 +173,54 @@
    MOBILE MENU
 ========================================================= */
 
-.mobile-menu {
-  position: absolute;
+.menu-button {
+  display: none;
 
-  top: 100%;
-  left: 0;
-
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 28px 5% 30px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 28px;
-
-  background: rgba(0, 0, 0, 0.96);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  transform: translateY(-10px);
-
-  pointer-events: none;
-
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease,
-    transform 0.35s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-}
-
-.mobile-menu-open {
-  opacity: 1;
-
-  visibility: visible;
-
-  transform: translateY(0);
-
-  pointer-events: auto;
-}
-
-
-/* =========================================================
-   MOBILE MENU LINKS
-========================================================= */
-
-.mobile-menu-links {
-  display: flex;
-
-  flex-direction: column;
-}
-
-.mobile-menu-links a {
-  display: flex;
+  width: 44px;
+  height: 44px;
 
   align-items: center;
+  justify-content: center;
 
-  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
-  padding: 17px 0;
+  border-radius: 50%;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: transparent;
 
-  color: rgba(255, 255, 255, 0.86);
+  color: #ffffff;
 
-  text-decoration: none;
+  font-size: 21px;
 
-  font-family: "Syne", sans-serif;
-
-  font-size: 19px;
-
-  font-weight: 600;
-
-  letter-spacing: -0.03em;
+  cursor: pointer;
 
   transition:
-    color 0.3s ease,
-    padding-left 0.3s ease;
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
-.mobile-menu-links a:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
+.menu-button:hover {
+  border-color: #9b7bff;
 
-.mobile-menu-links a:hover {
   color: #9b7bff;
-
-  padding-left: 5px;
 }
 
 
 /* =========================================================
-   MOBILE MENU CTA
+   RESPONSIVE
 ========================================================= */
 
-.mobile-menu-cta {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 7px 7px 7px 20px;
-
-  border-radius: 100px;
-
-  background: #9b7bff;
-
-  color: #000000;
-
-  text-decoration: none;
-
-  font-family: "Syne", sans-serif;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.mobile-menu-cta:hover {
-  background: #aa8fff;
-
-  transform: translateY(-2px);
-}
-
-.mobile-menu-cta .navbar-cta-icon {
-  width: 38px;
-  height: 38px;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
+@media (max-width: 768px) {
   .navbar {
-    padding: 18px 0;
-
-    background: rgba(0, 0, 0, 0.78);
-
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    padding: 22px 0;
   }
-
-  .navbar-container {
-    width: 92%;
-
-    gap: 25px;
-  }
-
-  .navbar-logo span:first-child,
-  .navbar-logo span:last-child {
-    font-size: 19px;
-  }
-
-  .navbar-links {
-    gap: 28px;
-
-    margin-right: 10px;
-  }
-
-  .navbar-links a {
-    font-size: 13px;
-  }
-
-  .navbar-cta {
-    min-width: 125px;
-
-    padding-left: 16px;
-
-    font-size: 12px;
-  }
-
-  .navbar-cta-icon {
-    width: 34px;
-    height: 34px;
-
-    font-size: 16px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  .navbar {
-    padding: 15px 0;
-
-    background: rgba(0, 0, 0, 0.86);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-  }
-
-  .navbar-container {
-    width: 90%;
-
-    gap: 20px;
-  }
-
-
-  /* LOGO */
-
-  .navbar-logo {
-    gap: 4px;
-  }
-
-  .navbar-logo span:first-child,
-  .navbar-logo span:last-child {
-    font-size: 17px;
-  }
-
-
-  /* HIDE DESKTOP NAVIGATION */
 
   .navbar-links,
-  .navbar-right {
+  .navbar-cta {
     display: none;
   }
 
-
-  /* SHOW MOBILE BUTTON */
-
-  .navbar-menu-button {
+  .menu-button {
     display: flex;
-
-    margin-left: auto;
   }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .navbar {
-    padding: 14px 0;
-  }
-
-  .navbar-container {
-    width: 90%;
-  }
-
-  .navbar-logo span:first-child,
-  .navbar-logo span:last-child {
-    font-size: 15px;
-  }
-
-  .navbar-menu-button {
-    width: 40px;
-    height: 40px;
-
-    font-size: 18px;
-  }
-
-  .mobile-menu {
-    padding: 25px 5% 28px;
-  }
-
-  .mobile-menu-links a {
-    padding: 15px 0;
-
-    font-size: 18px;
-  }
-
-  .mobile-menu-cta {
-    padding-left: 17px;
-
-    font-size: 12px;
-  }
-
-  .mobile-menu-cta .navbar-cta-icon {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .navbar-logo span:first-child,
-  .navbar-logo span:last-child {
-    font-size: 14px;
-  }
-
-  .navbar-menu-button {
-    width: 38px;
-    height: 38px;
-
-    font-size: 17px;
-  }
-
-  .mobile-menu-links a {
-    font-size: 17px;
-  }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
-
-.navbar-links a:focus-visible,
-.navbar-cta:focus-visible,
-.navbar-logo:focus-visible,
-.navbar-menu-button:focus-visible,
-.mobile-menu-links a:focus-visible,
-.mobile-menu-cta:focus-visible {
-  outline: 2px solid #9b7bff;
-
-  outline-offset: 5px;
-
-  border-radius: 4px;
 }

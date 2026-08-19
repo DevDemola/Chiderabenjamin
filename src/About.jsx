@@ -1,184 +1,61 @@
 import React from "react";
-import { FiArrowUpRight } from "react-icons/fi";
 import "./About.css";
 
 const About = () => {
   return (
-    <section className="about-section" id="about">
+    <section className="about" id="about">
       <div className="about-container">
 
-        {/* =========================================
-            TOP LABEL
-        ========================================= */}
+        {/* =================================================
+            IMAGE
+        ================================================= */}
 
-        <div className="about-top">
-
-          <span className="about-eyebrow">
-            01 — ABOUT
-          </span>
-
-          <span className="about-top-line" />
-
-          <span className="about-top-note">
-            PRODUCT DESIGNER / RESEARCHER
-          </span>
-
+        <div className="about-image-wrapper">
+          <img
+            src="/me.png"
+            alt="Chidera"
+            className="about-image"
+          />
         </div>
 
 
-        {/* =========================================
-            MAIN STATEMENT
-        ========================================= */}
+        {/* =================================================
+            CONTENT
+        ================================================= */}
 
-        <div className="about-intro">
+        <div className="about-content">
 
           <h2 className="about-heading">
-            I design digital
-            <br />
-            experiences that
-            <span> make sense.</span>
+            About <span>Chidera.</span>
           </h2>
 
-          <div className="about-intro-side">
+
+          <div className="about-copy">
+
             <p>
-              Chidera Benjamin is a product designer,
-              UI/UX researcher and graphics designer
-              focused on creating thoughtful digital
-              experiences that are clear, useful and
-              visually engaging.
+              Hi! I'm Chidera, a multidisciplinary designer who
+              enjoys turning ideas into <strong>thoughtful,
+              meaningful experiences.</strong>
             </p>
 
-            <a
-              href="/work"
-              className="about-link"
-            >
-              <span>Explore my work</span>
 
-              <span className="about-link-icon">
-                <FiArrowUpRight />
-              </span>
-            </a>
-          </div>
-
-        </div>
+            <p>
+              My work sits at the intersection of
+              <strong> product design, visual design,</strong> and
+              <strong> UX research.</strong> I love understanding
+              people, uncovering the real problems behind a brief,
+              and translating those insights into designs that are
+              both useful and visually engaging.
+            </p>
 
 
-        {/* =========================================
-            IMAGE + DETAILS
-        ========================================= */}
-
-        <div className="about-main">
-
-          {/* IMAGE */}
-
-          <div className="about-image-side">
-
-            <div className="about-image-frame">
-
-              <img
-                src="/me.png"
-                alt="Chidera Benjamin"
-                className="about-image"
-              />
-
-              <span className="about-image-number">
-                01
-              </span>
-
-              <span className="about-image-tag">
-                CHIDERA / 2026
-              </span>
-
-            </div>
-
-          </div>
-
-
-          {/* DETAILS */}
-
-          <div className="about-details">
-
-            <div className="about-detail-intro">
-              <span>MY APPROACH</span>
-
-              <p>
-                I enjoy digging into problems,
-                understanding people and turning
-                research into simple experiences
-                that feel intuitive from the first
-                interaction.
-              </p>
-            </div>
-
-
-            {/* SPECIALTIES */}
-
-            <div className="about-specialties">
-
-              <div className="about-specialty">
-
-                <span>01</span>
-
-                <div>
-                  <h3>Product Design</h3>
-
-                  <p>
-                    From ideas to polished digital
-                    products.
-                  </p>
-                </div>
-
-              </div>
-
-
-              <div className="about-specialty">
-
-                <span>02</span>
-
-                <div>
-                  <h3>UI/UX Research</h3>
-
-                  <p>
-                    Understanding users before
-                    designing solutions.
-                  </p>
-                </div>
-
-              </div>
-
-
-              <div className="about-specialty">
-
-                <span>03</span>
-
-                <div>
-                  <h3>Graphics Design</h3>
-
-                  <p>
-                    Visual systems that communicate
-                    with clarity.
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-
-            {/* SIGNATURE */}
-
-            <div className="about-bottom">
-
-              <span className="about-status">
-                <span className="about-status-dot" />
-                AVAILABLE FOR SELECT PROJECTS
-              </span>
-
-              <span className="about-signature">
-                CB
-              </span>
-
-            </div>
+            <p>
+              Whether I'm designing a digital product, creating a
+              visual identity, or researching how people interact
+              with an experience, my goal is always the same:
+              <strong> make things clearer, simpler, and more
+              intentional.</strong>
+            </p>
 
           </div>
 
