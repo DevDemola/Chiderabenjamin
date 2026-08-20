@@ -11,7 +11,7 @@ const CTA = () => {
         <div className="cta-image-wrapper">
           <img
             src="/me1.png"
-            alt="Tosin"
+            alt="Product Designer"
             className="cta-image"
           />
         </div>
@@ -23,22 +23,24 @@ const CTA = () => {
             LET'S WORK TOGETHER
           </span>
 
-         <h2>
-  Let’s create
-  <br />
-  something
-  <br />
-  <em>worth seeing.</em>
-</h2>
+          <h2>
+            Let’s create
+            <br />
+            something
+            <br />
+            <em>people love.</em>
+          </h2>
 
-<p>
-  From animation and compositing to video and design,
-  I help turn creative ideas into polished visual stories.
-</p>
+          <p>
+            From research and strategy to user experience
+            and visual design, I create thoughtful digital
+            products that solve real problems.
+          </p>
+
           <a href="/contact" className="cta-button">
             <FiCalendar />
 
-            <span>Book a Free Consultation</span>
+            <span>Start a Project</span>
 
             <span className="cta-button-arrow">
               <FiArrowUpRight />

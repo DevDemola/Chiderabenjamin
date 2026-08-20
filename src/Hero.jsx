@@ -1,5 +1,10 @@
 import React from "react";
-import { FiArrowUpRight, FiMousePointer } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiArrowDown,
+  FiPlus,
+  FiMousePointer,
+} from "react-icons/fi";
 import "./Hero.css";
 
 const Hero = () => {
@@ -7,61 +12,134 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-container">
 
-        {/* LEFT CONTENT */}
-        <div className="hero-content">
+        {/* MAIN HERO */}
+        <div className="hero-main">
 
-          <div className="hero-label">
-            <span className="hero-label-dot"></span>
-            <span>Product Designer & UX Researcher</span>
+          {/* LEFT / TYPOGRAPHY */}
+          <div className="hero-copy">
+
+            <div className="hero-eyebrow">
+              <span>01</span>
+              <span>Product Designer</span>
+            </div>
+
+            <h1>
+              Designing
+              <br />
+              <span>products</span>
+              <br />
+              people love.
+            </h1>
+
+            <div className="hero-copy-bottom">
+
+              <p>
+                I create thoughtful digital experiences
+                that turn complex problems into simple,
+                useful products.
+              </p>
+
+              <a href="#work" className="hero-cta">
+                <span>Explore my work</span>
+
+                <span className="hero-cta-icon">
+                  <FiArrowUpRight />
+                </span>
+              </a>
+
+            </div>
+
           </div>
 
-          <h1 className="hero-title">
-            Designing
-            <br />
-            <span>ideas</span> into
-            <br />
-            experiences<span className="hero-dot">.</span>
-          </h1>
 
-          <p className="hero-description">
-            Hi, I’m Chidera. I’m a product designer, graphic designer,
-            and UX researcher focused on creating meaningful digital
-            experiences and visual identities.
-          </p>
+          {/* IMAGE AREA */}
+          <div className="hero-visual">
 
-          <div className="hero-actions">
-            <a href="#work" className="hero-primary-btn">
-              View my work
-              <FiArrowUpRight />
-            </a>
+            {/* IMAGE */}
+            <div className="hero-image-wrapper">
 
-            <a href="#contact" className="hero-secondary-btn">
-              Let's talk
-            </a>
+              <img
+                src="/me1.png"
+                alt="Product Designer"
+                className="hero-image"
+              />
+
+              <div className="image-overlay"></div>
+
+            </div>
+
+
+            {/* FLOATING TAG — UX */}
+            <div className="floating-tag tag-one">
+              <span className="tag-number">01</span>
+              <span>UX / UI</span>
+            </div>
+
+
+            {/* FLOATING TAG — RESEARCH */}
+            <div className="floating-tag tag-two">
+              <span className="tag-icon">
+                <FiMousePointer />
+              </span>
+
+              <span>Research</span>
+            </div>
+
+
+            {/* FLOATING TAG — PRODUCT */}
+            <div className="floating-tag tag-three">
+              <span>Product</span>
+
+              <span className="tag-arrow">
+                <FiArrowUpRight />
+              </span>
+            </div>
+
+
+            {/* DECORATIVE PLUS */}
+            <div className="hero-plus">
+              <FiPlus />
+            </div>
+
+
+            {/* CIRCLE */}
+            <div className="hero-circle">
+
+              <svg
+                viewBox="0 0 120 120"
+                className="circle-text"
+              >
+                <defs>
+                  <path
+                    id="circlePath"
+                    d="M 60,60 m -43,0 a 43,43 0 1,1 86,0 a 43,43 0 1,1 -86,0"
+                  />
+                </defs>
+
+                <text>
+                  <textPath href="#circlePath">
+                    PRODUCT DESIGN • UX • PRODUCT DESIGN • UX •
+                  </textPath>
+                </text>
+              </svg>
+
+              <div className="circle-arrow">
+                <FiArrowDown />
+              </div>
+
+            </div>
+
           </div>
-
 
         </div>
 
 
-        {/* RIGHT IMAGE */}
-        <div className="hero-visual">
+        {/* BOTTOM */}
+        <div className="hero-footer">
 
-          <div className="hero-image">
-            <img
-              src="/me1.png"
-              alt="Chidera - Product Designer"
-            />
-          </div>
+         
 
-          <div className="hero-image-info">
-            <span>CHIDERA</span>
-            <span>DESIGN / 2026</span>
-          </div>
-
-          <div className="hero-number">
-            01
-          </div>
+         
 
         </div>
 

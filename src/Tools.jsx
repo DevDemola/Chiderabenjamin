@@ -1,148 +1,153 @@
 import React from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiFigma,
+  FiPlus,
+} from "react-icons/fi";
 import "./Tools.css";
 
 const tools = [
   {
     name: "Figma",
-    role: "Design & Prototyping",
-    image: "/figma.png",
+    description: "UI Design & Prototyping",
+    className: "figma",
   },
   {
     name: "Photoshop",
-    role: "Visual Design",
-    image: "/photoshop.png",
+    description: "Visual & Graphic Design",
+    className: "photoshop",
   },
   {
     name: "Framer",
-    role: "Web & Prototyping",
-    image: "/framer.png",
+    description: "Interactive Prototypes",
+    className: "framer",
   },
   {
     name: "Claude",
-    role: "AI & Ideation",
-    image: "/claude.jpg",
+    description: "AI & Design Exploration",
+    className: "claude",
   },
 ];
 
 const Tools = () => {
   return (
     <section className="tools-section" id="tools">
-
       <div className="tools-container">
 
-        {/* =================================================
-            HEADER
-        ================================================= */}
-
+        {/* HEADER */}
         <div className="tools-header">
+          <div className="tools-line"></div>
 
-          <div className="tools-meta">
-            <span>03</span>
-
-            <span>
-              Tools & Workflow
-            </span>
-          </div>
-
-
-          <div className="tools-intro">
-
-            <h2>
-              The tools I use to
-              <br />
-              <em>bring ideas to life.</em>
-            </h2>
-
-            <p>
-              A mix of design, prototyping and creative tools
-              that help me turn ideas into meaningful experiences.
-            </p>
-
-          </div>
+          <span className="tools-small-text">
+            MY DIGITAL TOOLKIT
+          </span>
 
         </div>
 
 
-        {/* =================================================
-            TOOLS SHOWCASE
-        ================================================= */}
+        {/* INTRO */}
+        <div className="tools-intro">
 
-        <div className="tools-showcase">
+          <h2>
+            Tools I use to
+            <span> bring ideas to life.</span>
+          </h2>
+
+          <p>
+            A small collection of the tools I use to
+            research, design, prototype and bring
+            digital products to life.
+          </p>
+
+        </div>
+
+
+        {/* TOOL LIST */}
+        <div className="tools-list">
 
           {tools.map((tool, index) => (
-
-            <article
-              className={`tool-item tool-item-${index + 1}`}
+            <div
+              className={`tool-item ${tool.className}`}
               key={tool.name}
             >
 
-              {/* TOOL IMAGE */}
+              {/* NUMBER */}
+              <span className="tool-number">
+                0{index + 1}
+              </span>
 
-              <div className="tool-visual">
 
-                <img
-                  src={tool.image}
-                  alt={`${tool.name} logo`}
-                />
+              {/* ICON */}
+              <div className="tool-icon">
+
+                {tool.name === "Figma" && (
+                  <div className="figma-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                )}
+
+                {tool.name === "Photoshop" && (
+                  <span className="ps-icon">
+                    Ps
+                  </span>
+                )}
+
+                {tool.name === "Framer" && (
+                  <span className="framer-icon">
+                    F
+                  </span>
+                )}
+
+                {tool.name === "Claude" && (
+                  <span className="claude-icon">
+                    ✦
+                  </span>
+                )}
 
               </div>
 
 
-              {/* TOOL INFORMATION */}
+              {/* NAME */}
+              <div className="tool-name">
+                {tool.name}
+              </div>
 
-              <div className="tool-info">
 
-                <span className="tool-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <div>
-
-                  <h3>
-                    {tool.name}
-                  </h3>
-
-                  <p>
-                    {tool.role}
-                  </p>
-
-                </div>
-
+              {/* DESCRIPTION */}
+              <div className="tool-description">
+                {tool.description}
               </div>
 
 
               {/* ARROW */}
+              <div className="tool-arrow">
+                <FiArrowUpRight />
+              </div>
 
-              <FiArrowUpRight className="tool-item-arrow" />
-
-            </article>
-
+            </div>
           ))}
 
         </div>
 
 
-        {/* =================================================
-            BOTTOM
-        ================================================= */}
+        {/* BOTTOM */}
+        <div className="tools-bottom">
 
-        <div className="tools-footer">
-
-          <span>
-            A few of my everyday tools
-          </span>
-
-          <div className="tools-footer-line" />
+          <div className="tools-plus">
+            <FiPlus />
+          </div>
 
           <span>
-            Always exploring
+            Always learning. Always exploring.
           </span>
 
         </div>
 
       </div>
-
     </section>
   );
 };

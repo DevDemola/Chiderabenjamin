@@ -1,31 +1,95 @@
-import React from "react";
-import { FiArrowUpRight, FiMenu } from "react-icons/fi";
+import React, { useState } from "react";
+import {
+  FiArrowUpRight,
+  FiMenu,
+  FiX,
+  // FiSparkles,
+} from "react-icons/fi";
 import "./Navbar.css";
 
 const Navbar = () => {
-  return (
-    <header className="navbar">
-      <div className="navbar-container">
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        <a href="#home" className="navbar-logo">
-          CHIDERA<span>.</span>
+  const navLinks = [
+    { name: "Work", href: "#work" },
+    { name: "About", href: "#about" },
+    { name: "Process", href: "#process" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const closeMenu = () => setMenuOpen(false);
+
+  return (
+    <header className="header">
+      <div className="header-container">
+
+        {/* LOGO */}
+        <a href="#home" className="logo" onClick={closeMenu}>
+          CB<span>.</span>
         </a>
 
-        <nav className="navbar-links">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+        {/* DESKTOP NAVIGATION */}
+        <nav className="desktop-nav">
+          {navLinks.map((link) => (
+            <a key={link.name} href={link.href}>
+              {link.name}
+            </a>
+          ))}
         </nav>
 
-        <a href="#contact" className="navbar-cta">
-          Let's talk
-          <FiArrowUpRight />
+        {/* DESKTOP CTA */}
+        <a href="#contact" className="project-button">
+          <span className="project-icon">
+            {/* <FiSparkles /> */}
+          </span>
+
+          <span>Start a Project</span>
+
+          <span className="arrow-icon">
+            <FiArrowUpRight />
+          </span>
         </a>
 
-        <button className="menu-button" aria-label="Open menu">
-          <FiMenu />
+        {/* MOBILE MENU BUTTON */}
+        <button
+          className="menu-button"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <FiX /> : <FiMenu />}
         </button>
+      </div>
 
+      {/* MOBILE NAVIGATION */}
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <nav>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={closeMenu}
+            >
+              <span>{link.name}</span>
+              <FiArrowUpRight />
+            </a>
+          ))}
+        </nav>
+
+        <a
+          href="#contact"
+          className="mobile-project-button"
+          onClick={closeMenu}
+        >
+          <span className="project-icon">
+            {/* <FiSparkles /> */}
+          </span>
+
+          <span>Start a Project</span>
+
+          <span className="arrow-icon">
+            <FiArrowUpRight />
+          </span>
+        </a>
       </div>
     </header>
   );

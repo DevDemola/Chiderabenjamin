@@ -3,9 +3,9 @@ import "./Marquee.css";
 
 const items = [
   "PRODUCT DESIGNER",
-  "UI/UX RESEARCHER",
-  "GRAPHICS DESIGNER",
-  "PRODUCT DESIGN",
+  "UI/UX DESIGNER",
+  "UX RESEARCHER",
+  "DIGITAL PRODUCT DESIGN",
   "USER RESEARCH",
   "VISUAL DESIGN",
 ];
@@ -20,7 +20,7 @@ const Marquee = () => {
               {item}
             </span>
 
-            <span className="marquee-dot">
+            <span className="marquee-divider">
               /
             </span>
           </React.Fragment>

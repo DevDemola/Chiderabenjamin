@@ -10,10 +10,10 @@
   background:
     radial-gradient(
       circle at 15% 50%,
-      rgba(156, 122, 255, 0.07),
+      rgba(207, 60, 33, 0.08),
       transparent 30%
     ),
-    #0a0a0c;
+    #000000;
 
   color: #f5f5f5;
 
@@ -27,6 +27,7 @@
 
 .cta-container {
   width: 100%;
+
   max-width: 1350px;
 
   margin: 0 auto;
@@ -56,7 +57,7 @@
 
   border-radius: 45% 45% 20px 20px;
 
-  background: #111116;
+  background: #111111;
 }
 
 
@@ -75,7 +76,7 @@
 
   border-radius: 45% 45% 20px 20px;
 
-  background: #9c7aff;
+  background: #cf3c21;
 }
 
 
@@ -89,6 +90,7 @@
   z-index: 1;
 
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -136,11 +138,11 @@
 
   border-radius: 50px;
 
-  background: rgba(156, 122, 255, 0.08);
+  background: rgba(207, 60, 33, 0.08);
 
-  border: 1px solid rgba(156, 122, 255, 0.18);
+  border: 1px solid rgba(207, 60, 33, 0.22);
 
-  color: #9c7aff;
+  color: #cf3c21;
 
   font-family: "Poppins", sans-serif;
 
@@ -177,7 +179,7 @@
 }
 
 .cta-content h2 em {
-  color: #9c7aff;
+  color: #cf3c21;
 
   font-style: italic;
 }
@@ -222,15 +224,15 @@
   padding: 9px 9px 9px 22px;
 
   border: 1px solid rgba(
-    156,
-    122,
-    255,
+    207,
+    60,
+    33,
     0.35
   );
 
   border-radius: 60px;
 
-  background: #9c7aff;
+  background: #cf3c21;
 
   color: white;
 
@@ -244,9 +246,9 @@
 
   box-shadow:
     0 10px 25px rgba(
-      156,
-      122,
-      255,
+      207,
+      60,
+      33,
       0.12
     );
 
@@ -259,13 +261,13 @@
 .cta-button:hover {
   transform: translateY(-3px);
 
-  background: #9c7aff;
+  background: #cf3c21;
 
   box-shadow:
     0 17px 32px rgba(
-      156,
-      122,
-      255,
+      207,
+      60,
+      33,
       0.2
     );
 }
@@ -277,16 +279,18 @@
 
 .cta-button-arrow {
   width: 43px;
+
   height: 43px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
 
-  background: #0a0a0c;
+  background: #000000;
 
   color: #f5f5f5;
 
@@ -303,7 +307,7 @@
 
   background: #f5f5f5;
 
-  color: #0a0a0c;
+  color: #000000;
 }
 
 
@@ -324,7 +328,6 @@
   .cta-content h2 {
     font-size: 58px;
   }
-
 }
 
 
@@ -357,7 +360,6 @@
   .cta-content h2 {
     font-size: 55px;
   }
-
 }
 
 
@@ -373,6 +375,7 @@
     display: flex;
 
     align-items: center;
+
     justify-content: center;
   }
 
@@ -416,7 +419,6 @@
 
     justify-content: space-between;
   }
-
 }
 
 
@@ -437,7 +439,6 @@
   .cta-content h2 {
     font-size: 40px;
   }
-
 }
 
 
@@ -452,5 +453,4 @@
   .cta-button-arrow {
     transition: none;
   }
-
 }

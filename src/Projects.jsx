@@ -2,79 +2,78 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./Projects.css";
 
-const behanceUrl = "https://www.behance.net/";
+// import projectOne from "../../assets/project-one.jpg";
+// import projectTwo from "../../assets/project-two.jpg";
+// import projectThree from "../../assets/project-three.jpg";
 
 const projects = [
   {
-    id: "01",
-    title: "AZZA FINTECH APP",
-    category: "Product Design",
+    number: "01",
+    title: "Finora",
+    category: "FINTECH / PRODUCT DESIGN",
     description:
-      "A digital product designed around simplicity, clarity and better user experiences.",
+      "A simple financial experience designed to make managing money feel clearer and more intuitive.",
     image: "/Azza Fintech App.jpg.jpeg",
   },
   {
-    id: "02",
-    title: "LUMORA WELLNESS APP",
-    category: "UX Research",
+    number: "02",
+    title: "Nexa",
+    category: "SAAS / UX & UI",
     description:
-      "Research-led design work focused on understanding users and solving meaningful problems.",
+      "A modern platform that helps teams organize their workflow and collaborate more effectively.",
     image: "/Lumora Wellness App.jpg.jpeg",
   },
   {
-    id: "03",
-    title: "LUMINO WRISTWATCH BRAND",
-    category: "Visual Design",
+    number: "03",
+    title: "Mori",
+    category: "HEALTH / DIGITAL PRODUCT",
     description:
-      "A visual exploration combining strong typography, composition and a distinctive visual language.",
+      "A thoughtful digital experience focused on making everyday health management easier.",
     image: "/Lumino- Wrist watch brand.jpg.jpeg",
   },
-  // {
-  //   id: "04",
-  //   title: "PROJECT FOUR",
-  //   category: "Graphic Design",
-  //   description:
-  //     "A visual identity created to communicate personality, clarity and creative direction.",
-  //   image: "/project-4.jpg",
-  // },
 ];
 
 const Projects = () => {
   return (
-    <section className="projects-section" id="work">
-      <div className="projects-container">
+    <section className="work-section" id="work">
+      <div className="work-container">
 
         {/* =================================================
             HEADER
         ================================================= */}
 
-        <div className="projects-header">
+        <div className="work-header">
 
-          <div className="projects-header-top">
-            <span className="projects-index">
-              04
-            </span>
-
-            <span className="projects-eyebrow">
-              Selected work
-            </span>
+          <div className="work-label">
+            <span className="work-number">04</span>
+            <span>SELECTED WORK</span>
           </div>
 
+          <div className="work-line"></div>
 
-          <div className="projects-heading-row">
+          <span className="work-small-text">
+            A FEW THINGS I'VE DESIGNED
+          </span>
 
-            <h2 className="projects-heading">
-              Work that
-              <br />
-              <span>speaks for itself.</span>
-            </h2>
+        </div>
 
-            <p className="projects-intro">
-              A selection of projects exploring product design,
-              user experience, research and visual communication.
-            </p>
 
-          </div>
+        {/* =================================================
+            INTRO
+        ================================================= */}
+
+        <div className="work-intro">
+
+          <h2>
+            Selected
+            <span> work.</span>
+          </h2>
+
+          <p>
+            A collection of products, experiences and
+            interfaces I've had the opportunity to
+            research, design and bring to life.
+          </p>
 
         </div>
 
@@ -83,31 +82,40 @@ const Projects = () => {
             PROJECTS
         ================================================= */}
 
-        <div className="projects-list">
+        <div className="work-list">
 
           {projects.map((project, index) => (
-            <a
-              href={behanceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+
+            <article
               className="project"
-              key={project.id}
+              key={project.number}
             >
 
               {/* IMAGE */}
 
               <div className="project-image-wrapper">
 
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                />
+                <div className="project-image">
 
-                <div className="project-image-overlay"></div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                  />
 
-                <div className="project-view">
-                  <FiArrowUpRight />
+                  <div className="project-overlay"></div>
+
+                  <div className="project-image-top">
+                    <span>{project.number}</span>
+
+                    <span>
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <div className="project-image-button">
+                    <FiArrowUpRight />
+                  </div>
+
                 </div>
 
               </div>
@@ -117,63 +125,67 @@ const Projects = () => {
 
               <div className="project-info">
 
-                <div className="project-info-left">
+                <div className="project-info-top">
 
-                  <span className="project-number">
-                    {project.id}
+                  <span className="project-index">
+                    {project.number} /
                   </span>
 
-                  <div className="project-title-wrapper">
+                  <h3>
+                    {project.title}
+                  </h3>
 
-                    <h3>
-                      {project.title}
-                    </h3>
+                </div>
 
-                    <span className="project-category">
-                      {project.category}
+
+                <div className="project-info-bottom">
+
+                  <p>
+                    {project.description}
+                  </p>
+
+                  <div className="project-tags">
+
+                    <span>
+                      {project.category.split(" / ")[0]}
+                    </span>
+
+                    <span>
+                      Product Design
                     </span>
 
                   </div>
 
                 </div>
 
-
-                <div className="project-info-right">
-
-                  <p>
-                    {project.description}
-                  </p>
-
-                  <FiArrowUpRight className="project-arrow" />
-
-                </div>
-
               </div>
 
-            </a>
+            </article>
+
           ))}
 
         </div>
 
 
         {/* =================================================
-            FOOTER
+            BOTTOM CTA
         ================================================= */}
 
-        <div className="projects-footer">
+        <div className="work-footer">
 
-          <span className="projects-footer-text">
-            More work & explorations
+          <span>
+            MORE PROJECTS COMING SOON
           </span>
 
           <a
-            href={behanceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="projects-view-all"
+            href="#contact"
+            className="work-cta"
           >
-            View Behance
-            <FiArrowUpRight />
+            <span>Start a project</span>
+
+            <span className="work-cta-icon">
+              <FiArrowUpRight />
+            </span>
           </a>
 
         </div>

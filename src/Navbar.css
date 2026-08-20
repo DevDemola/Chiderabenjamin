@@ -1,18 +1,23 @@
 /* =========================================================
-   NAVBAR
+   HEADER
 ========================================================= */
 
-.navbar {
-  position: absolute;
-
+.header {
+  position: fixed;
   top: 0;
   left: 0;
 
   width: 100%;
+  height: 82px;
 
-  padding: 28px 0;
+  z-index: 1000;
 
-  z-index: 100;
+  background: rgba(0, 0, 0, 0.82);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
@@ -20,15 +25,15 @@
    CONTAINER
 ========================================================= */
 
-.navbar-container {
+.header-container {
   width: min(92%, 1400px);
+
+  height: 100%;
 
   margin: 0 auto;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
@@ -37,54 +42,62 @@
    LOGO
 ========================================================= */
 
-.navbar-logo {
+.logo {
   color: #ffffff;
+
+  text-decoration: none;
 
   font-family: "Poppins", sans-serif;
 
-  font-size: 20px;
-
+  font-size: 1.25rem;
   font-weight: 700;
 
-  letter-spacing: -0.5px;
+  letter-spacing: -0.04em;
 
-  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
-.navbar-logo span {
-  color: #9b7bff;
+.logo span {
+  color: #cf3c21;
+}
+
+.logo:hover {
+  opacity: 0.7;
 }
 
 
 /* =========================================================
-   NAVIGATION
+   DESKTOP NAV
 ========================================================= */
 
-.navbar-links {
+.desktop-nav {
   display: flex;
-
   align-items: center;
 
-  gap: 42px;
+  gap: 38px;
+
+  margin-left: auto;
+  margin-right: 42px;
 }
 
-.navbar-links a {
+.desktop-nav a {
   position: relative;
 
-  color: rgba(255, 255, 255, 0.7);
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.68);
 
   text-decoration: none;
 
-  transition: color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+
+  font-size: 0.88rem;
+  font-weight: 400;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.navbar-links a::after {
+.desktop-nav a::after {
   content: "";
 
   position: absolute;
@@ -95,82 +108,115 @@
   width: 0;
   height: 1px;
 
-  background: #9b7bff;
+  background: #cf3c21;
 
   transition: width 0.3s ease;
 }
 
-.navbar-links a:hover {
+.desktop-nav a:hover {
   color: #ffffff;
 }
 
-.navbar-links a:hover::after {
+.desktop-nav a:hover::after {
   width: 100%;
 }
 
 
 /* =========================================================
-   CTA
+   PROJECT BUTTON
 ========================================================= */
 
-.navbar-cta {
-  display: flex;
-
+.project-button {
+  display: inline-flex;
   align-items: center;
 
-  gap: 8px;
+  gap: 9px;
 
-  padding: 11px 18px;
+  height: 48px;
 
-  border: 1px solid rgba(155, 123, 255, 0.45);
+  padding: 5px 6px 5px 8px;
 
-  border-radius: 100px;
+  border-radius: 999px;
 
-  background: rgba(155, 123, 255, 0.08);
+  background: #cf3c21;
 
   color: #ffffff;
 
-  font-family: "Poppins", sans-serif;
-
-  font-size: 13px;
-
-  font-weight: 500;
-
   text-decoration: none;
 
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
+  font-family: "Poppins", sans-serif;
 
-.navbar-cta svg {
-  color: #9b7bff;
+  font-size: 0.82rem;
+  font-weight: 500;
 
-  font-size: 17px;
+  white-space: nowrap;
 
   transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
-.navbar-cta:hover {
-  background: #9b7bff;
-
-  border-color: #9b7bff;
-
+.project-button:hover {
   transform: translateY(-2px);
-}
 
-.navbar-cta:hover svg {
-  color: #000000;
-
-  transform: translate(2px, -2px);
+  background: #e1492d;
 }
 
 
 /* =========================================================
-   MOBILE MENU
+   PROJECT ICON
+========================================================= */
+
+.project-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  font-size: 0.9rem;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ARROW ICON
+========================================================= */
+
+.arrow-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #cf3c21;
+
+  font-size: 1rem;
+
+  flex-shrink: 0;
+
+  transition: transform 0.3s ease;
+}
+
+.project-button:hover .arrow-icon {
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
 ========================================================= */
 
 .menu-button {
@@ -182,45 +228,199 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: none;
 
   border-radius: 50%;
 
-  background: transparent;
+  background: rgba(255, 255, 255, 0.08);
 
   color: #ffffff;
 
-  font-size: 21px;
+  font-size: 1.35rem;
 
   cursor: pointer;
-
-  transition:
-    border-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.menu-button:hover {
-  border-color: #9b7bff;
-
-  color: #9b7bff;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE MENU
 ========================================================= */
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 22px 0;
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .desktop-nav {
+    gap: 25px;
+
+    margin-right: 25px;
   }
 
-  .navbar-links,
-  .navbar-cta {
+  .desktop-nav a {
+    font-size: 0.8rem;
+  }
+
+  .project-button {
+    font-size: 0.76rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .header {
+    height: 72px;
+  }
+
+  .header-container {
+    width: 90%;
+  }
+
+  .desktop-nav,
+  .header-container > .project-button {
     display: none;
   }
 
   .menu-button {
     display: flex;
   }
+
+
+  /* MOBILE MENU */
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 5% 30px;
+
+    background: rgba(0, 0, 0, 0.97);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-15px);
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+
+  /* MOBILE LINKS */
+
+  .mobile-menu nav {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .mobile-menu nav a {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1.1rem;
+
+    transition: color 0.3s ease;
+  }
+
+  .mobile-menu nav a:hover {
+    color: #cf3c21;
+  }
+
+
+  /* MOBILE CTA */
+
+  .mobile-project-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding: 6px 6px 6px 8px;
+
+    min-height: 52px;
+
+    border-radius: 999px;
+
+    background: #cf3c21;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .mobile-project-button > span:nth-child(2) {
+    flex: 1;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+
+    font-size: 1.2rem;
+  }
+
 }

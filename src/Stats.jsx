@@ -1,149 +1,147 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import React from "react";
+import { FiArrowUpRight, FiPlus } from "react-icons/fi";
 import "./Stats.css";
 
-const stats = [
-  {
-    value: 22,
-    suffix: "+",
-    label: "Projects Done",
-  },
-  {
-    value: 17,
-    suffix: "+",
-    label: "Happy Clients",
-  },
-  {
-    value: 5,
-    suffix: "+",
-    label: "Years Creating",
-  },
-  {
-    value: 100,
-    suffix: "%",
-    label: "Client Satisfaction",
-  },
-];
-
 const Stats = () => {
-  const [hasStarted, setHasStarted] = useState(false);
-  const statsRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setHasStarted(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.25,
-      }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="stats-section" ref={statsRef}>
+    <section className="stats-section">
       <div className="stats-container">
 
-        {/* Heading */}
-        <div className="stats-heading">
-          <span className="stats-eyebrow">
-            BY THE NUMBERS
-          </span>
+        {/* TOP LABEL */}
+        <div className="stats-header">
+          <div className="stats-label">
+            <span className="stats-number">03</span>
+            <span>BY THE NUMBERS</span>
+          </div>
 
+          <div className="stats-line"></div>
+
+          <span className="stats-side-text">
+            A FEW NUMBERS
+          </span>
+        </div>
+
+
+        {/* INTRO */}
+        <div className="stats-intro">
           <h2>
-            A little proof
-            <br />
-            <em>goes a long way.</em>
+            A little bit of
+            <span> what I bring.</span>
           </h2>
 
           <p>
-            I care about creating websites that don't just look good,
-            but actually help brands show up better online.
+            Some numbers that give a glimpse into my
+            experience, process and the work I love doing.
           </p>
         </div>
 
-        {/* Stats */}
+
+        {/* STATS */}
         <div className="stats-grid">
-          {stats.map((stat) => (
-            <StatCard
-              key={stat.label}
-              {...stat}
-              hasStarted={hasStarted}
-            />
-          ))}
+
+          {/* STAT 1 */}
+          <div className="stat-card stat-large">
+
+            <div className="stat-top">
+              <span>01</span>
+
+              <div className="stat-circle">
+                <FiArrowUpRight />
+              </div>
+            </div>
+
+            <div className="stat-content">
+              <strong>20+</strong>
+
+              <span>
+                Projects designed
+              </span>
+            </div>
+
+          </div>
+
+
+          {/* STAT 2 */}
+          <div className="stat-card stat-orange">
+
+            <div className="stat-top">
+              <span>02</span>
+
+              <FiPlus className="stat-plus" />
+            </div>
+
+            <div className="stat-content">
+              <strong>4+</strong>
+
+              <span>
+                Years exploring design
+              </span>
+            </div>
+
+          </div>
+
+
+          {/* STAT 3 */}
+          <div className="stat-card stat-wide">
+
+            <div className="stat-top">
+              <span>03</span>
+
+              <span className="stat-mini">
+                PEOPLE FIRST
+              </span>
+            </div>
+
+            <div className="stat-content">
+              <strong>100%</strong>
+
+              <span>
+                User-focused approach
+              </span>
+            </div>
+
+            <div className="stat-decoration">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+          </div>
+
+
+          {/* STAT 4 */}
+          <div className="stat-card stat-dark">
+
+            <div className="stat-top">
+              <span>04</span>
+
+              <div className="stat-dot"></div>
+            </div>
+
+            <div className="stat-content">
+              <strong>∞</strong>
+
+              <span>
+                Curiosity for better ideas
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        {/* BOTTOM */}
+        <div className="stats-footer">
+          <span className="stats-footer-dot"></span>
+
+          <span>
+            Always learning. Always designing.
+          </span>
         </div>
 
       </div>
     </section>
-  );
-};
-
-const StatCard = ({
-  value,
-  suffix,
-  label,
-  hasStarted,
-}) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!hasStarted) return;
-
-    let startTime;
-    const duration = 1400;
-
-    const animate = (currentTime) => {
-      if (!startTime) {
-        startTime = currentTime;
-      }
-
-      const progress = Math.min(
-        (currentTime - startTime) / duration,
-        1
-      );
-
-      // Smooth ease-out
-      const easedProgress =
-        1 - Math.pow(1 - progress, 3);
-
-      setCount(
-        Math.floor(easedProgress * value)
-      );
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [hasStarted, value]);
-
-  return (
-    <div className="stat-card">
-      <span className="stat-number">
-        {count}
-        {suffix}
-      </span>
-
-      <div className="stat-bottom">
-        <span className="stat-label">
-          {label}
-        </span>
-
-        <span className="stat-icon">
-          <FiArrowUpRight />
-        </span>
-      </div>
-    </div>
   );
 };
 
