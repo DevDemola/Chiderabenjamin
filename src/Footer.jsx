@@ -1,9 +1,9 @@
 import React from "react";
 import {
+  FiArrowUpRight,
   FiInstagram,
   FiLinkedin,
   FiDribbble,
-  FiArrowUpRight,
 } from "react-icons/fi";
 import "./Footer.css";
 
@@ -16,87 +16,96 @@ const Footer = () => {
         {/* TOP */}
         <div className="footer-top">
 
-          <a href="#home" className="footer-logo">
-            Chidera<span>.</span>
-          </a>
-
-          <span className="footer-status">
-            Available for select projects
-          </span>
-
-        </div>
-
-
-        {/* INFO */}
-        <div className="footer-info-grid">
-
-          <div className="footer-info-item">
-            <span className="footer-label">
-              BASED IN
-            </span>
+          <div className="footer-brand">
+            <a href="/" className="footer-logo">
+              Chidera Benjamin<span>.</span>
+            </a>
 
             <p>
-              Lagos, Nigeria
+              Product designer creating
+              thoughtful digital experiences.
             </p>
           </div>
 
 
-          <div className="footer-info-item">
-            <span className="footer-label">
-              SPECIALIZED IN
+          {/* NAVIGATION */}
+          <div className="footer-nav">
+
+            <span className="footer-nav-title">
+              EXPLORE
             </span>
 
-            <p>
-              Product Design · Graphic Design · UX Research
-            </p>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#tools">Tools</a>
+            <a href="#contact">Contact</a>
+
           </div>
 
 
-          <div className="footer-info-item">
-            <span className="footer-label">
-              SAY HELLO
+          {/* SOCIALS */}
+          <div className="footer-social">
+
+            <span className="footer-nav-title">
+              CONNECT
             </span>
 
             <a
-              href="mailto:chidera@email.com"
-              className="footer-email"
+              href="#"
+              target="_blank"
+              rel="noreferrer"
             >
-              chidera@email.com
+              <span>Instagram</span>
               <FiArrowUpRight />
             </a>
+
+            <a
+              href="#"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>LinkedIn</span>
+              <FiArrowUpRight />
+            </a>
+
+            <a
+              href="#"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Dribbble</span>
+              <FiArrowUpRight />
+            </a>
+
           </div>
 
         </div>
+
+
+       
 
 
         {/* BOTTOM */}
         <div className="footer-bottom">
 
-          <p className="footer-copy">
-            © 2026 Chidera
-          </p>
+          <span>
+            © 2026 Chidera Benjamin. All rights reserved.
+          </span>
 
+          <a
+  href="https://wa.me/08158411808"
+  target="_blank"
+  rel="noreferrer"
+  className="footer-credit"
+>
+  Designed & built by <strong>Demola</strong>
+</a>
 
-          <div className="footer-socials">
-
-            <a href="#" aria-label="Instagram">
-              <FiInstagram />
-            </a>
-
-            <a href="#" aria-label="LinkedIn">
-              <FiLinkedin />
-            </a>
-
-            <a href="#" aria-label="Dribbble">
-              <FiDribbble />
-            </a>
-
-          </div>
-
-
-          <a href="#home" className="footer-top-link">
-            Back to top
-            <FiArrowUpRight />
+          <a href="#top" className="footer-back-top">
+            BACK TO TOP
+            <span>
+              <FiArrowUpRight />
+            </span>
           </a>
 
         </div>

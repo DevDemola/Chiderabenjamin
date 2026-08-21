@@ -5,11 +5,11 @@
 .tools-section {
   width: 100%;
 
-  padding: 140px 0;
+  padding: clamp(100px, 11vw, 160px) 5%;
 
-  background: #000000;
+  background: #ffffff;
 
-  color: #ffffff;
+  color: #0a0a0a;
 
   overflow: hidden;
 
@@ -22,7 +22,9 @@
 ========================================================= */
 
 .tools-container {
-  width: min(92%, 1350px);
+  width: 100%;
+
+  max-width: 1350px;
 
   margin: 0 auto;
 }
@@ -33,47 +35,33 @@
 ========================================================= */
 
 .tools-header {
-  display: grid;
-
-  grid-template-columns: auto 1fr auto;
-
-  align-items: center;
-
-  gap: 25px;
-
-  margin-bottom: 75px;
-}
-
-.tools-label {
   display: flex;
 
   align-items: center;
 
-  gap: 12px;
+  gap: 15px;
 
-  color: rgba(255, 255, 255, 0.5);
-
-  font-size: 0.7rem;
-
-  letter-spacing: 0.12em;
+  margin-bottom: 55px;
 }
 
-.tools-number {
-  color: #cf3c21;
-}
 
 .tools-line {
+  width: 35px;
+
   height: 1px;
 
-  background: rgba(255, 255, 255, 0.1);
+  background: #cf3c21;
 }
 
+
 .tools-small-text {
-  color: rgba(255, 255, 255, 0.3);
+  color: #cf3c21;
 
-  font-size: 0.65rem;
+  font-size: 10px;
 
-  letter-spacing: 0.1em;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
 }
 
 
@@ -84,43 +72,63 @@
 .tools-intro {
   display: grid;
 
-  grid-template-columns: 1fr 0.5fr;
-
-  gap: 80px;
+  grid-template-columns: 1.2fr 0.8fr;
 
   align-items: end;
 
-  margin-bottom: 85px;
+  gap: 80px;
+
+  margin-bottom: 70px;
 }
 
+
+/* =========================================================
+   HEADING
+========================================================= */
+
 .tools-intro h2 {
-  max-width: 900px;
+  max-width: 850px;
 
   margin: 0;
 
-  font-size: clamp(3.8rem, 6vw, 7rem);
+  font-size: clamp(
+    3.5rem,
+    6vw,
+    6.5rem
+  );
 
-  line-height: 0.92;
+  line-height: 0.9;
 
-  letter-spacing: -0.075em;
+  letter-spacing: -0.07em;
 
-  font-weight: 500;
+  font-weight: 600;
 }
+
 
 .tools-intro h2 span {
   color: #cf3c21;
 }
 
+
+/* =========================================================
+   INTRO TEXT
+========================================================= */
+
 .tools-intro p {
-  max-width: 360px;
+  max-width: 400px;
 
-  margin: 0;
+  margin: 0 0 5px;
 
-  color: rgba(255, 255, 255, 0.43);
+  color: rgba(
+    0,
+    0,
+    0,
+    0.48
+  );
 
-  font-size: 0.85rem;
+  font-size: 14px;
 
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 
@@ -129,7 +137,14 @@
 ========================================================= */
 
 .tools-list {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+
+  border-top: 1px solid rgba(
+    0,
+    0,
+    0,
+    0.1
+  );
 }
 
 
@@ -140,27 +155,75 @@
 .tool-item {
   position: relative;
 
-  min-height: 125px;
+  min-height: 115px;
 
   display: grid;
 
-  grid-template-columns: 70px 100px 1fr 1fr 55px;
+  grid-template-columns:
+    70px
+    90px
+    1fr
+    1fr
+    60px;
 
   align-items: center;
 
-  gap: 25px;
+  gap: 20px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 15px;
+
+  border-bottom: 1px solid rgba(
+    0,
+    0,
+    0,
+    0.1
+  );
 
   transition:
     background 0.35s ease,
     padding 0.35s ease;
 }
 
-.tool-item:hover {
-  padding-left: 15px;
 
-  background: rgba(207, 60, 33, 0.04);
+/* =========================================================
+   HOVER
+========================================================= */
+
+.tool-item:hover {
+  padding-left: 25px;
+
+  padding-right: 25px;
+
+  background: #faf8f7;
+}
+
+
+/* =========================================================
+   ORANGE HOVER LINE
+========================================================= */
+
+.tool-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 3px;
+
+  height: 0;
+
+  background: #cf3c21;
+
+  transition:
+    height 0.35s ease;
+}
+
+
+.tool-item:hover::before {
+  height: 100%;
 }
 
 
@@ -169,97 +232,143 @@
 ========================================================= */
 
 .tool-number {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  );
 
-  font-size: 0.65rem;
+  font-size: 10px;
+
+  font-weight: 600;
 
   letter-spacing: 0.08em;
 }
 
 
 /* =========================================================
-   ICON
+   TOOL ICON
 ========================================================= */
 
 .tool-icon {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+
+  height: 52px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
 
-  border-radius: 16px;
+  background: #f6f6f6;
 
-  background: #0b0b0b;
+  border: 1px solid rgba(
+    0,
+    0,
+    0,
+    0.06
+  );
 
   transition:
     transform 0.35s ease,
-    border-color 0.35s ease;
+    background 0.35s ease;
 }
 
-.tool-item:hover .tool-icon {
-  transform: rotate(-6deg);
 
-  border-color: rgba(207, 60, 33, 0.5);
+.tool-item:hover .tool-icon {
+  transform: translateY(-4px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 25px rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
 }
 
 
 /* =========================================================
-   FIGMA ICON
+   FIGMA
 ========================================================= */
 
 .figma-icon {
-  width: 27px;
+  width: 26px;
+
   height: 36px;
 
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, 13px);
 
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows:
+    repeat(3, 12px);
+
+  overflow: hidden;
 }
+
 
 .figma-icon span {
-  display: block;
-
   width: 13px;
-  height: 13px;
 
-  border-radius: 50%;
+  height: 12px;
 }
+
+
+/* top left */
 
 .figma-icon span:nth-child(1) {
   background: #f24e1e;
 
-  border-radius: 7px 0 0 7px;
+  border-radius:
+    7px 0 0 7px;
 }
+
+
+/* top right */
 
 .figma-icon span:nth-child(2) {
   background: #ff7262;
 
-  border-radius: 0 7px 7px 0;
+  border-radius:
+    0 7px 7px 0;
 }
+
+
+/* middle left */
 
 .figma-icon span:nth-child(3) {
   background: #a259ff;
 
-  border-radius: 7px 0 0 7px;
+  border-radius:
+    7px 0 0 7px;
 }
+
+
+/* middle right */
 
 .figma-icon span:nth-child(4) {
   background: #1abcfe;
 
-  border-radius: 50%;
+  border-radius:
+    0 7px 7px 0;
 }
+
+
+/* bottom */
 
 .figma-icon span:nth-child(5) {
   background: #0acf83;
 
-  border-radius: 7px 0 7px 7px;
+  border-radius:
+    7px 7px 7px 0;
 }
 
 
@@ -268,21 +377,25 @@
 ========================================================= */
 
 .ps-icon {
+  width: 34px;
+
+  height: 34px;
+
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  width: 34px;
-  height: 34px;
+  border: 2px solid #31a8ff;
 
-  border: 2px solid #cf3c21;
+  color: #31a8ff;
 
-  color: #cf3c21;
+  font-size: 14px;
 
-  font-size: 0.72rem;
+  font-weight: 700;
 
-  font-weight: 600;
+  letter-spacing: -0.05em;
 }
 
 
@@ -291,11 +404,32 @@
 ========================================================= */
 
 .framer-icon {
+  width: 34px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #111111;
+
   color: #ffffff;
 
-  font-size: 1.7rem;
+  font-size: 20px;
 
-  font-weight: 600;
+  font-weight: 700;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 50%,
+    50% 50%,
+    50% 100%,
+    0 100%
+  );
 }
 
 
@@ -304,9 +438,23 @@
 ========================================================= */
 
 .claude-icon {
-  color: #cf3c21;
+  width: 34px;
 
-  font-size: 1.8rem;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8d6c5;
+
+  color: #111111;
+
+  font-size: 18px;
 }
 
 
@@ -315,11 +463,13 @@
 ========================================================= */
 
 .tool-name {
-  font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+  color: #101010;
 
-  letter-spacing: -0.05em;
+  font-size: 20px;
 
-  font-weight: 500;
+  font-weight: 600;
+
+  letter-spacing: -0.03em;
 }
 
 
@@ -328,9 +478,16 @@
 ========================================================= */
 
 .tool-description {
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(
+    0,
+    0,
+    0,
+    0.42
+  );
 
-  font-size: 0.75rem;
+  font-size: 12px;
+
+  line-height: 1.5;
 }
 
 
@@ -339,34 +496,47 @@
 ========================================================= */
 
 .tool-arrow {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+
+  height: 46px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  justify-self: end;
+
+  border: 1px solid rgba(
+    0,
+    0,
+    0,
+    0.1
+  );
 
   border-radius: 50%;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: #111111;
+
+  font-size: 18px;
 
   transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
 }
 
+
 .tool-item:hover .tool-arrow {
-  background: #cf3c21;
-
-  color: #ffffff;
-
   transform: rotate(45deg);
 
+  background: #cf3c21;
+
   border-color: #cf3c21;
+
+  color: #ffffff;
 }
 
 
@@ -379,35 +549,77 @@
 
   align-items: center;
 
-  justify-content: flex-end;
+  gap: 14px;
 
-  gap: 12px;
+  margin-top: 35px;
 
-  padding-top: 25px;
+  color: rgba(
+    0,
+    0,
+    0,
+    0.35
+  );
 
-  color: rgba(255, 255, 255, 0.3);
-
-  font-size: 0.65rem;
+  font-size: 10px;
 
   letter-spacing: 0.08em;
 }
 
+
+/* =========================================================
+   PLUS
+========================================================= */
+
 .tools-plus {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+
+  height: 30px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  border: 1px solid rgba(207, 60, 33, 0.4);
+  border: 1px solid rgba(
+    207,
+    60,
+    33,
+    0.25
+  );
 
   border-radius: 50%;
 
   color: #cf3c21;
 
-  font-size: 0.7rem;
+  font-size: 13px;
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .tools-section {
+    padding: 100px 4%;
+  }
+
+  .tools-intro {
+    gap: 50px;
+  }
+
+  .tool-item {
+    grid-template-columns:
+      50px
+      75px
+      1fr
+      1fr
+      55px;
+  }
 }
 
 
@@ -415,20 +627,47 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
+
+  .tools-section {
+    padding: 90px 24px;
+  }
 
   .tools-intro {
-    grid-template-columns: 1fr 0.7fr;
+    grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 25px;
+
+    margin-bottom: 50px;
+  }
+
+  .tools-intro h2 {
+    font-size: 4rem;
+  }
+
+  .tools-intro p {
+    max-width: 500px;
   }
 
   .tool-item {
-    grid-template-columns: 50px 80px 1fr 1fr 45px;
+    min-height: 100px;
+
+    grid-template-columns:
+      45px
+      65px
+      1fr
+      55px;
 
     gap: 15px;
   }
 
+  .tool-description {
+    display: none;
+  }
+
+  .tool-name {
+    font-size: 18px;
+  }
 }
 
 
@@ -436,105 +675,183 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 550px) {
 
   .tools-section {
-    padding: 100px 0;
-  }
-
-  .tools-container {
-    width: 90%;
+    padding: 75px 18px;
   }
 
   .tools-header {
-    grid-template-columns: auto 1fr;
-
-    margin-bottom: 55px;
-  }
-
-  .tools-small-text {
-    display: none;
+    margin-bottom: 40px;
   }
 
   .tools-intro {
-    display: block;
-
-    margin-bottom: 60px;
+    margin-bottom: 45px;
   }
 
   .tools-intro h2 {
-    font-size: clamp(3.2rem, 13vw, 5rem);
+    font-size: 3.1rem;
 
-    margin-bottom: 30px;
+    line-height: 0.94;
+
+    letter-spacing: -0.06em;
   }
 
   .tools-intro p {
-    font-size: 0.82rem;
+    font-size: 13px;
   }
+
+
+  /* =========================================
+     TOOL ITEM
+  ========================================= */
 
   .tool-item {
-    min-height: 100px;
+    min-height: 90px;
 
-    grid-template-columns: 35px 55px 1fr 40px;
+    grid-template-columns:
+      30px
+      48px
+      1fr
+      40px;
 
-    gap: 15px;
+    gap: 12px;
+
+    padding: 0 5px;
   }
+
+  .tool-item:hover {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+
+  /* =========================================
+     NUMBER
+  ========================================= */
 
   .tool-number {
-    font-size: 0.58rem;
+    font-size: 8px;
   }
 
+
+  /* =========================================
+     ICON
+  ========================================= */
+
   .tool-icon {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+
+    height: 42px;
 
     border-radius: 12px;
   }
 
-  .tool-name {
-    font-size: 1.2rem;
+  .figma-icon {
+    transform: scale(0.8);
   }
 
-  .tool-description {
-    display: none;
+  .ps-icon,
+  .framer-icon,
+  .claude-icon {
+    transform: scale(0.78);
   }
+
+
+  /* =========================================
+     NAME
+  ========================================= */
+
+  .tool-name {
+    font-size: 15px;
+  }
+
+
+  /* =========================================
+     ARROW
+  ========================================= */
 
   .tool-arrow {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+
+    height: 34px;
+
+    font-size: 14px;
   }
+
+
+  /* =========================================
+     BOTTOM
+  ========================================= */
 
   .tools-bottom {
-    justify-content: flex-start;
+    margin-top: 28px;
+
+    font-size: 8px;
   }
 
+  .tools-plus {
+    width: 27px;
+
+    height: 27px;
+
+    font-size: 11px;
+  }
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   SMALL PHONES
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
 
-  .tool-item {
-    grid-template-columns: 28px 48px 1fr 35px;
-
-    gap: 10px;
+  .tools-section {
+    padding: 65px 16px;
   }
 
-  .tool-icon {
-    width: 42px;
-    height: 42px;
+  .tools-intro h2 {
+    font-size: 2.8rem;
+  }
+
+  .tool-item {
+    grid-template-columns:
+      25px
+      43px
+      1fr
+      35px;
+
+    gap: 9px;
   }
 
   .tool-name {
-    font-size: 1.05rem;
+    font-size: 14px;
+  }
+
+  .tool-icon {
+    width: 39px;
+
+    height: 39px;
   }
 
   .tool-arrow {
     width: 32px;
+
     height: 32px;
   }
+}
 
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tool-item,
+  .tool-icon,
+  .tool-arrow {
+    transition: none;
+  }
 }

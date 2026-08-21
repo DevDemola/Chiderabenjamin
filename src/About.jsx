@@ -77,7 +77,7 @@ const About = () => {
 
             <h2>
               I design
-              <span> digital products</span>
+              <span> digital products{" "}</span>
               that people enjoy using.
             </h2>
 

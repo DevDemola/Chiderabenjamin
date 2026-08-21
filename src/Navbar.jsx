@@ -25,7 +25,7 @@ const Navbar = () => {
 
         {/* LOGO */}
         <a href="#home" className="logo" onClick={closeMenu}>
-          CB<span>.</span>
+          CHIDERA BENJAMIN<span>.</span>
         </a>
 
         {/* DESKTOP NAVIGATION */}
@@ -39,9 +39,6 @@ const Navbar = () => {
 
         {/* DESKTOP CTA */}
         <a href="#contact" className="project-button">
-          <span className="project-icon">
-            {/* <FiSparkles /> */}
-          </span>
 
           <span>Start a Project</span>
 

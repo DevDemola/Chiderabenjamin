@@ -1,283 +1,406 @@
-/* ========================================
+/* =========================================================
    CTA
-======================================== */
+========================================================= */
 
 .cta-section {
   width: 100%;
 
-  padding: clamp(100px, 11vw, 160px) 5%;
+  padding: clamp(90px, 11vw, 150px) 5%;
 
-  background:
-    radial-gradient(
-      circle at 15% 50%,
-      rgba(207, 60, 33, 0.08),
-      transparent 30%
-    ),
-    #000000;
+  background: #ffffff;
 
-  color: #f5f5f5;
+  color: #0a0a0a;
+
+  font-family: "Poppins", sans-serif;
 
   overflow: hidden;
 }
 
 
-/* ========================================
-   CONTAINER
-======================================== */
+/* =========================================================
+   CARD
+========================================================= */
 
-.cta-container {
-  width: 100%;
+.cta-card {
+  position: relative;
 
-  max-width: 1350px;
+  width: min(100%, 1250px);
+
+  min-height: 650px;
 
   margin: 0 auto;
 
-  display: grid;
+  padding: 30px 40px;
 
-  grid-template-columns: 0.85fr 1.15fr;
+  display: flex;
 
-  align-items: center;
+  flex-direction: column;
 
-  gap: clamp(60px, 8vw, 130px);
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-radius: 38px;
+
+  background: #f7f7f5;
+
+  border: 1px solid rgba(
+    0,
+    0,
+    0,
+    0.05
+  );
+
+  box-shadow:
+    0 25px 80px rgba(
+      0,
+      0,
+      0,
+      0.06
+    );
 }
 
 
-/* ========================================
-   IMAGE
-======================================== */
+/* =========================================================
+   ORANGE GLOW
+========================================================= */
 
-.cta-image-wrapper {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 0.85;
-
-  overflow: visible;
-
-  border-radius: 45% 45% 20px 20px;
-
-  background: #111111;
-}
-
-
-/* ========================================
-   SUBTLE ACCENT BEHIND IMAGE
-======================================== */
-
-.cta-image-wrapper::after {
+.cta-card::before {
   content: "";
 
   position: absolute;
 
-  inset: 18px -18px -18px 18px;
+  width: 430px;
 
-  z-index: 0;
+  height: 430px;
 
-  border-radius: 45% 45% 20px 20px;
+  top: -250px;
+
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(
+    207,
+    60,
+    33,
+    0.11
+  );
+
+  filter: blur(15px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECOND GLOW
+========================================================= */
+
+.cta-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  bottom: -210px;
+
+  left: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(
+    207,
+    60,
+    33,
+    0.06
+  );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.cta-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid rgba(
+    0,
+    0,
+    0,
+    0.08
+  );
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.cta-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #cf3c21;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+
+.cta-label::before {
+  content: "";
+
+  width: 24px;
+
+  height: 1px;
 
   background: #cf3c21;
 }
 
 
-/* ========================================
-   IMAGE
-======================================== */
+/* =========================================================
+   INDEX
+========================================================= */
 
-.cta-image {
-  position: relative;
-
-  z-index: 1;
-
-  width: 100%;
-
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  border-radius: 45% 45% 20px 20px;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  transition:
-    transform 0.7s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-}
-
-.cta-image-wrapper:hover .cta-image {
-  transform: translate(-4px, -4px);
-}
-
-
-/* ========================================
-   CONTENT
-======================================== */
-
-.cta-content {
-  max-width: 700px;
-}
-
-
-/* ========================================
-   EYEBROW
-======================================== */
-
-.cta-eyebrow {
-  display: inline-flex;
-
-  margin-bottom: 24px;
-
-  padding: 8px 18px;
-
-  border-radius: 50px;
-
-  background: rgba(207, 60, 33, 0.08);
-
-  border: 1px solid rgba(207, 60, 33, 0.22);
-
-  color: #cf3c21;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.12em;
-}
-
-
-/* ========================================
-   HEADING
-======================================== */
-
-.cta-content h2 {
-  margin: 0;
-
-  color: #f5f5f5;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: clamp(
-    50px,
-    5.2vw,
-    78px
+.cta-index {
+  color: rgba(
+    0,
+    0,
+    0,
+    0.25
   );
 
-  line-height: 0.94;
+  font-size: 9px;
 
-  letter-spacing: -3px;
+  font-weight: 600;
 
-  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
-.cta-content h2 em {
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 1;
+
+  text-align: center;
+
+  padding: 70px 20px;
+}
+
+
+/* =========================================================
+   HEADING WRAPPER
+========================================================= */
+
+.cta-heading-wrap {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cta-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: rgba(
+    0,
+    0,
+    0,
+    0.38
+  );
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cta-heading-wrap h2 {
+  margin: 0;
+
+  font-size: clamp(
+    4rem,
+    7vw,
+    7.5rem
+  );
+
+  line-height: 0.88;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 600;
+}
+
+
+.cta-heading-wrap h2 span {
   color: #cf3c21;
 
   font-style: italic;
 }
 
 
-/* ========================================
-   TEXT
-======================================== */
+/* =========================================================
+   ORANGE MARK
+========================================================= */
 
-.cta-content p {
-  max-width: 560px;
+.cta-orange-mark {
+  position: absolute;
 
-  margin: 30px 0 35px;
+  top: -30px;
 
-  color: #92929d;
+  right: -75px;
 
-  font-family: "Poppins", sans-serif;
+  width: 55px;
 
-  font-size: clamp(
-    15px,
-    1.1vw,
-    18px
-  );
-
-  line-height: 1.6;
-}
-
-
-/* ========================================
-   BUTTON
-======================================== */
-
-.cta-button {
-  width: fit-content;
+  height: 55px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 13px;
+  justify-content: center;
 
-  padding: 9px 9px 9px 22px;
-
-  border: 1px solid rgba(
-    207,
-    60,
-    33,
-    0.35
-  );
-
-  border-radius: 60px;
+  border-radius: 50%;
 
   background: #cf3c21;
 
-  color: white;
+  color: #ffffff;
 
-  text-decoration: none;
+  font-size: 17px;
 
-  font-family: "Poppins", sans-serif;
-
-  font-size: 15px;
-
-  font-weight: 700;
+  transform: rotate(45deg);
 
   box-shadow:
-    0 10px 25px rgba(
+    0 12px 30px rgba(
       207,
       60,
       33,
-      0.12
+      0.18
     );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cta-description {
+  max-width: 520px;
+
+  margin: 35px auto 28px;
+
+  color: rgba(
+    0,
+    0,
+    0,
+    0.47
+  );
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 6px 6px 6px 22px;
+
+  border-radius: 999px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
 
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease,
     background 0.3s ease;
 }
+
 
 .cta-button:hover {
   transform: translateY(-3px);
 
   background: #cf3c21;
-
-  box-shadow:
-    0 17px 32px rgba(
-      207,
-      60,
-      33,
-      0.2
-    );
 }
 
 
-/* ========================================
-   BUTTON ARROW
-======================================== */
+/* =========================================================
+   ARROW
+========================================================= */
 
-.cta-button-arrow {
+.cta-arrow {
   width: 43px;
 
   height: 43px;
@@ -290,167 +413,214 @@
 
   border-radius: 50%;
 
-  background: #000000;
+  background: #ffffff;
 
-  color: #f5f5f5;
+  color: #111111;
 
-  font-size: 20px;
+  font-size: 18px;
 
   transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
+    transform 0.3s ease;
 }
 
-.cta-button:hover .cta-button-arrow {
+
+.cta-button:hover .cta-arrow {
   transform: rotate(45deg);
 
-  background: #f5f5f5;
-
-  color: #000000;
+  color: #cf3c21;
 }
 
 
-/* ========================================
-   LAPTOP
-======================================== */
+/* =========================================================
+   FOOTER
+========================================================= */
 
-@media (max-width: 1100px) {
+.cta-footer {
+  position: relative;
 
-  .cta-section {
-    padding: 90px 4%;
-  }
+  z-index: 2;
 
-  .cta-container {
-    gap: 60px;
-  }
+  display: flex;
 
-  .cta-content h2 {
-    font-size: 58px;
-  }
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(
+    0,
+    0,
+    0,
+    0.08
+  );
+
+  color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  );
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
 }
 
 
-/* ========================================
+/* =========================================================
    TABLET
-======================================== */
+========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-  .cta-section {
-    padding: 80px 24px;
+  .cta-card {
+    min-height: 600px;
+
+    padding: 28px;
   }
 
-  .cta-container {
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-
-    max-width: 650px;
+  .cta-heading-wrap h2 {
+    font-size: 5.7rem;
   }
 
-  .cta-image-wrapper {
-    width: 65%;
-
-    margin: 0 auto;
-
-    aspect-ratio: 0.9;
-  }
-
-  .cta-content h2 {
-    font-size: 55px;
+  .cta-orange-mark {
+    right: -60px;
   }
 }
 
 
-/* ========================================
+/* =========================================================
    MOBILE
-======================================== */
+========================================================= */
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
 
   .cta-section {
-    padding: 70px 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    padding: 75px 18px;
   }
 
-  .cta-container {
-    gap: 40px;
+  .cta-card {
+    min-height: 590px;
+
+    padding: 22px;
+
+    border-radius: 28px;
   }
 
-  .cta-image-wrapper {
-    width: 82%;
 
-    border-radius:
-      45% 45% 18px 18px;
+  .cta-content {
+    padding: 55px 5px;
   }
 
-  .cta-image-wrapper::after {
-    inset: 12px -12px -12px 12px;
 
-    border-radius:
-      45% 45% 18px 18px;
+  .cta-heading-wrap h2 {
+    font-size: 3.45rem;
+
+    line-height: 0.91;
+
+    letter-spacing: -0.065em;
   }
 
-  .cta-image {
-    border-radius:
-      45% 45% 18px 18px;
+
+  .cta-eyebrow {
+    margin-bottom: 16px;
+
+    font-size: 8px;
   }
 
-  .cta-content h2 {
-    font-size: 43px;
 
-    letter-spacing: -1px;
+  .cta-orange-mark {
+    width: 43px;
+
+    height: 43px;
+
+    top: -18px;
+
+    right: -42px;
+
+    font-size: 13px;
   }
 
-  .cta-content p {
-    margin: 25px 0 30px;
 
-    font-size: 15px;
+  .cta-description {
+    max-width: 400px;
+
+    margin: 28px auto;
+
+    font-size: 12px;
   }
+
 
   .cta-button {
     width: 100%;
 
+    max-width: 280px;
+
     justify-content: space-between;
+  }
+
+
+  .cta-footer {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px 20px;
+
+    text-align: center;
   }
 }
 
 
-/* ========================================
+/* =========================================================
    SMALL PHONES
-======================================== */
+========================================================= */
 
 @media (max-width: 380px) {
 
   .cta-section {
-    padding: 60px 18px;
+    padding: 65px 16px;
   }
 
-  .cta-image-wrapper {
-    width: 86%;
+  .cta-card {
+    min-height: 550px;
+
+    padding: 20px;
+
+    border-radius: 24px;
   }
 
-  .cta-content h2 {
-    font-size: 40px;
+  .cta-heading-wrap h2 {
+    font-size: 3rem;
+  }
+
+  .cta-orange-mark {
+    width: 37px;
+
+    height: 37px;
+
+    right: -32px;
+
+    font-size: 11px;
+  }
+
+  .cta-description {
+    font-size: 11px;
   }
 }
 
 
-/* ========================================
+/* =========================================================
    REDUCED MOTION
-======================================== */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-  .cta-image,
   .cta-button,
-  .cta-button-arrow {
+  .cta-arrow {
     transition: none;
   }
 }

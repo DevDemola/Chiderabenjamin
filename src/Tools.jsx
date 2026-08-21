@@ -132,21 +132,6 @@ const Tools = () => {
           ))}
 
         </div>
-
-
-        {/* BOTTOM */}
-        <div className="tools-bottom">
-
-          <div className="tools-plus">
-            <FiPlus />
-          </div>
-
-          <span>
-            Always learning. Always exploring.
-          </span>
-
-        </div>
-
       </div>
     </section>
   );

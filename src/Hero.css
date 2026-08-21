@@ -2,72 +2,74 @@
    HERO
 ========================================================= */
 
-.hero {
+.hero-section {
   position: relative;
-
   width: 100%;
-  min-height: 100vh;
+  min-height: 850px;
 
-  background: #000000;
-
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   overflow: hidden;
+
+  background: #ffffff;
+  color: #0a0a0a;
 
   font-family: "Poppins", sans-serif;
 }
 
 
 /* =========================================================
-   CONTAINER
+   HERO CONTENT
 ========================================================= */
 
-.hero-container {
+.hero-content {
   position: relative;
+  z-index: 5;
 
-  width: min(92%, 1400px);
-
-  min-height: 100vh;
-
+  width: min(90%, 1000px);
   margin: 0 auto;
-
-  padding-top: 82px;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  text-align: center;
 }
 
 
 /* =========================================================
-   TOP META
+   EYEBROW
 ========================================================= */
 
-.hero-meta {
-  display: flex;
-
+.hero-eyebrow {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
 
-  padding-top: 32px;
+  margin-bottom: 30px;
+  padding: 9px 17px;
 
-  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(207, 60, 33, 0.2);
+  border-radius: 999px;
 
-  font-size: 0.7rem;
+  background: rgba(207, 60, 33, 0.05);
 
-  text-transform: uppercase;
+  color: #cf3c21;
 
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
 }
 
-.hero-availability {
-  display: flex;
 
-  align-items: center;
+/* =========================================================
+   EYEBROW DOT
+========================================================= */
 
-  gap: 9px;
-}
-
-.availability-dot {
+.hero-dot {
   width: 7px;
   height: 7px;
 
@@ -76,63 +78,7 @@
   background: #cf3c21;
 
   box-shadow:
-    0 0 0 5px rgba(207, 60, 33, 0.12);
-}
-
-.hero-year {
-  opacity: 0.6;
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-.hero-main {
-  flex: 1;
-
-  display: grid;
-
-  grid-template-columns: 1.05fr 0.95fr;
-
-  align-items: center;
-
-  gap: 30px;
-
-  padding: 55px 0 65px;
-}
-
-
-/* =========================================================
-   HERO COPY
-========================================================= */
-
-.hero-copy {
-  position: relative;
-
-  z-index: 5;
-}
-
-.hero-eyebrow {
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
-  margin-bottom: 25px;
-
-  color: rgba(255, 255, 255, 0.48);
-
-  font-size: 0.72rem;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.08em;
-}
-
-.hero-eyebrow span:first-child {
-  color: #cf3c21;
+    0 0 0 5px rgba(207, 60, 33, 0.08);
 }
 
 
@@ -140,62 +86,60 @@
    HEADING
 ========================================================= */
 
-.hero h1 {
+.hero-content h1 {
   margin: 0;
 
-  font-size: clamp(4.3rem, 7vw, 7.8rem);
+  max-width: 1000px;
+
+  font-size: clamp(
+    4.2rem,
+    8vw,
+    8.5rem
+  );
 
   line-height: 0.88;
 
-  letter-spacing: -0.075em;
+  letter-spacing: -0.085em;
 
   font-weight: 600;
 }
 
-.hero h1 span {
+.hero-content h1 span {
   color: #cf3c21;
 }
 
 
 /* =========================================================
-   COPY BOTTOM
+   DESCRIPTION
 ========================================================= */
 
-.hero-copy-bottom {
-  display: flex;
+.hero-content p {
+  max-width: 500px;
 
-  align-items: flex-end;
+  margin: 34px auto 0;
 
-  gap: 50px;
+  color: rgba(0, 0, 0, 0.48);
 
-  margin-top: 45px;
-}
+  font-size: 15px;
 
-.hero-copy-bottom p {
-  max-width: 330px;
-
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.53);
-
-  font-size: 0.86rem;
-
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 
 /* =========================================================
-   CTA
+   CTA BUTTON
 ========================================================= */
 
-.hero-cta {
+.hero-button {
   display: inline-flex;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 12px;
 
-  padding: 5px 5px 5px 18px;
+  margin-top: 35px;
+
+  padding: 6px 6px 6px 22px;
 
   border-radius: 999px;
 
@@ -205,26 +149,33 @@
 
   text-decoration: none;
 
-  white-space: nowrap;
+  font-size: 14px;
 
-  font-size: 0.78rem;
+  font-weight: 600;
 
-  font-weight: 500;
+  box-shadow:
+    0 15px 35px rgba(207, 60, 33, 0.18);
 
   transition:
     transform 0.3s ease,
-    background 0.3s ease;
+    box-shadow 0.3s ease;
 }
 
-.hero-cta:hover {
-  transform: translateY(-3px);
+.hero-button:hover {
+  transform: translateY(-4px);
 
-  background: #e14a2d;
+  box-shadow:
+    0 20px 45px rgba(207, 60, 33, 0.25);
 }
 
-.hero-cta-icon {
-  width: 36px;
-  height: 36px;
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.hero-button-icon {
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
@@ -236,356 +187,258 @@
 
   color: #cf3c21;
 
-  font-size: 1rem;
+  font-size: 18px;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
 
-.hero-cta:hover .hero-cta-icon {
+.hero-button:hover .hero-button-icon {
   transform: rotate(45deg);
 }
 
 
 /* =========================================================
-   VISUAL
+   FLOATING TOOL CARDS
 ========================================================= */
 
-.hero-visual {
-  position: relative;
+.hero-tool {
+  position: absolute;
 
-  width: min(100%, 560px);
+  z-index: 3;
 
-  height: 650px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
 
-  justify-self: end;
+  padding: 8px 14px 8px 8px;
+
+  border: 1px solid rgba(0, 0, 0, 0.07);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: #111111;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  animation: floatingTool 5s ease-in-out infinite;
+
+  user-select: none;
 }
 
 
 /* =========================================================
-   IMAGE
+   TOOL IMAGE
 ========================================================= */
 
-.hero-image-wrapper {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  width: 420px;
-  height: 540px;
-
-  transform: translate(-50%, -50%);
-
-  overflow: hidden;
-
-  border-radius: 210px 210px 20px 20px;
-
-  background: #181818;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
+.hero-tool img {
+  width: 34px;
+  height: 34px;
 
   display: block;
 
-  object-fit: cover;
+  object-fit: contain;
 
-  object-position: center;
+  padding: 7px;
 
-  filter: grayscale(12%);
+  border-radius: 11px;
 
-  transition:
-    transform 0.8s ease,
-    filter 0.5s ease;
-}
+  background: #f7f7f7;
 
-.hero-image-wrapper:hover .hero-image {
-  transform: scale(1.04);
-
-  filter: grayscale(0%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 
 /* =========================================================
-   IMAGE OVERLAY
+   INDIVIDUAL TOOL ACCENTS
 ========================================================= */
 
-.image-overlay {
-  position: absolute;
+.hero-tool-1 img {
+  background: #f3f0ff;
+}
 
-  inset: 0;
+.hero-tool-2 img {
+  background: #eaf6ff;
+}
 
-  pointer-events: none;
+.hero-tool-3 img {
+  background: #f1f1f1;
+}
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.02),
-      rgba(0, 0, 0, 0.18)
-    );
+.hero-tool-4 img {
+  background: #fff1eb;
+}
+
+.hero-tool-5 img {
+  background: #f4f4f4;
 }
 
 
 /* =========================================================
-   FLOATING TAGS
+   TOOL POSITIONS
 ========================================================= */
 
-.floating-tag {
-  position: absolute;
+.hero-tool-1 {
+  top: 22%;
+  left: 9%;
 
-  z-index: 10;
+  transform: rotate(-7deg);
 
-  display: flex;
+  animation-delay: 0s;
+}
 
-  align-items: center;
 
-  gap: 9px;
+.hero-tool-2 {
+  top: 16%;
+  right: 10%;
 
-  padding: 8px 10px;
+  transform: rotate(6deg);
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  animation-delay: 1s;
+}
 
-  border-radius: 999px;
 
-  background: rgba(20, 20, 20, 0.86);
+.hero-tool-3 {
+  bottom: 25%;
+  left: 12%;
 
-  backdrop-filter: blur(15px);
+  transform: rotate(5deg);
 
-  -webkit-backdrop-filter: blur(15px);
+  animation-delay: 2s;
+}
 
-  color: rgba(255, 255, 255, 0.82);
 
-  font-size: 0.65rem;
+.hero-tool-4 {
+  bottom: 19%;
+  right: 12%;
 
-  text-transform: uppercase;
+  transform: rotate(-6deg);
 
-  letter-spacing: 0.06em;
+  animation-delay: 3s;
+}
+
+
+.hero-tool-5 {
+  top: 45%;
+  right: 5%;
+
+  transform: rotate(5deg);
+
+  animation-delay: 1.5s;
 }
 
 
 /* =========================================================
-   TAG ONE
+   FLOATING ANIMATION
 ========================================================= */
 
-.tag-one {
-  top: 85px;
-  left: 10px;
-}
+@keyframes floatingTool {
 
-.tag-number {
-  display: flex;
+  0%,
+  100% {
+    margin-top: 0;
+  }
 
-  align-items: center;
-  justify-content: center;
-
-  width: 25px;
-  height: 25px;
-
-  border-radius: 50%;
-
-  background: #cf3c21;
-
-  color: #ffffff;
-
-  font-size: 0.58rem;
+  50% {
+    margin-top: -12px;
+  }
 }
 
 
 /* =========================================================
-   TAG TWO
-========================================================= */
-
-.tag-two {
-  right: 10px;
-  top: 240px;
-}
-
-.tag-icon {
-  width: 25px;
-  height: 25px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.1);
-
-  color: #cf3c21;
-}
-
-
-/* =========================================================
-   TAG THREE
-========================================================= */
-
-.tag-three {
-  left: 30px;
-  bottom: 100px;
-
-  background: #cf3c21;
-
-  border-color: transparent;
-
-  color: #ffffff;
-}
-
-.tag-arrow {
-  width: 25px;
-  height: 25px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #ffffff;
-
-  color: #cf3c21;
-}
-
-
-/* =========================================================
-   PLUS
+   DECORATIVE PLUS
 ========================================================= */
 
 .hero-plus {
   position: absolute;
 
-  right: 45px;
-  bottom: 75px;
+  z-index: 2;
 
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(207, 60, 33, 0.22);
 
   border-radius: 50%;
 
   color: #cf3c21;
 
-  font-size: 1rem;
+  font-size: 15px;
+
+  background: rgba(207, 60, 33, 0.03);
 
   transform: rotate(45deg);
 }
 
 
 /* =========================================================
-   CIRCLE
+   PLUS POSITIONS
 ========================================================= */
 
-.hero-circle {
-  position: absolute;
-
-  right: -15px;
-  top: 25px;
-
-  width: 105px;
-  height: 105px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
+.hero-plus-1 {
+  top: 20%;
+  left: 25%;
 }
 
-.circle-text {
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
-  animation: circleRotate 18s linear infinite;
-}
-
-.circle-text text {
-  fill: rgba(255, 255, 255, 0.6);
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-}
-
-.circle-arrow {
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #cf3c21;
-
-  color: #ffffff;
-
-  font-size: 1rem;
-}
-
-@keyframes circleRotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.hero-plus-2 {
+  right: 28%;
+  bottom: 19%;
 }
 
 
 /* =========================================================
-   FOOTER
+   HERO BOTTOM
 ========================================================= */
 
-.hero-footer {
-  display: flex;
+.hero-bottom {
+  position: absolute;
 
+  left: 5%;
+  right: 5%;
+
+  bottom: 30px;
+
+  display: flex;
   align-items: center;
 
-  justify-content: space-between;
+  gap: 15px;
 
-  padding-bottom: 28px;
+  color: rgba(0, 0, 0, 0.3);
 
-  color: rgba(255, 255, 255, 0.38);
+  font-size: 9px;
 
-  font-size: 0.68rem;
+  font-weight: 500;
 
-  text-transform: uppercase;
-
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
 }
 
-.hero-scroll {
-  display: flex;
 
-  align-items: center;
+/* =========================================================
+   BOTTOM LINE
+========================================================= */
 
-  gap: 10px;
-}
+.hero-bottom-line {
+  flex: 1;
 
-.scroll-line {
-  width: 35px;
   height: 1px;
 
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.hero-location {
-  opacity: 0.6;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 
@@ -593,33 +446,39 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1000px) {
 
-  .hero-main {
-    grid-template-columns: 1fr 0.8fr;
+  .hero-section {
+    min-height: 800px;
   }
 
-  .hero h1 {
-    font-size: clamp(3.8rem, 7vw, 6.2rem);
+  .hero-tool-1 {
+    left: 4%;
   }
 
-  .hero-visual {
-    height: 570px;
+  .hero-tool-2 {
+    right: 4%;
   }
 
-  .hero-image-wrapper {
-    width: 350px;
-    height: 480px;
+  .hero-tool-3 {
+    left: 5%;
   }
 
-  .tag-one {
-    left: -5px;
+  .hero-tool-4 {
+    right: 5%;
   }
 
-  .tag-two {
-    right: -5px;
+  .hero-tool-5 {
+    display: none;
   }
 
+  .hero-plus-1 {
+    left: 18%;
+  }
+
+  .hero-plus-2 {
+    right: 18%;
+  }
 }
 
 
@@ -627,153 +486,216 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 650px) {
 
-  .hero-container {
-    width: 90%;
+  .hero-section {
+    min-height: 760px;
 
-    padding-top: 72px;
+    padding: 100px 18px 80px;
   }
 
-  .hero-meta {
-    padding-top: 25px;
-  }
 
-  .hero-main {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 30px;
-
-    padding: 45px 0 45px;
-  }
-
-  .hero-copy {
-    order: 1;
-  }
-
-  .hero-visual {
-    order: 2;
-
+  .hero-content {
     width: 100%;
-
-    height: 480px;
-
-    margin-top: 10px;
   }
 
-  .hero h1 {
-    font-size: clamp(3.4rem, 14vw, 5.5rem);
-
-    line-height: 0.9;
-  }
 
   .hero-eyebrow {
-    margin-bottom: 18px;
+    margin-bottom: 24px;
+
+    padding: 8px 14px;
+
+    font-size: 9px;
   }
 
-  .hero-copy-bottom {
-    flex-direction: column;
 
-    align-items: flex-start;
+  .hero-content h1 {
+    max-width: 500px;
 
-    gap: 22px;
+    font-size: clamp(
+      3.2rem,
+      13vw,
+      5rem
+    );
 
-    margin-top: 30px;
+    line-height: 0.91;
+
+    letter-spacing: -0.07em;
   }
 
-  .hero-copy-bottom p {
-    max-width: 390px;
+
+  .hero-content p {
+    max-width: 330px;
+
+    margin-top: 27px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
   }
 
-  .hero-image-wrapper {
-    width: min(78vw, 360px);
 
-    height: 420px;
+  .hero-button {
+    margin-top: 28px;
+
+    font-size: 12px;
   }
 
-  .tag-one {
-    top: 50px;
-    left: 2%;
+
+  .hero-button-icon {
+    width: 38px;
+    height: 38px;
   }
 
-  .tag-two {
-    top: 190px;
-    right: 0;
+
+  /* =============================================
+     MOBILE TOOL CARDS
+  ============================================= */
+
+  .hero-tool {
+    gap: 6px;
+
+    padding: 6px 9px 6px 6px;
+
+    border-radius: 13px;
+
+    font-size: 8px;
+
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.07);
   }
 
-  .tag-three {
+
+  .hero-tool img {
+    width: 25px;
+    height: 25px;
+
+    padding: 5px;
+
+    border-radius: 7px;
+  }
+
+
+  .hero-tool-1 {
+    top: 15%;
     left: 3%;
-    bottom: 50px;
+
+    transform: rotate(-7deg);
   }
 
-  .hero-circle {
-    right: 0;
-    top: 5px;
 
-    width: 80px;
-    height: 80px;
+  .hero-tool-2 {
+    top: 22%;
+    right: 2%;
+
+    transform: rotate(6deg);
   }
 
-  .circle-arrow {
-    width: 31px;
-    height: 31px;
 
-    font-size: 0.8rem;
+  .hero-tool-3 {
+    left: 3%;
+    bottom: 22%;
+
+    transform: rotate(5deg);
   }
 
-  .hero-plus {
-    right: 5%;
-    bottom: 40px;
 
-    width: 32px;
-    height: 32px;
+  .hero-tool-4 {
+    right: 3%;
+    bottom: 17%;
+
+    transform: rotate(-6deg);
   }
 
-  .hero-footer {
-    padding-bottom: 20px;
-  }
 
-  .hero-location {
+  .hero-tool-5 {
     display: none;
   }
 
+
+  /* =============================================
+     PLUS
+  ============================================= */
+
+  .hero-plus {
+    width: 30px;
+    height: 30px;
+
+    font-size: 11px;
+  }
+
+
+  .hero-plus-1 {
+    top: 28%;
+    left: 15%;
+  }
+
+
+  .hero-plus-2 {
+    right: 15%;
+    bottom: 27%;
+  }
+
+
+  /* =============================================
+     BOTTOM
+  ============================================= */
+
+  .hero-bottom {
+    left: 18px;
+    right: 18px;
+
+    bottom: 20px;
+
+    font-size: 7px;
+  }
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   SMALL PHONES
 ========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 400px) {
 
-  .hero h1 {
-    font-size: 3.1rem;
+  .hero-section {
+    min-height: 700px;
   }
 
-  .hero-visual {
-    height: 420px;
+
+  .hero-content h1 {
+    font-size: 3rem;
   }
 
-  .hero-image-wrapper {
-    width: 280px;
-    height: 370px;
+
+  .hero-tool-3,
+  .hero-tool-4 {
+    display: none;
   }
 
-  .floating-tag {
-    font-size: 0.55rem;
+
+  .hero-plus-1 {
+    left: 7%;
   }
 
-  .hero-circle {
-    width: 70px;
-    height: 70px;
-  }
 
-  .circle-text text {
-    font-size: 8px;
+  .hero-plus-2 {
+    right: 7%;
   }
+}
 
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-tool,
+  .hero-button,
+  .hero-button-icon {
+    animation: none;
+
+    transition: none;
+  }
 }

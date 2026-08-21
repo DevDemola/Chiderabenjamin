@@ -2,34 +2,48 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./Projects.css";
 
-// import projectOne from "../../assets/project-one.jpg";
-// import projectTwo from "../../assets/project-two.jpg";
-// import projectThree from "../../assets/project-three.jpg";
+
 
 const projects = [
   {
     number: "01",
-    title: "Finora",
-    category: "FINTECH / PRODUCT DESIGN",
+    title: "AZZA",
+    // category: "FINTECH / PRODUCT DESIGN",
     description:
       "A simple financial experience designed to make managing money feel clearer and more intuitive.",
-    image: "/Azza Fintech App.jpg.jpeg",
+    image: "/Fintech AZZA.jpg.jpeg",
   },
   {
     number: "02",
-    title: "Nexa",
-    category: "SAAS / UX & UI",
+    title: "LUMORA",
+    // category: "SAAS / UX & UI",
     description:
       "A modern platform that helps teams organize their workflow and collaborate more effectively.",
-    image: "/Lumora Wellness App.jpg.jpeg",
+    image: "/Wellness App.jpg.jpeg",
   },
   {
     number: "03",
-    title: "Mori",
+    title: "SPLITA",
+    // category: "SAAS / UX & UI",
+    description:
+      "A modern platform that helps teams organize their workflow and collaborate more effectively.",
+    image: "/Spilta Fintech.jpg.jpeg",
+  },
+  {
+    number: "04",
+    title: "LUMINO",
     category: "HEALTH / DIGITAL PRODUCT",
     description:
       "A thoughtful digital experience focused on making everyday health management easier.",
     image: "/Lumino- Wrist watch brand.jpg.jpeg",
+  },
+  {
+    number: "05",
+    title: "TCA TECH FAIR",
+    // category: "HEALTH / DIGITAL PRODUCT",
+    description:
+      "A thoughtful digital experience focused on making everyday health management easier.",
+    image: "/Flyer Design.jpg.jpeg",
   },
 ];
 
@@ -107,9 +121,6 @@ const Projects = () => {
                   <div className="project-image-top">
                     <span>{project.number}</span>
 
-                    <span>
-                      {project.category}
-                    </span>
                   </div>
 
                   <div className="project-image-button">
@@ -146,9 +157,7 @@ const Projects = () => {
 
                   <div className="project-tags">
 
-                    <span>
-                      {project.category.split(" / ")[0]}
-                    </span>
+                    
 
                     <span>
                       Product Design

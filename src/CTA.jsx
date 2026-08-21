@@ -1,51 +1,96 @@
 import React from "react";
-import { FiArrowUpRight, FiCalendar } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiPlus,
+} from "react-icons/fi";
 import "./CTA.css";
 
 const CTA = () => {
   return (
     <section className="cta-section" id="contact">
-      <div className="cta-container">
+      <div className="cta-card">
 
-        {/* IMAGE */}
-        <div className="cta-image-wrapper">
-          <img
-            src="/me1.png"
-            alt="Product Designer"
-            className="cta-image"
-          />
-        </div>
-
-        {/* CONTENT */}
-        <div className="cta-content">
-
-          <span className="cta-eyebrow">
+        {/* TOP LABEL */}
+        <div className="cta-top">
+          <span className="cta-label">
             LET'S WORK TOGETHER
           </span>
 
-          <h2>
-            Let’s create
-            <br />
-            something
-            <br />
-            <em>people love.</em>
-          </h2>
+          <span className="cta-index">
+            04
+          </span>
+        </div>
 
-          <p>
-            From research and strategy to user experience
-            and visual design, I create thoughtful digital
-            products that solve real problems.
+
+        {/* MAIN CONTENT */}
+        <div className="cta-content">
+
+          <div className="cta-heading-wrap">
+
+            <span className="cta-eyebrow">
+              HAVE AN IDEA?
+            </span>
+
+            <h2>
+              Have an idea?
+              <br />
+              <span>Let's design it.</span>
+            </h2>
+
+            <div className="cta-orange-mark">
+              <FiPlus />
+            </div>
+
+          </div>
+
+
+          {/* DESCRIPTION */}
+
+          <p className="cta-description">
+            Whether you're building something new,
+            improving an existing product, or simply
+            exploring an idea — let's create something
+            meaningful together.
           </p>
 
-          <a href="/contact" className="cta-button">
-            <FiCalendar />
 
-            <span>Start a Project</span>
+          {/* BUTTON */}
 
-            <span className="cta-button-arrow">
+          <a
+            href="mailto:hello@example.com"
+            className="cta-button"
+          >
+            <span>
+              Start a Project
+            </span>
+
+            <span className="cta-arrow">
               <FiArrowUpRight />
             </span>
           </a>
+
+        </div>
+
+
+        {/* FOOTER */}
+
+        <div className="cta-footer">
+
+          <span>
+            PRODUCT DESIGN
+          </span>
+
+          <span>
+            UX / UI
+          </span>
+
+          <span>
+            USER RESEARCH
+          </span>
+
+          <span>
+            DIGITAL EXPERIENCES
+          </span>
 
         </div>
 

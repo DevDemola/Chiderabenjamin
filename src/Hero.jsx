@@ -1,149 +1,98 @@
 import React from "react";
-import {
-  FiArrowUpRight,
-  FiArrowDown,
-  FiPlus,
-  FiMousePointer,
-} from "react-icons/fi";
+import { FiArrowUpRight, FiPlus } from "react-icons/fi";
 import "./Hero.css";
+
+const tools = [
+  {
+    name: "Figma",
+    image: "/figma.png",
+    className: "hero-tool-1",
+  },
+  {
+    name: "Photoshop",
+    image: "/photoshop.png",
+    className: "hero-tool-2",
+  },
+  {
+    name: "Framer",
+    image: "/framer.png",
+    className: "hero-tool-3",
+  },
+  {
+    name: "Claude",
+    image: "/claude.jpg",
+    className: "hero-tool-4",
+  },
+];
 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
-      <div className="hero-container">
+    <section className="hero-section">
 
-        {/* MAIN HERO */}
-        <div className="hero-main">
+      {/* FLOATING TOOLS */}
 
-          {/* LEFT / TYPOGRAPHY */}
-          <div className="hero-copy">
+      {tools.map((tool) => (
+        <div
+          className={`hero-tool ${tool.className}`}
+          key={tool.name}
+        >
+          <img
+            src={tool.image}
+            alt={tool.name}
+          />
 
-            <div className="hero-eyebrow">
-              <span>01</span>
-              <span>Product Designer</span>
-            </div>
-
-            <h1>
-              Designing
-              <br />
-              <span>products</span>
-              <br />
-              people love.
-            </h1>
-
-            <div className="hero-copy-bottom">
-
-              <p>
-                I create thoughtful digital experiences
-                that turn complex problems into simple,
-                useful products.
-              </p>
-
-              <a href="#work" className="hero-cta">
-                <span>Explore my work</span>
-
-                <span className="hero-cta-icon">
-                  <FiArrowUpRight />
-                </span>
-              </a>
-
-            </div>
-
-          </div>
+          <span>{tool.name}</span>
+        </div>
+      ))}
 
 
-          {/* IMAGE AREA */}
-          <div className="hero-visual">
+      {/* DECORATIVE PLUS */}
 
-            {/* IMAGE */}
-            <div className="hero-image-wrapper">
+      <div className="hero-plus hero-plus-1">
+        <FiPlus />
+      </div>
 
-              <img
-                src="/me1.png"
-                alt="Product Designer"
-                className="hero-image"
-              />
-
-              <div className="image-overlay"></div>
-
-            </div>
+      <div className="hero-plus hero-plus-2">
+        <FiPlus />
+      </div>
 
 
-            {/* FLOATING TAG — UX */}
-            <div className="floating-tag tag-one">
-              <span className="tag-number">01</span>
-              <span>UX / UI</span>
-            </div>
+      {/* HERO CONTENT */}
 
+      <div className="hero-content">
 
-            {/* FLOATING TAG — RESEARCH */}
-            <div className="floating-tag tag-two">
-              <span className="tag-icon">
-                <FiMousePointer />
-              </span>
-
-              <span>Research</span>
-            </div>
-
-
-            {/* FLOATING TAG — PRODUCT */}
-            <div className="floating-tag tag-three">
-              <span>Product</span>
-
-              <span className="tag-arrow">
-                <FiArrowUpRight />
-              </span>
-            </div>
-
-
-            {/* DECORATIVE PLUS */}
-            <div className="hero-plus">
-              <FiPlus />
-            </div>
-
-
-            {/* CIRCLE */}
-            <div className="hero-circle">
-
-              <svg
-                viewBox="0 0 120 120"
-                className="circle-text"
-              >
-                <defs>
-                  <path
-                    id="circlePath"
-                    d="M 60,60 m -43,0 a 43,43 0 1,1 86,0 a 43,43 0 1,1 -86,0"
-                  />
-                </defs>
-
-                <text>
-                  <textPath href="#circlePath">
-                    PRODUCT DESIGN • UX • PRODUCT DESIGN • UX •
-                  </textPath>
-                </text>
-              </svg>
-
-              <div className="circle-arrow">
-                <FiArrowDown />
-              </div>
-
-            </div>
-
-          </div>
-
+        <div className="hero-eyebrow">
+          <span className="hero-dot"></span>
+          PRODUCT DESIGNER
         </div>
 
+        <h1>
+          I design digital
+          <br />
+          <span>products people love.</span>
+        </h1>
 
-        {/* BOTTOM */}
-        <div className="hero-footer">
+        <p>
+          I turn complex ideas into simple,
+          thoughtful and intuitive digital
+          experiences.
+        </p>
 
-         
+        <a
+          href="#contact"
+          className="hero-button"
+        >
+          <span>Start a Project</span>
 
-         
-
-        </div>
+          <span className="hero-button-icon">
+            <FiArrowUpRight />
+          </span>
+        </a>
 
       </div>
+
+
+
     </section>
   );
 };
