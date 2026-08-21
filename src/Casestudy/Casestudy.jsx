@@ -34,29 +34,12 @@ const caseStudies = {
 
     duration: "8 Weeks",
 
-    image: "/Fintech AZZA.jpg.jpeg",
-
     overview:
       "AZZA is a financial product designed to make managing money feel simpler, clearer and more intuitive.",
 
-    introduction:
-      "AZZA explores a simpler approach to personal finance, focusing on how users understand, manage and interact with their money.",
-
-    challenge:
-      "Managing personal finances can often feel complicated. Users need to understand where their money is going without being overwhelmed by unnecessary information.",
-
-    solution:
-      "I designed a cleaner financial experience focused on clarity, simple navigation and meaningful information hierarchy.",
-
-    processText:
-      "The process began with understanding the core problem and mapping the experience around the user's most important financial tasks. From early flows and wireframes, I refined the interface into a simple and focused product experience.",
-
-    process: [
-      "Research",
-      "User Flows",
-      "Wireframing",
-      "UI Design",
-      "Prototyping",
+    images: [
+      "/Fintech AZZA.jpg.jpeg",
+      "/Azza Fintech App.jpg.jpeg"
     ],
   },
 
@@ -76,29 +59,12 @@ const caseStudies = {
 
     duration: "6 Weeks",
 
-    image: "/Wellness App.jpg.jpeg",
-
     overview:
       "Lumora is a wellness experience designed to make everyday self-care feel simple and engaging.",
 
-    introduction:
-      "Lumora was designed around the idea that wellness should feel approachable rather than overwhelming. The experience focuses on creating simple interactions that encourage users to stay engaged with their routines.",
-
-    challenge:
-      "Users needed a more approachable way to build healthy routines without feeling overwhelmed.",
-
-    solution:
-      "The experience was designed around simplicity, clear feedback and an easy-to-understand interface.",
-
-    processText:
-      "I explored the experience from the user's perspective, focusing on how information could be presented clearly while keeping the interface calm and approachable.",
-
-    process: [
-      "Research",
-      "User Flows",
-      "Wireframing",
-      "UI Design",
-      "Prototype",
+    images: [
+      "/Wellness App.jpg.jpeg",
+      "/Lumora Wellness App.jpg.jpeg",
     ],
   },
 
@@ -118,29 +84,11 @@ const caseStudies = {
 
     duration: "7 Weeks",
 
-    image: "/Spilta Fintech.jpg.jpeg",
-
     overview:
       "Splita is a financial product designed to make shared expenses easier to manage.",
 
-    introduction:
-      "Splita explores how shared financial responsibilities can be made easier to understand through a clear and straightforward digital experience.",
-
-    challenge:
-      "Splitting expenses between friends and groups can quickly become confusing.",
-
-    solution:
-      "I focused on creating a straightforward experience where users can easily understand, track and manage shared payments.",
-
-    processText:
-      "I mapped the main interactions around creating groups, tracking contributions and understanding shared expenses. The final interface was designed around clear information hierarchy and simple navigation.",
-
-    process: [
-      "Research",
-      "User Flows",
-      "Wireframes",
-      "UI Design",
-      "Testing",
+    images: [
+      "/Spilta Fintech.jpg.jpeg",
     ],
   },
 
@@ -160,29 +108,11 @@ const caseStudies = {
 
     duration: "5 Weeks",
 
-    image: "/Lumino- Wrist watch brand.jpg.jpeg",
-
     overview:
       "Lumino explores a thoughtful digital experience for everyday health management.",
 
-    introduction:
-      "Lumino explores how everyday health information can be presented in a way that feels clear, useful and approachable.",
-
-    challenge:
-      "Health information can often feel difficult to understand and act upon.",
-
-    solution:
-      "The product focuses on presenting useful information in a simple and approachable way.",
-
-    processText:
-      "The design process focused on information architecture, simplifying complex information and creating an experience that feels easy to understand at a glance.",
-
-    process: [
-      "Research",
-      "Information Architecture",
-      "Wireframes",
-      "UI Design",
-      "Prototype",
+    images: [
+      "/Lumino- Wrist watch brand.jpg.jpeg",
     ],
   },
 
@@ -192,9 +122,9 @@ const caseStudies = {
   ======================================================= */
 
   "tca-tech-fair": {
-    title: "TCA TECH FAIR",
+    title: "PROMOTIONAL & SOCIAL MEDIA DESIGN",
 
-    category: "EVENT / VISUAL DESIGN",
+    category: "PROMOTIONAL & SOCIAL MEDIA DESIGN",
 
     year: "2026",
 
@@ -202,7 +132,8 @@ const caseStudies = {
 
     duration: "3 Weeks",
 
-    image: "/Flyer Design.jpg.jpeg",
+    overview:
+      "Event promotional campaign designed to build awareness, drive registrations, and communicate the key benefits and highlights of the event through engaging social media graphics and carousel content.",
 
     images: [
       "/Flyer Design.jpg.jpeg",
@@ -210,29 +141,8 @@ const caseStudies = {
       "/COVER.jpg.jpeg",
       "/YOU’RE READY.jpg.jpeg",
       "/PARTNERS FLYER.jpg.jpeg",
-    ],
-
-    overview:
-      "A visual design project created to communicate the energy and identity of a technology-focused event.",
-
-    introduction:
-      "The TCA Tech Fair project focused on creating a consistent visual language for a technology-focused event while making each communication piece clear, bold and engaging.",
-
-    challenge:
-      "The visual identity needed to capture attention while communicating the event clearly.",
-
-    solution:
-      "I developed a bold visual direction focused on hierarchy, typography and strong visual communication.",
-
-    processText:
-      "The project moved from the initial visual concept into typography, layout exploration and final artwork. Each asset was designed to feel connected while still communicating its individual purpose.",
-
-    process: [
-      "Concept",
-      "Art Direction",
-      "Typography",
-      "Visual Design",
-      "Final Artwork",
+      "/PARTNERS FLYER.jpg.jpeg",
+      "/N.M.A Travels 3.jpg.jpeg",
     ],
   },
 
@@ -379,161 +289,15 @@ const CaseStudy = () => {
 
 
       {/* ===================================================
-          HERO IMAGE
+          FEATURE IMAGE
       =================================================== */}
 
       <section className="case-feature-image">
 
         <img
-          src={project.image}
+          src={project.images[0]}
           alt={project.title}
         />
-
-      </section>
-
-
-      {/* ===================================================
-          INTRODUCTION
-      =================================================== */}
-
-      <section className="case-text-section">
-
-        <div className="case-section-number">
-          01
-        </div>
-
-
-        <div className="case-text-content">
-
-          <span className="case-section-title">
-            INTRODUCTION
-          </span>
-
-          <h2>
-            Understanding the project.
-          </h2>
-
-          <p>
-            {project.introduction}
-          </p>
-
-        </div>
-
-      </section>
-
-
-      {/* ===================================================
-          CHALLENGE
-      =================================================== */}
-
-      <section className="case-text-section">
-
-        <div className="case-section-number">
-          02
-        </div>
-
-
-        <div className="case-text-content">
-
-          <span className="case-section-title">
-            THE CHALLENGE
-          </span>
-
-          <h2>
-            Understanding the problem.
-          </h2>
-
-          <p>
-            {project.challenge}
-          </p>
-
-        </div>
-
-      </section>
-
-
-      {/* ===================================================
-          SOLUTION
-      =================================================== */}
-
-      <section className="case-text-section">
-
-        <div className="case-section-number">
-          03
-        </div>
-
-
-        <div className="case-text-content">
-
-          <span className="case-section-title">
-            THE SOLUTION
-          </span>
-
-          <h2>
-            Designing a better experience.
-          </h2>
-
-          <p>
-            {project.solution}
-          </p>
-
-        </div>
-
-      </section>
-
-
-      {/* ===================================================
-          DESIGN PROCESS
-      =================================================== */}
-
-      <section className="case-process-section">
-
-        <div className="case-section-number">
-          04
-        </div>
-
-
-        <div className="case-process-content">
-
-          <span className="case-section-title">
-            MY DESIGN PROCESS
-          </span>
-
-          <h2>
-            From idea to final experience.
-          </h2>
-
-          <p>
-            {project.processText}
-          </p>
-
-
-          <div className="process-list">
-
-            {project.process.map(
-              (step, index) => (
-
-                <div
-                  className="process-row"
-                  key={step}
-                >
-
-                  <span>
-                    0{index + 1}
-                  </span>
-
-                  <strong>
-                    {step}
-                  </strong>
-
-                </div>
-
-              )
-            )}
-
-          </div>
-
-        </div>
 
       </section>
 
@@ -542,7 +306,7 @@ const CaseStudy = () => {
           PROJECT VISUALS
       =================================================== */}
 
-      {project.images && project.images.length > 1 && (
+      {project.images.length > 1 && (
 
         <section className="case-visuals">
 
@@ -553,31 +317,39 @@ const CaseStudy = () => {
             </span>
 
             <span className="case-visuals-count">
-              05 / {String(project.images.length - 1).padStart(2, "0")}
+              {String(project.images.length).padStart(2, "0")} VISUALS
             </span>
 
           </div>
 
 
-          <div className="case-visuals-list">
+          {/* =================================================
+              CAROUSEL
+          ================================================= */}
 
-            {project.images
-              .slice(1)
-              .map((image, index) => (
+          <div className="case-carousel">
 
-                <div
-                  className={`case-visual visual-${index + 1}`}
-                  key={image}
-                >
+            <div className="case-carousel-track">
 
-                  <img
-                    src={image}
-                    alt={`${project.title} visual ${index + 2}`}
-                  />
+              {project.images.map(
+                (image, index) => (
 
-                </div>
+                  <div
+                    className="case-carousel-card"
+                    key={`${image}-${index}`}
+                  >
 
-              ))}
+                    <img
+                      src={image}
+                      alt={`${project.title} visual ${index + 1}`}
+                    />
+
+                  </div>
+
+                )
+              )}
+
+            </div>
 
           </div>
 
@@ -587,7 +359,7 @@ const CaseStudy = () => {
 
 
       {/* ===================================================
-          BACK TO PROJECTS
+          BOTTOM CTA
       =================================================== */}
 
       <section className="case-bottom">

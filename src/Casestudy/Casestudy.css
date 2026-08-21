@@ -115,7 +115,7 @@
 
   color: #111111;
 
-  font-size: clamp(70px, 12vw, 155px);
+  font-size: 50px;
 
   line-height: 0.8;
 
@@ -123,7 +123,7 @@
 
   font-weight: 600;
 
-  word-break: break-word;
+  /* word-break: break-word; */
 }
 
 .case-hero-description {
@@ -1122,4 +1122,77 @@
   .case-bottom-icon {
     transition: none;
   }
+}
+
+/* =========================================================
+   PROJECT CAROUSEL
+========================================================= */
+
+.case-carousel {
+  width: 100%;
+
+  margin-top: 55px;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+
+  cursor: grab;
+}
+
+.case-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.case-carousel-track {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 28px;
+
+  width: max-content;
+}
+
+.case-carousel-card {
+  width: 430px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: #f4f4f2;
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.case-carousel-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.10);
+}
+
+.case-carousel-card img {
+  width: 100%;
+
+  height: 560px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.case-carousel-card:hover img {
+  transform: scale(1.02);
 }
