@@ -1,56 +1,132 @@
 import React from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+} from "react-icons/fi";
+import {
+  Link,
+} from "react-router-dom";
+
 import "./Projects.css";
 
 
+/* =========================================================
+   PROJECT DATA
+========================================================= */
 
 const projects = [
+
   {
     number: "01",
+
     title: "AZZA",
-    // category: "FINTECH / PRODUCT DESIGN",
+
+    slug: "azza",
+
+    category: [
+      "FINTECH",
+      "PRODUCT DESIGN",
+    ],
+
     description:
       "A simple financial experience designed to make managing money feel clearer and more intuitive.",
+
     image: "/Fintech AZZA.jpg.jpeg",
   },
+
+
   {
     number: "02",
+
     title: "LUMORA",
-    // category: "SAAS / UX & UI",
+
+    slug: "lumora",
+
+    category: [
+      "WELLNESS",
+      "UX / UI",
+    ],
+
     description:
-      "A modern platform that helps teams organize their workflow and collaborate more effectively.",
+      "A modern wellness experience designed to make everyday self-care feel simpler and more engaging.",
+
     image: "/Wellness App.jpg.jpeg",
   },
+
+
   {
     number: "03",
+
     title: "SPLITA",
-    // category: "SAAS / UX & UI",
+
+    slug: "splita",
+
+    category: [
+      "FINTECH",
+      "UX / UI",
+    ],
+
     description:
-      "A modern platform that helps teams organize their workflow and collaborate more effectively.",
+      "A modern platform designed to make shared expenses and money management easier and more intuitive.",
+
     image: "/Spilta Fintech.jpg.jpeg",
   },
+
+
   {
     number: "04",
+
     title: "LUMINO",
-    category: "HEALTH / DIGITAL PRODUCT",
+
+    slug: "lumino",
+
+    category: [
+      "HEALTH",
+      "DIGITAL PRODUCT",
+    ],
+
     description:
       "A thoughtful digital experience focused on making everyday health management easier.",
-    image: "/Lumino- Wrist watch brand.jpg.jpeg",
+
+    image: "/Lumino (1).jpg.jpeg",
   },
+
+
   {
     number: "05",
+
     title: "TCA TECH FAIR",
-    // category: "HEALTH / DIGITAL PRODUCT",
+
+    slug: "tca-tech-fair",
+
+    category: [
+      "EVENT",
+      "VISUAL DESIGN",
+    ],
+
     description:
-      "A thoughtful digital experience focused on making everyday health management easier.",
+      "A visual identity and promotional design created to communicate the energy of a technology-focused event.",
+
     image: "/Flyer Design.jpg.jpeg",
   },
+
 ];
 
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
 const Projects = () => {
+
   return (
-    <section className="work-section" id="work">
+
+    <section
+      className="work-section"
+      id="work"
+    >
+
       <div className="work-container">
+
 
         {/* =================================================
             HEADER
@@ -59,11 +135,20 @@ const Projects = () => {
         <div className="work-header">
 
           <div className="work-label">
-            <span className="work-number">04</span>
-            <span>SELECTED WORK</span>
+
+            <span className="work-number">
+              04
+            </span>
+
+            <span>
+              SELECTED WORK
+            </span>
+
           </div>
 
+
           <div className="work-line"></div>
+
 
           <span className="work-small-text">
             A FEW THINGS I'VE DESIGNED
@@ -79,9 +164,15 @@ const Projects = () => {
         <div className="work-intro">
 
           <h2>
+
             Selected
-            <span> work.</span>
+
+            <span>
+              {" "}work.
+            </span>
+
           </h2>
+
 
           <p>
             A collection of products, experiences and
@@ -93,16 +184,17 @@ const Projects = () => {
 
 
         {/* =================================================
-            PROJECTS
+            PROJECT LIST
         ================================================= */}
 
         <div className="work-list">
 
-          {projects.map((project, index) => (
+          {projects.map((project) => (
 
-            <article
-              className="project"
+            <Link
               key={project.number}
+              to={`/work/${project.slug}`}
+              className="project"
             >
 
               {/* IMAGE */}
@@ -116,15 +208,23 @@ const Projects = () => {
                     alt={project.title}
                   />
 
+
                   <div className="project-overlay"></div>
 
+
                   <div className="project-image-top">
-                    <span>{project.number}</span>
+
+                    <span>
+                      {project.number}
+                    </span>
 
                   </div>
 
+
                   <div className="project-image-button">
+
                     <FiArrowUpRight />
+
                   </div>
 
                 </div>
@@ -136,11 +236,17 @@ const Projects = () => {
 
               <div className="project-info">
 
+
                 <div className="project-info-top">
 
                   <span className="project-index">
-                    {project.number} /
+
+                    {project.number}
+
+                    {" "}/
+
                   </span>
+
 
                   <h3>
                     {project.title}
@@ -151,25 +257,37 @@ const Projects = () => {
 
                 <div className="project-info-bottom">
 
+
                   <p>
                     {project.description}
                   </p>
 
+
+                  {/* CATEGORIES */}
+
                   <div className="project-tags">
 
-                    
+                    {project.category.map(
+                      (category) => (
 
-                    <span>
-                      Product Design
-                    </span>
+                        <span
+                          className="project-tag"
+                          key={category}
+                        >
+                          {category}
+                        </span>
+
+                      )
+                    )}
 
                   </div>
+
 
                 </div>
 
               </div>
 
-            </article>
+            </Link>
 
           ))}
 
@@ -177,7 +295,7 @@ const Projects = () => {
 
 
         {/* =================================================
-            BOTTOM CTA
+            FOOTER
         ================================================= */}
 
         <div className="work-footer">
@@ -186,22 +304,35 @@ const Projects = () => {
             MORE PROJECTS COMING SOON
           </span>
 
+
           <a
             href="#contact"
             className="work-cta"
           >
-            <span>Start a project</span>
+
+            <span>
+              Start a project
+            </span>
+
 
             <span className="work-cta-icon">
+
               <FiArrowUpRight />
+
             </span>
+
           </a>
 
         </div>
 
+
       </div>
+
     </section>
+
   );
+
 };
+
 
 export default Projects;
