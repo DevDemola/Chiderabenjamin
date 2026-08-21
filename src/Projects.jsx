@@ -94,7 +94,7 @@ const projects = [
   {
     number: "05",
 
-    title: "TCA TECH FAIR",
+    title: "PROMOTIONAL & SOCIAL MEDIA DESIGN",
 
     slug: "tca-tech-fair",
 
