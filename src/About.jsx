@@ -50,17 +50,8 @@ const About = () => {
             </div>
 
 
-            {/* FLOATING PLUS */}
-            <div className="about-plus">
-              <FiPlus />
-            </div>
 
-
-            {/* FLOATING TAG */}
-            <div className="about-tag">
-              <span></span>
-              OPEN TO PROJECTS
-            </div>
+         
 
           </div>
 
