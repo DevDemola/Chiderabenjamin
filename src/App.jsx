@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import Hero from "./Hero";
@@ -35,20 +35,25 @@ const Home = () => {
 
 const App = () => {
   return (
-   
-      <Routes>
+    <Routes>
+      {/* HOME */}
+      <Route path="/" element={<Home />} />
 
-        {/* HOME */}
-        <Route path="/" element={<Home />} />
+      {/* CASE STUDIES */}
+      <Route path="/work/:slug" element={<CaseStudy />} />
 
-        {/* CASE STUDIES */}
-        <Route
-          path="/work/:slug"
-          element={<CaseStudy />}
-        />
+      {/* OLD PROJECTS URL */}
+      <Route
+        path="/projects"
+        element={<Navigate to="/#work" replace />}
+      />
 
-      </Routes>
-    
+      {/* UNKNOWN URL */}
+      <Route
+        path="*"
+        element={<Navigate to="/" replace />}
+      />
+    </Routes>
   );
 };
 
