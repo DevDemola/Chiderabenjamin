@@ -1,338 +1,58 @@
-import React from "react";
-import {
-  FiArrowUpRight,
-} from "react-icons/fi";
-import {
-  Link,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 
+import { projects } from "./data/projects";
 import "./Projects.css";
 
-
-/* =========================================================
-   PROJECT DATA
-========================================================= */
-
-const projects = [
-
-  {
-    number: "01",
-
-    title: "AZZA",
-
-    slug: "azza",
-
-    category: [
-      "FINTECH",
-      "PRODUCT DESIGN",
-    ],
-
-    description:
-      "A simple financial experience designed to make managing money feel clearer and more intuitive.",
-
-    image: "/Fintech AZZA.jpg.jpeg",
-  },
-
-
-  {
-    number: "02",
-
-    title: "LUMORA",
-
-    slug: "lumora",
-
-    category: [
-      "WELLNESS",
-      "UX / UI",
-    ],
-
-    description:
-      "A modern wellness experience designed to make everyday self-care feel simpler and more engaging.",
-
-    image: "/Wellness App.jpg.jpeg",
-  },
-
-
-  {
-    number: "03",
-
-    title: "SPLITA",
-
-    slug: "splita",
-
-    category: [
-      "FINTECH",
-      "UX / UI",
-    ],
-
-    description:
-      "A modern platform designed to make shared expenses and money management easier and more intuitive.",
-
-    image: "/Spilta Fintech.jpg.jpeg",
-  },
-
-
-  {
-    number: "04",
-
-    title: "LUMINO",
-
-    slug: "lumino",
-
-    category: [
-      "HEALTH",
-      "DIGITAL PRODUCT",
-    ],
-
-    description:
-      "A thoughtful digital experience focused on making everyday health management easier.",
-
-    image: "/Lumino (1).jpg.jpeg",
-  },
-
-
-  {
-    number: "05",
-
-    title: "PROMOTIONAL & SOCIAL MEDIA DESIGN",
-
-    slug: "tca-tech-fair",
-
-    category: [
-      "EVENT",
-      "VISUAL DESIGN",
-    ],
-
-    description:
-      "A visual identity and promotional design created to communicate the energy of a technology-focused event.",
-
-    image: "/Flyer Design.jpg.jpeg",
-  },
-
-];
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
 const Projects = () => {
-
   return (
-
-    <section
-      className="work-section"
-      id="work"
-    >
-
-      <div className="work-container">
-
-
-        {/* =================================================
-            HEADER
-        ================================================= */}
-
-        <div className="work-header">
-
-          <div className="work-label">
-
-            <span className="work-number">
-              04
-            </span>
-
-            <span>
-              SELECTED WORK
-            </span>
-
+    <section className="section on-brand" id="work" aria-labelledby="work-title">
+      <div className="container">
+        <header className="work__head" data-reveal>
+          <div>
+            <span className="eyebrow">Selected work</span>
+            <h2 id="work-title">Products I've Designed</h2>
           </div>
-
-
-          <div className="work-line"></div>
-
-
-          <span className="work-small-text">
-            A FEW THINGS I'VE DESIGNED
-          </span>
-
-        </div>
-
-
-        {/* =================================================
-            INTRO
-        ================================================= */}
-
-        <div className="work-intro">
-
-          <h2>
-
-            Selected
-
-            <span>
-              {" "}work.
-            </span>
-
-          </h2>
-
-
           <p>
-            A collection of products, experiences and
-            interfaces I've had the opportunity to
-            research, design and bring to life.
+            Fintech, wellness, health and visual design — each project opens
+            into a full case study of how it came together.
           </p>
+        </header>
 
-        </div>
+        <ul className="work__grid">
+          {projects.map((p, i) => (
+            <li key={p.slug} data-reveal style={{ "--delay": `${i * 70}ms` }}>
+              <Link to={`/work/${p.slug}`} className="work-card">
+                <img
+                  src={p.cover}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  style={{ objectPosition: p.coverPosition }}
+                />
 
+                <span className="work-card__arrow" aria-hidden="true">
+                  <FiArrowUpRight />
+                </span>
 
-        {/* =================================================
-            PROJECT LIST
-        ================================================= */}
-
-        <div className="work-list">
-
-          {projects.map((project) => (
-
-            <Link
-              key={project.number}
-              to={`/work/${project.slug}`}
-              className="project"
-            >
-
-              {/* IMAGE */}
-
-              <div className="project-image-wrapper">
-
-                <div className="project-image">
-
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                  />
-
-
-                  <div className="project-overlay"></div>
-
-
-                  <div className="project-image-top">
-
-                    <span>
-                      {project.number}
-                    </span>
-
-                  </div>
-
-
-                  <div className="project-image-button">
-
-                    <FiArrowUpRight />
-
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              {/* INFO */}
-
-              <div className="project-info">
-
-
-                <div className="project-info-top">
-
-                  <span className="project-index">
-
-                    {project.number}
-
-                    {" "}/
-
-                  </span>
-
-
-                  <h3>
-                    {project.title}
-                  </h3>
-
-                </div>
-
-
-                <div className="project-info-bottom">
-
-
-                  <p>
-                    {project.description}
-                  </p>
-
-
-                  {/* CATEGORIES */}
-
-                  <div className="project-tags">
-
-                    {project.category.map(
-                      (category) => (
-
-                        <span
-                          className="project-tag"
-                          key={category}
-                        >
-                          {category}
-                        </span>
-
-                      )
-                    )}
-
-                  </div>
-
-
-                </div>
-
-              </div>
-
-            </Link>
-
+                <span className="work-card__info">
+                  <span className="work-card__tags">{p.tags.join(" · ")}</span>
+                  <span className="work-card__title">{p.title}</span>
+                </span>
+              </Link>
+            </li>
           ))}
+        </ul>
 
+        <div className="work__foot" data-reveal>
+          <Link to="/#contact" className="btn btn--dark">
+            Start a Project With Me
+            <FiArrowRight aria-hidden="true" />
+          </Link>
         </div>
-
-
-        {/* =================================================
-            FOOTER
-        ================================================= */}
-
-        <div className="work-footer">
-
-          <span>
-            MORE PROJECTS COMING SOON
-          </span>
-
-
-          <a
-            href="#contact"
-            className="work-cta"
-          >
-
-            <span>
-              Start a project
-            </span>
-
-
-            <span className="work-cta-icon">
-
-              <FiArrowUpRight />
-
-            </span>
-
-          </a>
-
-        </div>
-
-
       </div>
-
     </section>
-
   );
-
 };
-
 
 export default Projects;

@@ -1,4 +1,3 @@
-import React from "react";
 import { FiArrowUpRight, FiPlus } from "react-icons/fi";
 import "./Stats.css";
 

@@ -1,59 +1,66 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-import Marquee from "./Marquee";
 import About from "./About";
-import Tools from "./Tools";
+import Problems from "./Problems";
+import Services from "./Services";
 import Projects from "./Projects";
+import Process from "./Process";
+import WhyMe from "./WhyMe";
+import Marquee from "./Marquee";
+import FAQ from "./FAQ";
 import CTA from "./CTA";
 import Footer from "./Footer";
-
 import CaseStudy from "./Casestudy/Casestudy";
 
-import "./App.css";
+import { site } from "./data/site";
+import { useDocumentTitle, useReveal, useScrollManager } from "./hooks";
 
 const Home = () => {
+  useDocumentTitle(`${site.name} — ${site.role}`);
+
   return (
     <>
-      <Navbar />
-
-      <main>
-        <Hero />
-        <Marquee />
-        <About />
-        <Tools />
-        <Projects />
-        <CTA />
-      </main>
-
-      <Footer />
+      <Hero />
+      <About />
+      <Problems />
+      <Services />
+      <Projects />
+      <Process />
+      <WhyMe />
+      <Marquee />
+      <FAQ />
     </>
   );
 };
 
 const App = () => {
+  const { pathname } = useLocation();
+
+  useScrollManager();
+  useReveal(pathname);
+
   return (
-    <Routes>
-      {/* HOME */}
-      <Route path="/" element={<Home />} />
+    <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
 
-      {/* CASE STUDIES */}
-      <Route path="/work/:slug" element={<CaseStudy />} />
+      <Navbar />
 
-      {/* OLD PROJECTS URL */}
-      <Route
-        path="/projects"
-        element={<Navigate to="/#work" replace />}
-      />
+      <main id="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work/:slug" element={<CaseStudy />} />
+          <Route path="/projects" element={<Navigate to="/#work" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
 
-      {/* UNKNOWN URL */}
-      <Route
-        path="*"
-        element={<Navigate to="/" replace />}
-      />
-    </Routes>
+      <CTA />
+      <Footer />
+    </>
   );
 };
 

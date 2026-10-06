@@ -1,136 +1,47 @@
-import React from "react";
-import { FiArrowUpRight, FiPlus } from "react-icons/fi";
-import "./About.css";
+import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 
-// import designerImage from "../../assets/designer.jpg";
+import { pillars } from "./data/site";
+import "./About.css";
 
 const About = () => {
   return (
-    <section className="about-section" id="about">
-      <div className="about-container">
+    <section className="section about on-dark" id="about" aria-labelledby="about-title">
+      <div className="container">
+        <header className="section-title" data-reveal>
+          <h2 id="about-title">
+            Great Products Should Feel <span className="hl">Effortless</span>
+          </h2>
+          <p>
+            I combine research, strategy and visual design to create products
+            that are useful, thoughtful and easy to understand — and I enjoy being
+            involved from the very first idea to the final prototype.
+          </p>
+        </header>
 
-
-        {/* MAIN CONTENT */}
-        <div className="about-wrapper">
-
-          {/* =========================
-              IMAGE
-          ========================== */}
-
-          <div className="about-image-side">
-
-            <div className="about-image-card">
-
-              <img
-                src="/me1.png"
-                alt="Product Designer"
-              />
-
-              <div className="about-image-overlay"></div>
-
-              {/* TOP LABEL */}
-              <div className="about-image-top">
-                <span>PRODUCT DESIGNER</span>
-                <span>2026</span>
-              </div>
-
-              {/* BOTTOM LABEL */}
-              <div className="about-image-bottom">
-
-                <span>
-                  LAGOS, NIGERIA
-                </span>
-
-                <span className="about-image-arrow">
-                  <FiArrowUpRight />
-                </span>
-
-              </div>
-
-            </div>
-
-
-
-         
-
-          </div>
-
-
-          {/* =========================
-              TEXT
-          ========================== */}
-
-          <div className="about-text-side">
-
-            <div className="about-small-label">
-              A LITTLE ABOUT ME
-            </div>
-
-            <h2>
-              I design
-              <span> digital products{" "}</span>
-              that people enjoy using.
-            </h2>
-
-            <p className="about-intro">
-              I'm a product designer passionate about
-              turning ideas and complex problems into
-              simple, intuitive digital experiences.
-            </p>
-
-            <p>
-              I combine research, strategy and visual
-              design to create products that are useful,
-              thoughtful and easy to understand.
-            </p>
-
-            <p>
-              From early ideas and user research to
-              wireframes, interfaces and prototypes,
-              I enjoy being involved throughout the
-              product journey.
-            </p>
-
-
-            {/* CTA */}
-
-            <a
-              href="#contact"
-              className="about-button"
+        <div className="pillars">
+          {pillars.map((p, i) => (
+            <article
+              key={p.title}
+              className={`pillar${p.featured ? " is-featured" : ""}`}
+              data-reveal
+              style={{ "--delay": `${i * 90}ms` }}
             >
-              <span>Let's work together</span>
-
-              <span className="about-button-icon">
-                <FiArrowUpRight />
-              </span>
-            </a>
-
-
-            {/* DETAILS */}
-
-            <div className="about-details">
-
-              <div>
-                <span>FOCUS</span>
-                <strong>Product Design</strong>
+              <div className="pillar__image">
+                <img src={p.image} alt="" loading="lazy" decoding="async" />
               </div>
 
-              <div>
-                <span>EXPERTISE</span>
-                <strong>UX · UI · Research</strong>
+              <div className="pillar__body">
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+                <Link to={p.cta.to} className="btn btn--dark btn--sm">
+                  {p.cta.label}
+                  <FiArrowRight aria-hidden="true" />
+                </Link>
               </div>
-
-              <div>
-                <span>BASED IN</span>
-                <strong>Lagos, Nigeria</strong>
-              </div>
-
-            </div>
-
-          </div>
-
+            </article>
+          ))}
         </div>
-
       </div>
     </section>
   );

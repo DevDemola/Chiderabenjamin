@@ -2,655 +2,236 @@
    HEADER
 ========================================================= */
 
-.header {
+.nav {
   position: fixed;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  height: 82px;
-
-  z-index: 1000;
-
-  background: rgba(255, 255, 255, 0.88);
-
-  backdrop-filter: blur(18px);
-
-  -webkit-backdrop-filter: blur(18px);
-
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  inset: 0 0 auto;
+  z-index: 60;
+  height: var(--header-h);
+  transition:
+    background-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
 }
 
+.nav.is-scrolled {
+  background: var(--brand);
+  box-shadow: 0 1px 0 rgba(11, 11, 11, 0.12);
+}
 
-/* =========================================================
-   CONTAINER
-========================================================= */
+.nav.is-open {
+  background: var(--ink);
+  box-shadow: none;
+}
 
-.header-container {
-  width: min(92%, 1400px);
-
+.nav__inner {
   height: 100%;
-
-  margin: 0 auto;
-
   display: flex;
-
   align-items: center;
-
-  justify-content: space-between;
+  gap: 32px;
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
+/* ---------- logo ---------- */
 
 .logo {
-  color: #111111;
-
-  text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 1.05rem;
-
-  font-weight: 700;
-
-  letter-spacing: -0.05em;
-
-  transition: opacity 0.3s ease;
-}
-
-.logo span {
-  color: #cf3c21;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  margin-right: auto;
+  padding: 7px 14px 9px;
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--brand);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transform: rotate(-3deg);
+  transition: transform 0.3s var(--ease);
 }
 
 .logo:hover {
-  opacity: 0.65;
+  transform: rotate(0deg) scale(1.03);
 }
 
+.logo__dot {
+  width: 7px;
+  height: 7px;
+  margin-bottom: 1px;
+  border-radius: 50%;
+  background: var(--brand);
+}
 
-/* =========================================================
-   DESKTOP NAV
-========================================================= */
+.nav.is-open .logo {
+  background: var(--brand);
+  color: var(--ink);
+}
 
-.desktop-nav {
+.nav.is-open .logo__dot {
+  background: var(--ink);
+}
+
+/* ---------- links ---------- */
+
+.nav__links {
   display: flex;
-
   align-items: center;
-
-  gap: 38px;
-
-  margin-left: auto;
-
-  margin-right: 42px;
+  gap: 32px;
 }
 
-.desktop-nav a {
+.nav__links a {
   position: relative;
-
-  color: rgba(0, 0, 0, 0.55);
-
-  text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 0.82rem;
-
+  font-size: 16px;
   font-weight: 500;
-
-  transition:
-    color 0.3s ease;
 }
 
-.desktop-nav a::after {
+.nav__links a::after {
   content: "";
-
   position: absolute;
-
   left: 0;
-
-  bottom: -7px;
-
-  width: 0;
-
-  height: 1px;
-
-  background: #cf3c21;
-
-  transition: width 0.3s ease;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
 }
 
-.desktop-nav a:hover {
-  color: #111111;
+.nav__links a:hover::after {
+  transform: scaleX(1);
 }
 
-.desktop-nav a:hover::after {
-  width: 100%;
-}
+/* ---------- toggle ---------- */
 
-
-/* =========================================================
-   PROJECT BUTTON
-========================================================= */
-
-.project-button {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  height: 48px;
-
-  padding: 5px 6px 5px 19px;
-
-  border-radius: 999px;
-
-  background: #cf3c21;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 0.78rem;
-
-  font-weight: 600;
-
-  white-space: nowrap;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.project-button:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(
-      207,
-      60,
-      33,
-      0.18
-    );
-}
-
-
-/* =========================================================
-   ARROW ICON
-========================================================= */
-
-.arrow-icon {
-  width: 35px;
-
-  height: 35px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #ffffff;
-
-  color: #cf3c21;
-
-  font-size: 1rem;
-
-  flex-shrink: 0;
-
-  transition:
-    transform 0.3s ease;
-}
-
-.project-button:hover .arrow-icon {
-  transform: rotate(45deg);
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
-
-.menu-button {
+.nav__toggle {
   display: none;
-
-  width: 45px;
-
-  height: 45px;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border: 1px solid rgba(0, 0, 0, 0.08);
-
-  border-radius: 50%;
-
-  background: #f5f5f3;
-
-  color: #111111;
-
-  font-size: 1.25rem;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--brand);
+  font-size: 22px;
 }
 
-.menu-button:hover {
-  background: #cf3c21;
-
-  color: #ffffff;
+.nav.is-open .nav__toggle {
+  background: var(--brand);
+  color: var(--ink);
 }
-
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE SHEET
 ========================================================= */
 
-.mobile-menu {
-  position: absolute;
-
-  top: calc(100% + 12px);
-
-  left: 5%;
-
-  width: 90%;
-
-  padding: 12px;
-
-  border-radius: 24px;
-
-  background: rgba(250, 250, 248, 0.97);
-
-  border: 1px solid rgba(0, 0, 0, 0.07);
-
-  box-shadow:
-    0 25px 70px rgba(
-      0,
-      0,
-      0,
-      0.12
-    );
-
-  backdrop-filter: blur(20px);
-
-  -webkit-backdrop-filter: blur(20px);
-
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  padding-top: var(--header-h);
+  background: var(--ink);
+  color: var(--white);
   opacity: 0;
-
   visibility: hidden;
-
-  transform:
-    translateY(-15px)
-    scale(0.98);
-
-  transform-origin: top center;
-
   transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease,
-    transform 0.3s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-
-  pointer-events: none;
+    opacity 0.3s var(--ease),
+    visibility 0.3s;
 }
 
-
-/* =========================================================
-   OPEN MENU
-========================================================= */
-
-.mobile-menu.open {
+.sheet.is-open {
   opacity: 1;
-
   visibility: visible;
-
-  transform:
-    translateY(0)
-    scale(1);
-
-  pointer-events: auto;
 }
 
-
-/* =========================================================
-   MOBILE LINKS
-========================================================= */
-
-.mobile-menu nav {
+.sheet__inner {
+  height: 100%;
   display: flex;
-
   flex-direction: column;
-}
-
-
-/* =========================================================
-   LINK
-========================================================= */
-
-.mobile-menu nav a {
-  position: relative;
-
-  min-height: 62px;
-
-  display: flex;
-
-  align-items: center;
-
   justify-content: space-between;
-
-  padding: 0 14px;
-
-  color: #111111;
-
-  text-decoration: none;
-
-  border-radius: 16px;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 1rem;
-
-  font-weight: 500;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+  padding-top: 32px;
+  padding-bottom: 40px;
 }
 
+.sheet li {
+  border-bottom: 1px solid var(--line-dark);
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.45s var(--ease),
+    transform 0.45s var(--ease);
+  transition-delay: calc(var(--i) * 50ms + 80ms);
+}
 
-/* =========================================================
-   LINK NUMBER
-========================================================= */
+.sheet.is-open li {
+  opacity: 1;
+  transform: none;
+}
 
-.mobile-menu nav a::before {
-  content: attr(data-number);
-
-  margin-right: 10px;
-
-  color: rgba(0, 0, 0, 0.25);
-
-  font-size: 8px;
-
+.sheet li a {
+  display: block;
+  padding: 16px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 9vw, 2.75rem);
   font-weight: 700;
-
-  letter-spacing: 0.08em;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
+.sheet li a:hover {
+  color: var(--brand);
+}
 
 /* =========================================================
-   HOVER
+   SIDE TAB
 ========================================================= */
 
-.mobile-menu nav a:hover {
-  background: #ffffff;
-
-  color: #cf3c21;
-
-  transform: translateX(3px);
+.side-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 50;
+  padding: 18px 10px;
+  border-radius: 8px 0 0 8px;
+  background: var(--ink);
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  box-shadow: -2px 2px 0 var(--white);
+  transition: padding 0.25s var(--ease);
 }
 
+.side-tab:hover {
+  padding-right: 16px;
+}
 
 /* =========================================================
-   MOBILE LINK ARROW
+   RESPONSIVE
 ========================================================= */
 
-.mobile-menu nav a svg {
-  width: 18px;
-
-  height: 18px;
-
-  color: rgba(0, 0, 0, 0.35);
-
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-
-.mobile-menu nav a:hover svg {
-  color: #cf3c21;
-
-  transform: rotate(45deg);
-}
-
-
-/* =========================================================
-   DIVIDERS
-========================================================= */
-
-.mobile-menu nav a:not(:last-child)::after {
-  content: "";
-
-  position: absolute;
-
-  left: 14px;
-
-  right: 14px;
-
-  bottom: 0;
-
-  height: 1px;
-
-  background: rgba(
-    0,
-    0,
-    0,
-    0.06
-  );
-}
-
-
-/* =========================================================
-   MOBILE CTA
-========================================================= */
-
-.mobile-project-button {
-  margin-top: 12px;
-
-  min-height: 56px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 6px 6px 6px 9px;
-
-  border-radius: 999px;
-
-  background: #cf3c21;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 0.82rem;
-
-  font-weight: 600;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.mobile-project-button:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 12px 30px rgba(
-      207,
-      60,
-      33,
-      0.2
-    );
-}
-
-
-/* =========================================================
-   MOBILE CTA TEXT
-========================================================= */
-
-.mobile-project-button > span:nth-child(2) {
-  flex: 1;
-
-  padding-left: 3px;
-}
-
-
-/* =========================================================
-   MOBILE CTA ICON
-========================================================= */
-
-.mobile-project-button .arrow-icon {
-  width: 40px;
-
-  height: 40px;
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
-
-@media (max-width: 700px) {
-
-  .header {
-    height: 72px;
-
-    background: rgba(
-      255,
-      255,
-      255,
-      0.92
-    );
-  }
-
-  .header-container {
-    width: 90%;
-  }
-
-  .desktop-nav,
-  .header-container > .project-button {
+@media (max-width: 960px) {
+  .nav__links,
+  .nav__cta {
     display: none;
   }
 
-  .menu-button {
-    display: flex;
+  .nav__toggle {
+    display: grid;
+  }
+
+  .side-tab {
+    display: none;
   }
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (min-width: 701px) and (max-width: 950px) {
-
-  .desktop-nav {
-    gap: 22px;
-
-    margin-right: 25px;
+@media (max-width: 700px) {
+  :root {
+    --header-h: 68px;
   }
-
-  .desktop-nav a {
-    font-size: 0.76rem;
-  }
-
-  .project-button {
-    font-size: 0.72rem;
-
-    padding-left: 15px;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
 
   .logo {
-    font-size: 0.95rem;
-  }
-
-  .menu-button {
-    width: 42px;
-
-    height: 42px;
-
-    font-size: 1.15rem;
-  }
-
-  .mobile-menu {
-    left: 4%;
-
-    width: 92%;
-
-    border-radius: 21px;
-  }
-
-  .mobile-menu nav a {
-    min-height: 58px;
-
-    font-size: 0.95rem;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 340px) {
-
-  .mobile-menu {
-    padding: 9px;
-  }
-
-  .mobile-menu nav a {
-    min-height: 54px;
-  }
-
-  .mobile-project-button {
-    min-height: 52px;
-  }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .mobile-menu,
-  .menu-button,
-  .mobile-menu nav a,
-  .mobile-menu nav a svg,
-  .mobile-project-button,
-  .project-button,
-  .arrow-icon {
-    transition: none;
+    font-size: 19px;
   }
 }

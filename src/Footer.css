@@ -1,509 +1,87 @@
-/* =========================================================
-   FOOTER
-========================================================= */
-
 .footer {
-  width: 100%;
-
-  padding: 90px 5% 25px;
-
-  background: #ffffff;
-
-  color: #0a0a0a;
-
-  font-family: "Poppins", sans-serif;
-
-  overflow: hidden;
+  padding-top: clamp(56px, 7vw, 80px);
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.footer-container {
-  width: min(100%, 1350px);
-
-  margin: 0 auto;
-}
-
-
-/* =========================================================
-   TOP
-========================================================= */
-
-.footer-top {
+.footer__grid {
   display: grid;
-
-  grid-template-columns: 1.5fr 0.7fr 0.7fr;
-
-  gap: 80px;
-
-  padding-bottom: 80px;
-
-  border-bottom: 1px solid rgba(
-    0,
-    0,
-    0,
-    0.1
-  );
+  grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+  gap: 40px 24px;
+  padding-bottom: 48px;
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
-
-.footer-brand {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
+.footer__brand .logo {
+  margin-right: 0;
 }
 
-
-.footer-logo {
-  color: #111111;
-
-  text-decoration: none;
-
-  font-size: 2rem;
-
-  font-weight: 700;
-
-  letter-spacing: -0.07em;
+.footer__brand p {
+  margin-top: 20px;
+  font-weight: 500;
 }
 
-
-.footer-logo span {
-  color: #cf3c21;
-}
-
-
-.footer-brand p {
-  max-width: 260px;
-
-  margin: 18px 0 0;
-
-  color: rgba(
-    0,
-    0,
-    0,
-    0.42
-  );
-
-  font-size: 12px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   NAV TITLE
-========================================================= */
-
-.footer-nav-title {
-  display: block;
-
-  margin-bottom: 22px;
-
-  color: rgba(
-    0,
-    0,
-    0,
-    0.3
-  );
-
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-}
-
-
-/* =========================================================
-   NAV
-========================================================= */
-
-.footer-nav {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-}
-
-
-.footer-nav a {
-  margin-bottom: 12px;
-
-  color: #111111;
-
-  text-decoration: none;
-
-  font-size: 12px;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-
-.footer-nav a:hover {
-  color: #cf3c21;
-
-  transform: translateX(4px);
-}
-
-
-/* =========================================================
-   SOCIAL
-========================================================= */
-
-.footer-social {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-}
-
-
-.footer-social a {
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 25px;
-
-  margin-bottom: 12px;
-
-  color: #111111;
-
-  text-decoration: none;
-
-  font-size: 12px;
-
-  transition:
-    color 0.3s ease;
-}
-
-
-.footer-social a svg {
-  font-size: 14px;
-
-  transition:
-    transform 0.3s ease;
-}
-
-
-.footer-social a:hover {
-  color: #cf3c21;
-}
-
-
-.footer-social a:hover svg {
-  transform: rotate(45deg);
-}
-
-
-/* =========================================================
-   LARGE TEXT
-========================================================= */
-
-.footer-large-text {
-  padding: 75px 0 70px;
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  align-items: baseline;
-
-  justify-content: center;
-
-  column-gap: 20px;
-
-  text-align: center;
-
-  font-size: clamp(
-    4rem,
-    10vw,
-    10rem
-  );
-
-  line-height: 0.85;
-
-  letter-spacing: -0.085em;
-
+.footer__email {
+  display: inline-block;
+  margin-top: 6px;
   font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }
 
-
-.footer-orange {
-  color: #cf3c21;
-
-  font-style: italic;
-}
-
-
-/* =========================================================
-   BOTTOM
-========================================================= */
-
-.footer-bottom {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr 1fr;
-
-  align-items: center;
-
-  padding-top: 20px;
-
-  border-top: 1px solid rgba(
-    0,
-    0,
-    0,
-    0.1
-  );
-
-  color: rgba(
-    0,
-    0,
-    0,
-    0.3
-  );
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-}
-
-
-.footer-bottom > span:nth-child(2) {
-  text-align: center;
-}
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-.footer-back-top {
-  justify-self: end;
-
-  display: inline-flex;
-
-  align-items: center;
-
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
-
-  color: #111111;
-
-  text-decoration: none;
-
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
 }
 
+.footer__col h2 {
+  margin-bottom: 6px;
+  font-size: 1.125rem;
+}
 
-.footer-back-top span {
-  width: 30px;
+.footer__col a {
+  font-weight: 500;
+}
 
-  height: 30px;
+.footer__col a:hover,
+.footer__bottom a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
 
+.footer__bottom {
   display: flex;
-
+  flex-wrap: wrap;
   align-items: center;
-
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #cf3c21;
-
-  color: #ffffff;
-
-  transition:
-    transform 0.3s ease;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-block: 24px 32px;
+  border-top: 2px solid var(--ink);
+  font-size: 14px;
+  font-weight: 500;
 }
 
-
-.footer-back-top:hover span {
-  transform: rotate(-45deg);
+.footer__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
 }
-
-
-/* =========================================================
-   TABLET
-========================================================= */
 
 @media (max-width: 900px) {
-
-  .footer {
-    padding: 75px 4% 22px;
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .footer-top {
-    grid-template-columns:
-      1.3fr
-      0.8fr
-      0.8fr;
-
-    gap: 45px;
-  }
-
-  .footer-large-text {
-    font-size: 7rem;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  .footer {
-    padding: 65px 20px 20px;
-  }
-
-
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
-
-    gap: 50px 30px;
-
-    padding-bottom: 55px;
-  }
-
-
-  .footer-brand {
+  .footer__brand {
     grid-column: 1 / -1;
   }
+}
 
-
-  .footer-brand p {
-    max-width: 300px;
-  }
-
-
-  .footer-large-text {
-    padding: 55px 0;
-
+@media (max-width: 520px) {
+  .footer__bottom {
     flex-direction: column;
-
-    align-items: center;
-
-    gap: 5px;
-
-    font-size: 4rem;
+    align-items: flex-start;
   }
-
-
-  .footer-bottom {
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-
-    text-align: center;
-  }
-
-
-  .footer-bottom > span:nth-child(2) {
-    text-align: center;
-  }
-
-
-  .footer-back-top {
-    justify-self: center;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .footer {
-    padding-left: 16px;
-
-    padding-right: 16px;
-  }
-
-  .footer-top {
-    gap: 40px 20px;
-  }
-
-  .footer-large-text {
-    font-size: 3.3rem;
-  }
-
-  .footer-logo {
-    font-size: 1.7rem;
-  }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .footer-nav a,
-  .footer-social a,
-  .footer-social a svg,
-  .footer-back-top span {
-    transition: none;
-  }
-}
-/* =========================================================
-   FOOTER CREDIT
-========================================================= */
-
-.footer-credit {
-  justify-self: center;
-
-  color: rgba(0, 0, 0, 0.35);
-
-  text-decoration: none;
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-
-  transition: color 0.3s ease;
-}
-
-.footer-credit strong {
-  color: #111111;
-
-  font-weight: 700;
-
-  transition: color 0.3s ease;
-}
-
-.footer-credit:hover {
-  color: #cf3c21;
-}
-
-.footer-credit:hover strong {
-  color: #cf3c21;
 }

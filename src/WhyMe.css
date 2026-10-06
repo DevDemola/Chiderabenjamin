@@ -1,0 +1,105 @@
+.why__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  gap: clamp(48px, 7vw, 96px);
+}
+
+/* ---------- framed photo with offset black blocks ---------- */
+
+.why__photo {
+  position: relative;
+  max-width: 440px;
+  margin: 24px auto;
+}
+
+.why__photo::before,
+.why__photo::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  background: var(--ink);
+}
+
+.why__photo::before {
+  top: -24px;
+  left: -24px;
+  width: 55%;
+  height: 60%;
+}
+
+.why__photo::after {
+  right: -24px;
+  bottom: -24px;
+  width: 45%;
+  height: 45%;
+}
+
+.why__photo img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border: 10px solid var(--white);
+}
+
+/* ---------- copy ---------- */
+
+.why__copy h2 {
+  font-size: clamp(2rem, 3.8vw, 2.875rem);
+}
+
+.why__copy p {
+  margin-top: 20px;
+  color: var(--ink-2);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.why__tools {
+  margin: 32px 0 36px;
+}
+
+.why__tools > span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.why__tools ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.why__tools li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 8px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--white);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.why__tools img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .why__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .why__photo {
+    max-width: 340px;
+  }
+}

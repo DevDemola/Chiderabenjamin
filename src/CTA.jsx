@@ -1,99 +1,48 @@
-import React from "react";
-import {
-  FiArrowUpRight,
-  FiPlus,
-} from "react-icons/fi";
+import { useRef, useState } from "react";
+import { FiArrowRight, FiCheck, FiCopy } from "react-icons/fi";
+
+import { site } from "./data/site";
 import "./CTA.css";
 
 const CTA = () => {
+  const [copied, setCopied] = useState(false);
+  const timer = useRef();
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(site.email);
+      setCopied(true);
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${site.email}`;
+    }
+  };
+
   return (
-    <section className="cta-section" id="contact">
-      <div className="cta-card">
+    <section className="section cta on-dark" id="contact" aria-labelledby="cta-title">
+      <div className="container cta__inner" data-reveal>
+        <h2 id="cta-title">
+          Have an Idea? <span className="hl">Let's Design It.</span>
+        </h2>
 
-        {/* TOP LABEL */}
-        <div className="cta-top">
-          <span className="cta-label">
-            LET'S WORK TOGETHER
-          </span>
+        <p>
+          Whether you're building something new, improving an existing product or
+          simply exploring an idea — tell me about it and let's create something
+          meaningful together.
+        </p>
 
-          <span className="cta-index">
-            04
-          </span>
-        </div>
-
-
-        {/* MAIN CONTENT */}
-        <div className="cta-content">
-
-          <div className="cta-heading-wrap">
-
-            <span className="cta-eyebrow">
-              HAVE AN IDEA?
-            </span>
-
-            <h2>
-              Have an idea?
-              <br />
-              <span>Let's design it.</span>
-            </h2>
-
-            <div className="cta-orange-mark">
-              <FiPlus />
-            </div>
-
-          </div>
-
-
-          {/* DESCRIPTION */}
-
-          <p className="cta-description">
-            Whether you're building something new,
-            improving an existing product, or simply
-            exploring an idea — let's create something
-            meaningful together.
-          </p>
-
-
-          {/* BUTTON */}
-
-          <a
-            href="mailto:hello@example.com"
-            className="cta-button"
-          >
-            <span>
-              Start a Project
-            </span>
-
-            <span className="cta-arrow">
-              <FiArrowUpRight />
-            </span>
+        <div className="cta__actions">
+          <a href={`mailto:${site.email}`} className="btn btn--brand">
+            Start a Project
+            <FiArrowRight aria-hidden="true" />
           </a>
 
+          <button type="button" className="cta__copy" onClick={copyEmail}>
+            {copied ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />}
+            <span aria-live="polite">{copied ? "Email copied!" : site.email}</span>
+          </button>
         </div>
-
-
-        {/* FOOTER */}
-
-        <div className="cta-footer">
-
-          <span>
-            PRODUCT DESIGN
-          </span>
-
-          <span>
-            UX / UI
-          </span>
-
-          <span>
-            USER RESEARCH
-          </span>
-
-          <span>
-            DIGITAL EXPERIENCES
-          </span>
-
-        </div>
-
       </div>
     </section>
   );

@@ -1,117 +1,77 @@
-import React from "react";
-import {
-  FiArrowUpRight,
-  FiInstagram,
-  FiLinkedin,
-  FiDribbble,
-} from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { FiArrowUp } from "react-icons/fi";
+
+import { Logo } from "./Navbar";
+import { site } from "./data/site";
+import { projects } from "./data/projects";
 import "./Footer.css";
 
 const Footer = () => {
+  const socials = site.socials.filter((s) => s.href);
+
   return (
-    <footer className="footer">
-
-      <div className="footer-container">
-
-        {/* TOP */}
-        <div className="footer-top">
-
-          <div className="footer-brand">
-            <a href="/" className="footer-logo">
-              Chidera Benjamin<span>.</span>
-            </a>
-
+    <footer className="footer on-brand">
+      <div className="container">
+        <div className="footer__grid">
+          <div className="footer__brand">
+            <Logo />
             <p>
-              Product designer creating
-              thoughtful digital experiences.
+              {site.role} · {site.location}
             </p>
+            <a href={`mailto:${site.email}`} className="footer__email">
+              {site.email}
+            </a>
           </div>
 
+          <nav className="footer__col" aria-label="Explore">
+            <h2>Explore</h2>
+            <Link to="/#about">About</Link>
+            <Link to="/#services">Services</Link>
+            <Link to="/#process">Process</Link>
+            <Link to="/#faq">FAQ</Link>
+            <Link to="/#contact">Contact</Link>
+          </nav>
 
-          {/* NAVIGATION */}
-          <div className="footer-nav">
+          <nav className="footer__col" aria-label="Case studies">
+            <h2>Work</h2>
+            {projects.map((p) => (
+              <Link key={p.slug} to={`/work/${p.slug}`}>
+                {p.title}
+              </Link>
+            ))}
+          </nav>
 
-            <span className="footer-nav-title">
-              EXPLORE
-            </span>
-
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#tools">Tools</a>
-            <a href="#contact">Contact</a>
-
-          </div>
-
-
-          {/* SOCIALS */}
-          <div className="footer-social">
-
-            <span className="footer-nav-title">
-              CONNECT
-            </span>
-
-            <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>Instagram</span>
-              <FiArrowUpRight />
-            </a>
-
-            <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>LinkedIn</span>
-              <FiArrowUpRight />
-            </a>
-
-            <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>Dribbble</span>
-              <FiArrowUpRight />
-            </a>
-
-          </div>
-
+          {socials.length > 0 && (
+            <nav className="footer__col" aria-label="Social">
+              <h2>Connect</h2>
+              {socials.map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
+                  {s.label}
+                </a>
+              ))}
+            </nav>
+          )}
         </div>
 
-
-       
-
-
-        {/* BOTTOM */}
-        <div className="footer-bottom">
-
+        <div className="footer__bottom">
           <span>
-            © 2026 Chidera Benjamin. All rights reserved.
+            © {new Date().getFullYear()} {site.name}
           </span>
 
-          <a
-  href="https://wa.me/08158411808"
-  target="_blank"
-  rel="noreferrer"
-  className="footer-credit"
->
-  Designed & built by <strong>Demola</strong>
-</a>
-
-          <a href="#top" className="footer-back-top">
-            BACK TO TOP
-            <span>
-              <FiArrowUpRight />
-            </span>
+          <a href={site.credit.href} target="_blank" rel="noreferrer">
+            Designed & built by <strong>{site.credit.name}</strong>
           </a>
 
+          <button
+            type="button"
+            className="footer__top"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Back to top
+            <FiArrowUp aria-hidden="true" />
+          </button>
         </div>
-
       </div>
-
     </footer>
   );
 };

@@ -57,7 +57,7 @@
 .tools-small-text {
   color: #cf3c21;
 
-  font-size: 10px;
+  font-size: 11px;
 
   font-weight: 700;
 
@@ -232,14 +232,9 @@
 ========================================================= */
 
 .tool-number {
-  color: rgba(
-    0,
-    0,
-    0,
-    0.3
-  );
+  color: rgba(0, 0, 0, 0.5);
 
-  font-size: 10px;
+  font-size: 11px;
 
   font-weight: 600;
 
@@ -553,14 +548,9 @@
 
   margin-top: 35px;
 
-  color: rgba(
-    0,
-    0,
-    0,
-    0.35
-  );
+  color: rgba(0, 0, 0, 0.5);
 
-  font-size: 10px;
+  font-size: 11px;
 
   letter-spacing: 0.08em;
 }
@@ -732,7 +722,7 @@
   ========================================= */
 
   .tool-number {
-    font-size: 8px;
+    font-size: 10px;
   }
 
 
@@ -788,7 +778,7 @@
   .tools-bottom {
     margin-top: 28px;
 
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .tools-plus {
@@ -854,4 +844,18 @@
   .tool-arrow {
     transition: none;
   }
+}
+
+/* =========================================================
+   TOOL ROWS ARE LINKS
+========================================================= */
+
+.tools-list {
+  list-style: none;
+}
+
+a.tool-item {
+  color: inherit;
+
+  text-decoration: none;
 }

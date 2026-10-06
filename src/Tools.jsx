@@ -1,137 +1,85 @@
-import React from "react";
-import {
-  FiArrowUpRight,
-  FiFigma,
-  FiPlus,
-} from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
+
+import { toolkit } from "./data/site";
 import "./Tools.css";
 
-const tools = [
-  {
-    name: "Figma",
-    description: "UI Design & Prototyping",
-    className: "figma",
-  },
-  {
-    name: "Photoshop",
-    description: "Visual & Graphic Design",
-    className: "photoshop",
-  },
-  {
-    name: "Framer",
-    description: "Interactive Prototypes",
-    className: "framer",
-  },
-  {
-    name: "Claude",
-    description: "AI & Design Exploration",
-    className: "claude",
-  },
-];
+const ToolIcon = ({ icon }) => {
+  switch (icon) {
+    case "figma":
+      return (
+        <div className="figma-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      );
+    case "photoshop":
+      return <span className="ps-icon">Ps</span>;
+    case "framer":
+      return <span className="framer-icon">F</span>;
+    case "claude":
+      return <span className="claude-icon">✦</span>;
+    default:
+      return null;
+  }
+};
 
 const Tools = () => {
   return (
-    <section className="tools-section" id="tools">
+    <section className="tools-section" id="tools" aria-labelledby="tools-title">
       <div className="tools-container">
-
         {/* HEADER */}
         <div className="tools-header">
           <div className="tools-line"></div>
-
           <span className="tools-small-text">
+            <span className="section-number">03</span>
             MY DIGITAL TOOLKIT
           </span>
-
         </div>
 
-
         {/* INTRO */}
-        <div className="tools-intro">
-
-          <h2>
+        <div className="tools-intro" data-reveal>
+          <h2 id="tools-title">
             Tools I use to
             <span> bring ideas to life.</span>
           </h2>
 
           <p>
-            A small collection of the tools I use to
-            research, design, prototype and bring
-            digital products to life.
+            A small collection of the tools I use to research, design, prototype
+            and bring digital products to life.
           </p>
-
         </div>
-
 
         {/* TOOL LIST */}
-        <div className="tools-list">
+        <ul className="tools-list">
+          {toolkit.map((tool, index) => (
+            <li key={tool.name}>
+              <a
+                className={`tool-item ${tool.icon}`}
+                href={tool.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${tool.name} — ${tool.description} (opens in a new tab)`}
+              >
+                <span className="tool-number">0{index + 1}</span>
 
-          {tools.map((tool, index) => (
-            <div
-              className={`tool-item ${tool.className}`}
-              key={tool.name}
-            >
+                <div className="tool-icon" aria-hidden="true">
+                  <ToolIcon icon={tool.icon} />
+                </div>
 
-              {/* NUMBER */}
-              <span className="tool-number">
-                0{index + 1}
-              </span>
+                <div className="tool-name">{tool.name}</div>
 
+                <div className="tool-description">{tool.description}</div>
 
-              {/* ICON */}
-              <div className="tool-icon">
-
-                {tool.name === "Figma" && (
-                  <div className="figma-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                )}
-
-                {tool.name === "Photoshop" && (
-                  <span className="ps-icon">
-                    Ps
-                  </span>
-                )}
-
-                {tool.name === "Framer" && (
-                  <span className="framer-icon">
-                    F
-                  </span>
-                )}
-
-                {tool.name === "Claude" && (
-                  <span className="claude-icon">
-                    ✦
-                  </span>
-                )}
-
-              </div>
-
-
-              {/* NAME */}
-              <div className="tool-name">
-                {tool.name}
-              </div>
-
-
-              {/* DESCRIPTION */}
-              <div className="tool-description">
-                {tool.description}
-              </div>
-
-
-              {/* ARROW */}
-              <div className="tool-arrow">
-                <FiArrowUpRight />
-              </div>
-
-            </div>
+                <div className="tool-arrow" aria-hidden="true">
+                  <FiArrowUpRight />
+                </div>
+              </a>
+            </li>
           ))}
-
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -1,99 +1,68 @@
-import React from "react";
-import { FiArrowUpRight, FiPlus } from "react-icons/fi";
-import "./Hero.css";
+import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 
-const tools = [
-  {
-    name: "Figma",
-    image: "/figma.png",
-    className: "hero-tool-1",
-  },
-  {
-    name: "Photoshop",
-    image: "/photoshop.png",
-    className: "hero-tool-2",
-  },
-  {
-    name: "Framer",
-    image: "/framer.png",
-    className: "hero-tool-3",
-  },
-  {
-    name: "Claude",
-    image: "/claude.jpg",
-    className: "hero-tool-4",
-  },
-];
+import { site, stats } from "./data/site";
+import "./Hero.css";
 
 const Hero = () => {
   return (
-    <section className="hero-section">
+    <>
+      <section className="hero on-brand" aria-labelledby="hero-title">
+        <div className="container hero__inner">
+          <div className="hero__portrait">
+            <img
+              src={site.cutout}
+              alt={`${site.name}, smiling with arms folded`}
+              width="682"
+              height="1201"
+              fetchPriority="high"
+            />
+          </div>
 
-      {/* FLOATING TOOLS */}
+          <div className="hero__copy">
+            {site.available && (
+              <span className="hero__badge">
+                <span className="hero__badge-dot" aria-hidden="true" />
+                Open to new projects
+              </span>
+            )}
 
-      {tools.map((tool) => (
-        <div
-          className={`hero-tool ${tool.className}`}
-          key={tool.name}
-        >
-          <img
-            src={tool.image}
-            alt={tool.name}
-          />
+            <h1 id="hero-title">
+              Designing Products People Actually Enjoy Using
+            </h1>
 
-          <span>{tool.name}</span>
+            <p>
+              Hi, I'm {site.firstName} — a product designer in{" "}
+              {site.location.split(",")[0]}. I help founders and teams turn
+              complex ideas into simple, intuitive digital products that users
+              understand, trust and keep coming back to.
+            </p>
+
+            <div className="hero__actions">
+              <Link to="/#contact" className="btn btn--dark">
+                Let's Build Your Product
+                <FiArrowRight aria-hidden="true" />
+              </Link>
+              <Link to="/#work" className="hero__link">
+                See my work
+              </Link>
+            </div>
+          </div>
         </div>
-      ))}
+      </section>
 
-
-      {/* DECORATIVE PLUS */}
-
-      <div className="hero-plus hero-plus-1">
-        <FiPlus />
-      </div>
-
-      <div className="hero-plus hero-plus-2">
-        <FiPlus />
-      </div>
-
-
-      {/* HERO CONTENT */}
-
-      <div className="hero-content">
-
-        <div className="hero-eyebrow">
-          <span className="hero-dot"></span>
-          PRODUCT DESIGNER
-        </div>
-
-        <h1>
-          I design digital
-          <br />
-          <span>products people love.</span>
-        </h1>
-
-        <p>
-          I turn complex ideas into simple,
-          thoughtful and intuitive digital
-          experiences.
-        </p>
-
-        <a
-          href="#contact"
-          className="hero-button"
-        >
-          <span>Start a Project</span>
-
-          <span className="hero-button-icon">
-            <FiArrowUpRight />
-          </span>
-        </a>
-
-      </div>
-
-
-
-    </section>
+      {/* STATS STRIP */}
+      <section className="stats on-cream" aria-label="At a glance">
+        <ul className="container stats__list">
+          {stats.map((s) => (
+            <li key={s.label}>
+              <strong>{s.value}</strong>
+              <span>{s.label}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 };
 
