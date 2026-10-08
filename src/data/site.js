@@ -14,7 +14,7 @@ export const site = {
   cutout: "/img/chidera-cutout.webp",
 
   // TODO: replace with the real address before going live.
-  email: "hello@example.com",
+  email: "chiderabenjaminfav@gmail.com",
 
   available: true,
 

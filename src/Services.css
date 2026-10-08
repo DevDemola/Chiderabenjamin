@@ -12,7 +12,7 @@
   transition: transform 0.3s var(--ease);
 }
 
-/* alternate pale-lime / grey in a checkerboard */
+/* alternate pale-lavender / grey in a checkerboard */
 .service:nth-child(odd) {
   background: var(--card-a);
 }
