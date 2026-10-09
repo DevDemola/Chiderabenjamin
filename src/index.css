@@ -4,14 +4,14 @@
 ========================================================= */
 
 :root {
-  --brand: #d6ccf2;        /* soft lavender — signature colour */
-  --brand-deep: #a993e0;   /* dividers / accents */
+  --brand: #d2f94b;        /* electric lime — signature colour */
+  --brand-deep: #b8e02a;   /* dividers / accents */
   --ink: #0b0b0b;
   --ink-2: #3d3d3a;
   --ink-3: #5f5f5a;
-  --cream: #faf8fd;
+  --cream: #fbfbf3;
   --white: #ffffff;
-  --card-a: #f3effc;       /* pale lavender card */
+  --card-a: #f3fbd2;       /* pale lime card */
   --card-b: #e7e7e1;       /* soft grey card */
   --line-dark: rgba(255, 255, 255, 0.14);
 
